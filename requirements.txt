@@ -1,29 +1,16 @@
-Backend API (FastAPI)
-
-fastapi → Framework para criar a API
-uvicorn → Servidor web para rodar a API
-pydantic → Validação de dados
-python-multipart → Upload de arquivos
-
-Banco de Dados (Supabase)
-
-supabase → Conecta ao Supabase (PostgreSQL)
-postgrest-py → Cliente REST para o banco
-
-Modelos de IA (LLMs)
-
-openai → Para usar Claude (fallback)
-groq → Para usar Groq (chatbot rápido e grátis)
-
-Dashboard (Streamlit)
-
-streamlit → Framework do dashboard
-streamlit-authenticator → Login dos usuários
-pandas → Manipulação de dados
-plotly → Gráficos interativos
-
-Utilidades
-
-python-dotenv → Ler variáveis de ambiente (.env)
-requests → Fazer requisições HTTP
-aiohttp → Requisições assincronizadas
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+python-multipart==0.0.6
+supabase==2.3.5
+postgrest-py==0.13.5
+openai==1.3.9
+groq==0.4.2
+streamlit==1.28.1
+streamlit-authenticator==0.2.3
+pandas==2.1.3
+plotly==5.18.0
+python-dotenv==1.0.0
+requests==2.31.0
+aiohttp==3.9.1
