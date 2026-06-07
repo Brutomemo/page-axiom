@@ -1,0 +1,29 @@
+Backend API (FastAPI)
+
+fastapi → Framework para criar a API
+uvicorn → Servidor web para rodar a API
+pydantic → Validação de dados
+python-multipart → Upload de arquivos
+
+Banco de Dados (Supabase)
+
+supabase → Conecta ao Supabase (PostgreSQL)
+postgrest-py → Cliente REST para o banco
+
+Modelos de IA (LLMs)
+
+openai → Para usar Claude (fallback)
+groq → Para usar Groq (chatbot rápido e grátis)
+
+Dashboard (Streamlit)
+
+streamlit → Framework do dashboard
+streamlit-authenticator → Login dos usuários
+pandas → Manipulação de dados
+plotly → Gráficos interativos
+
+Utilidades
+
+python-dotenv → Ler variáveis de ambiente (.env)
+requests → Fazer requisições HTTP
+aiohttp → Requisições assincronizadas
