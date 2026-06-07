@@ -1,0 +1,30 @@
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.python-version
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
