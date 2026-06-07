@@ -1,0 +1,50 @@
+/* ─── SECTION DECORATIONS ────────────────────────── */
+    .scan-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .scan-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--clr-accent-primary), transparent);
+      animation: scan-line 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .slide-corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-color: rgba(201, 168, 76, 0.3);
+      border-style: solid;
+    }
+
+    .slide-corner.tl {
+      top: 80px;
+      left: 40px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .slide-corner.br {
+      bottom: 40px;
+      right: 40px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .slide-num {
+      position: absolute;
+      bottom: 48px;
+      left: 80px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--clr-dim);
+    }

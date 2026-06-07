@@ -1,0 +1,479 @@
+/* ═══ BACKGROUND AXIOM 4 (Unicorn + grid + efeitos) ═══ */
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(39, 39, 42, 0.8) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(39, 39, 42, 0.8) 1px, transparent 1px);
+    }
+
+    .axiom-bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .axiom-bg-layer .aura-background-component,
+    .axiom-bg-layer [data-us-project] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .axiom-bg-grid-overlay {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, #27272a 1px, transparent 1px),
+        linear-gradient(to bottom, #27272a 1px, transparent 1px);
+    }
+
+    .axiom-bg-radial {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(234, 88, 12, 0.12) 0%, transparent 55%);
+      mix-blend-mode: screen;
+    }
+
+    .axiom-bg-scanlines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+      background-size: 100% 2px;
+    }
+
+    .axiom-bg-crt {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+      background: linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 3px 100%;
+    }
+
+    nav,
+    main,
+    #scroll-progress {
+      position: relative;
+      z-index: 2;
+    }
+
+    body>.bg-fixed-grid,
+    body>.bg-fixed-radial,
+    body>.bg-scanlines,
+    body>.bg-vertical-streaks,
+    body>.orb {
+      display: none !important;
+    }
+
+    .slide {
+      background: linear-gradient(180deg, rgba(5, 5, 8, 0.45) 0%, rgba(5, 5, 8, 0.72) 100%);
+    }
+
+    #hero.slide {
+      background: linear-gradient(180deg, rgba(5, 5, 8, 0.25) 0%, rgba(5, 5, 8, 0.55) 100%);
+      justify-content: center;
+      text-align: left;
+    }
+
+    #empresa.slide {
+      background: var(--clr-chumbo);
+    }
+
+    #diagnostico.slide {
+      background: var(--clr-chumbo);
+    }
+
+    @keyframes spinSlow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin-slow {
+      animation: spinSlow 6s linear infinite;
+    }
+
+    @keyframes sys-flicker {
+      0% {
+        opacity: 0.08;
+      }
+
+      6% {
+        opacity: 1;
+      }
+
+      12% {
+        opacity: 0.08;
+      }
+
+      18% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .sys-flicker-anim,
+    .hero-cam-badge {
+      animation: sys-flicker 2.4s linear forwards;
+      opacity: 0;
+    }
+
+    .hero-axiom-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .hero-axiom-grid {
+        grid-template-columns: minmax(0, 1fr) 520px;
+        gap: 48px;
+      }
+    }
+
+    #hero .hero-head-content {
+      text-align: left;
+    }
+
+    #hero .hero-title {
+      font-size: 3rem;
+    }
+
+    #hero .hero-title-sub {
+      font-size: 0.4em;
+    }
+
+    #hero .hero-lead {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 10px 0;
+    }
+
+    #hero .hero-badges {
+      display: flex;
+      gap: 14px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+
+    #hero .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+
+    #hero .hero-badges,
+    #hero .hero-cta-group {
+      justify-content: flex-start !important;
+    }
+
+    #hero .body-text {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .hero-visual-module {
+      position: relative;
+      min-height: 380px;
+      width: 100%;
+      background: #18181b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .hero-visual-module .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1) brightness(0.5);
+      transform: scaleX(-1);
+      transition: filter 1s ease, transform 1s ease;
+      mask-image: linear-gradient(0deg, transparent, black 5%, black 95%, transparent);
+      -webkit-mask-image: linear-gradient(0deg, transparent, black 5%, black 95%, transparent);
+    }
+
+    .hero-visual-module:hover .hero-bg-image {
+      filter: brightness(0.85);
+      transform: scaleX(-1.03) scaleY(1.03);
+    }
+
+    .hero-visual-scanline {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+      background-size: 100% 2px;
+    }
+
+    .hero-tech-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-cam-badge {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      border: 1px solid #3f3f46;
+      padding: 6px 10px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #fff;
+      letter-spacing: 0.1em;
+      width: fit-content;
+    }
+
+    .hero-data-panel {
+      align-self: flex-end;
+      background: rgba(5, 5, 5, 0.9);
+      border: 1px solid #3f3f46;
+      padding: 14px;
+      width: 220px;
+    }
+
+    .hero-data-panel h4 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-bottom: 1px solid #27272a;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-data-panel .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    .hero-bar-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #71717a;
+      margin-bottom: 6px;
+    }
+
+    .hero-bar-row span:last-child {
+      color: #fff;
+    }
+
+    .hero-bar-track {
+      width: 100%;
+      height: 2px;
+      background: #27272a;
+      margin-bottom: 10px;
+    }
+
+    .hero-bar-fill {
+      height: 100%;
+      background: var(--clr-accent-primary);
+      width: 0;
+      transition: width 2s ease;
+    }
+
+    .profile-image .hero-visual-module {
+      min-height: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .profile-image .hero-bg-image {
+      transform: none;
+    }
+
+    .profile-image .hero-visual-module:hover .hero-bg-image {
+      filter: brightness(0.85);
+      transform: scale(1.03);
+    }
+
+    .profile-image .hero-data-panel {
+      width: min(220px, 90%);
+      padding: 10px;
+    }
+
+    .profile-image .hero-cam-badge {
+      font-size: 9px;
+      padding: 5px 8px;
+    }
+
+    .performance-index {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(9, 9, 11, 0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 24px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .performance-index-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-bottom: 1px solid #27272a;
+    }
+
+    .performance-index-header .label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--clr-accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .performance-index-header .sub {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: #52525b;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .performance-index-header .value {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #fff;
+    }
+
+    .performance-index-chart {
+      padding: 16px;
+      min-height: 140px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .perf-grid-dots {
+      display: flex;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .perf-grid-dots div {
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: #27272a;
+    }
+
+    .perf-grid-dots .perf-dot-accent {
+      box-shadow: 0 0 8px #f97316;
+    }
+
+    .perf-bars {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      height: 128px;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #18181b;
+    }
+
+    .perf-bars .bar {
+      flex: 1;
+      background: #27272a;
+      transition: all 0.3s ease;
+    }
+
+    .perf-bars .bar.peak {
+      box-shadow: 0 0 12px #fccea5;
+    }
+
+    .perf-bars .bar:hover {
+      background: var(--clr-accent-primary);
+    }
+
+    .perf-bars .bar.peak {
+      background: #fff;
+    }
+
+    .feature-image-card {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      margin-top: 16px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5) contrast(1);
+      transition: filter 0.5s;
+    }
+
+    .feature-image-card:hover img {
+      filter: brightness(0.9);
+    }
+
+    .feature-image-card .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #fff;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 4px 8px;
+    }

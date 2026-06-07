@@ -1,0 +1,155 @@
+/* ─── CONTATO — UnicornStudio local (index.html) ─── */
+    #contato.slide {
+      overflow: hidden;
+      background: var(--clr-surface);
+    }
+
+    #contato .contato-bg-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    #contato .contato-bg-layer .aura-background-component,
+    #contato .contato-bg-layer [data-us-project] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #contato .contato-bg-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+      background-size: 60px 60px;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    #contato .contato-bg-radial {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(234, 88, 12, 0.15) 0%, transparent 50%);
+      mix-blend-mode: screen;
+    }
+
+    #contato .contato-bg-scanlines {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.2;
+      background:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 2px, 3px 100%;
+    }
+
+    #contato .contato-content {
+      position: relative;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 960px;
+      padding: 0 24px;
+    }
+
+    #contato .contato-status {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    #contato .contato-status-line {
+      width: 48px;
+      height: 1px;
+      background: #27272a;
+    }
+
+    #contato .contato-status-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 12px;
+      background: rgba(24, 24, 27, 0.5);
+      border: 1px solid #27272a;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: #a1a1aa;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      backdrop-filter: blur(8px);
+    }
+
+    #contato .contato-status-dot {
+      position: relative;
+      display: flex;
+      width: 8px;
+      height: 8px;
+    }
+
+    #contato .contato-status-dot-ping {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #22c55e;
+      opacity: 0.75;
+      animation: contato-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    #contato .contato-status-dot-core {
+      position: relative;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    @keyframes contato-ping {
+
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    #contato .contato-intro {
+      margin-top: 16px;
+      max-width: 640px;
+    }
+
+    @media (max-width: 768px) {
+      #contato .contato-content {
+        padding: 0 8px;
+      }
+
+      #contato .contato-intro {
+        max-width: 100%;
+      }
+    }
+
+    #contato .scan-bar,
+    #contato .slide-num {
+      position: relative;
+      z-index: 20;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }

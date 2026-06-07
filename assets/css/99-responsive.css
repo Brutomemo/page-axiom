@@ -1,0 +1,315 @@
+/* ─── RESPONSIVE — página completa ───────────────── */
+    @media (max-width: 1024px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .three-col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metric-grid-3,
+      .metric-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-card--idealizador {
+        align-items: center;
+      }
+
+      .profile-card--idealizador .profile-image {
+        width: min(280px, 90vw);
+        max-width: none;
+        height: min(360px, 75vw);
+      }
+
+      .profile-card--idealizador .profile-content {
+        width: 100%;
+        max-width: 560px;
+        text-align: left;
+      }
+
+      .profile-image img {
+        width: 200px;
+        height: 240px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* ── Hero ── */
+      #hero .hero-title {
+        font-size: clamp(1.75rem, 8vw, 3rem);
+        line-height: 1.15;
+        margin-bottom: var(--spacing-md);
+      }
+
+      #hero .hero-title-sub {
+        display: block;
+        font-size: 0.38em;
+        margin-top: 0.35em;
+        line-height: 1.3;
+      }
+
+      #hero .hero-lead {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        max-width: 100%;
+        margin: 10px 0;
+      }
+
+      #hero .hero-badges {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin: 24px 0;
+      }
+
+      #hero .hero-cta-group {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin: 28px 0;
+      }
+
+      #hero .hero-visual-module {
+        min-height: min(320px, 55vw);
+      }
+
+      #hero .performance-index-chart {
+        margin-top: 20px;
+      }
+
+      #hero .perf-bars {
+        height: 96px;
+        gap: 8px;
+      }
+
+      #hero .perf-grid-dots {
+        gap: 8px;
+      }
+
+      /* ── Tipografia de seções ── */
+      h3.reveal {
+        font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+      }
+
+      .label {
+        font-size: 7px;
+        letter-spacing: 0.35em;
+        gap: var(--spacing-sm);
+      }
+
+      .label::before {
+        width: 20px;
+      }
+
+      .divider {
+        width: min(200px, 50vw);
+        margin: var(--spacing-lg) 0;
+      }
+
+      .section-description {
+        font-size: clamp(0.875rem, 3.5vw, 1rem);
+        max-width: 100%;
+      }
+
+      /* ── Perfil / idealizador ── */
+      #idealizador .profile-name {
+        font-size: clamp(1.25rem, 5vw, 1.5rem) !important;
+      }
+
+      #idealizador .step-item {
+        grid-template-columns: 28px 1fr;
+        gap: var(--spacing-sm);
+      }
+
+      /* ── Formulário ── */
+      .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        font-size: 16px;
+      }
+
+      .lead-form-submit {
+        text-align: center;
+        margin-top: 24px;
+      }
+
+      .lead-form-submit .btn-primary {
+        width: 100%;
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.4;
+        padding: 16px 20px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+
+      /* ── Botões hero ── */
+      #hero .btn {
+        flex: 1 1 auto;
+        min-width: min(100%, 200px);
+        padding: 14px 24px;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+      }
+
+      /* ── Contato / chatbot ── */
+      #contato .contato-content {
+        padding: 0 8px;
+      }
+
+      #contato .contato-status {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+
+      #contato .contato-status-line {
+        width: 32px;
+      }
+
+      #contato .body-text {
+        max-width: 100%;
+      }
+
+      .chatbot {
+        --chatbot-width: 100%;
+        --chatbot-height: min(420px, 70vh);
+        margin-top: 24px;
+      }
+
+      .chatbot-suggestions {
+        padding: 0 12px 10px;
+        gap: 6px;
+      }
+
+      .chatbot-suggestion {
+        font-size: 9px;
+        padding: 6px 10px;
+      }
+
+      .chatbot-header,
+      .chatbot-form {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .chatbot-messages {
+        padding: 14px;
+      }
+
+      .chatbot-message {
+        max-width: 92%;
+        font-size: 0.875rem;
+      }
+
+      /* ── Decorações ── */
+      .slide-corner.tl {
+        top: calc(var(--nav-height) + 12px);
+        left: 16px;
+      }
+
+      .slide-corner.br {
+        bottom: 24px;
+        right: 16px;
+      }
+
+      .slide-num {
+        left: 20px;
+        bottom: 20px;
+        font-size: 9px;
+      }
+
+      /* ── Grids ── */
+      .three-col {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid-2,
+      .metric-grid-3,
+      .metric-grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .step-item {
+        grid-template-columns: 40px 1fr;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md) 0;
+      }
+
+      .step-title {
+        font-size: 0.82rem;
+        word-break: break-word;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .profile-image img {
+        width: 160px;
+        height: 200px;
+      }
+
+      .profile-name {
+        font-size: 1.8rem;
+      }
+
+      .profile-role {
+        font-size: 1rem;
+      }
+
+      #hero .hero-badges .badge {
+        font-size: 9px;
+        padding: 5px 10px;
+        letter-spacing: 0.1em;
+      }
+
+      #hero .perf-bars {
+        height: 72px;
+        gap: 4px;
+      }
+
+      #hero .perf-grid-dots {
+        gap: 4px;
+      }
+
+      .chatbot-footer {
+        font-size: 8px;
+        padding: 8px 12px 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      #hero .hero-cta-group .btn {
+        width: 100%;
+      }
+
+      .nav-link {
+        font-size: 11px;
+        letter-spacing: 0.08em;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }

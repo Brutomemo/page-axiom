@@ -1,0 +1,13 @@
+/* ─── SCROLL PROGRESS ─────────────────────────────── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      z-index: 200;
+      background: linear-gradient(90deg, var(--clr-accent-primary), var(--clr-secondary-light), var(--clr-accent-light));
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 80ms linear;
+    }

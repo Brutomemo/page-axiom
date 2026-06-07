@@ -1,0 +1,20 @@
+/* AXIOM Strategic Intelligence — stylesheet entry */
+@import "./00-foundation.css";
+@import "./01-backgrounds.css";
+@import "./01-backgrounds-1.css";
+@import "./02-scroll-progress.css";
+@import "./03-navigation.css";
+@import "./04-slides.css";
+@import "./05-glass.css";
+@import "./06-animations.css";
+@import "./07-typography.css";
+@import "./08-buttons.css";
+@import "./09-cards.css";
+@import "./10-badges.css";
+@import "./11-decorations.css";
+@import "./12-profile.css";
+@import "./13-grids.css";
+@import "./99-responsive.css";
+@import "./01-backgrounds-2.css";
+@import "./18-contato.css";
+@import "./19-chatbot.css";

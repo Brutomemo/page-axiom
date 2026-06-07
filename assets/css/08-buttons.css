@@ -1,0 +1,58 @@
+/* ─── BUTTONS ─────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      font-family: var(--font-hd);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--clr-accent-primary), var(--clr-accent-light));
+      color: var(--clr-bg);
+      border: 1px solid transparent;
+      font-weight: 700;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 30px rgba(201, 168, 76, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--clr-white);
+      border: 1px solid var(--clr-accent-primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(201, 168, 76, 0.1);
+      border-color: var(--clr-accent-light);
+      box-shadow: inset 0 0 20px rgba(201, 168, 76, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        padding: 14px 28px;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .btn {
+        padding: 12px 20px;
+        letter-spacing: 0.14em;
+      }
+    }

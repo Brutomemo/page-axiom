@@ -1,0 +1,110 @@
+/* ─── TYPOGRAPHY ──────────────────────────────────── */
+    h1 {
+      font-family: var(--font-hd);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    h2 {
+      font-family: var(--font-hd);
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    h3 {
+      font-family: var(--font-hd);
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+      margin-bottom: var(--spacing-md);
+    }
+
+    h4 {
+      font-family: var(--font-hd);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-md);
+    }
+
+    p {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .body-text {
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      line-height: 1.75;
+      color: var(--clr-muted);
+      max-width: 680px;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--clr-dim);
+    }
+
+    .label {
+      font-family: var(--font-hd);
+      font-size: 8px;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--clr-accent-primary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--clr-accent-primary);
+    }
+
+    .label-num {
+      color: var(--clr-muted);
+    }
+
+    .caption {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-dim);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--clr-accent-primary) 0%, var(--clr-accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer-text 3s ease-in-out infinite;
+      background-size: 200% auto;
+    }
+
+    .glow-text {
+      color: var(--clr-accent-primary);
+      text-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--clr-accent-primary), transparent);
+      margin: var(--spacing-2xl) 0;
+      width: 200px;
+    }

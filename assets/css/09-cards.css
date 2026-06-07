@@ -1,0 +1,28 @@
+/* ─── CARDS & METRICS ─────────────────────────────── */
+    .card {
+      padding: var(--spacing-lg);
+      background: var(--clr-surface-light);
+      border: 1px solid var(--clr-border);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(201, 168, 76, 0.3);
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .card-title {
+      font-family: var(--font-hd);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+      color: var(--clr-white);
+    }
+
+    .card-content {
+      color: var(--clr-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXIOM Human Performance | Performance Humana & People Analytics</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ethnocentric+Bold&family=Eurostile+Extended&family=Share+Tech+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/pages/human-performance.css" />
+</head>
+
+<body class="page-human-performance" data-axiom-page="human-performance">
+
+  <!-- Background — Unicorn projeto alternativo (Human Performance) -->
+  <div class="axiom-bg-layer" data-axiom-unicorn aria-hidden="true">
+    <div class="aura-background-component top-0 w-full absolute h-full">
+      <div class="absolute w-full h-full left-0 top-0"
+        data-us-project="UtvhDctN8AjL6tvf1yKd"></div>
+    </div>
+    <div class="axiom-bg-grid-overlay bg-grid"></div>
+    <div class="axiom-bg-radial"></div>
+    <div class="axiom-bg-scanlines"></div>
+    <div class="axiom-bg-crt"></div>
+  </div>
+
+  <div id="scroll-progress"></div>
+
+  <nav class="site-nav" data-nav-mobile aria-label="Navegação principal">
+    <a href="../index.html#hero" class="nav-brand">
+      <div class="nav-logo">
+        <img src="../assets/images/logo-nav.webp" alt="AXIOM"
+          style="filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.45));" />
+      </div>
+    </a>
+
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menu">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-panel" id="nav-panel" aria-label="Menu de navegação">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link" data-nav-page="home">Strategic Intelligence</a>
+        <a href="human-performance.html#hero-hp" class="nav-link nav-link--active" data-nav-page="human-performance"
+          aria-current="page">Human Performance</a>
+        <a href="#pilares" class="nav-link">Pilares</a>
+        <a href="#metodologia" class="nav-link">Metodologia</a>
+        <a href="#contato-hp" class="nav-link">Assistente Virtual</a>
+      </div>
+      <div class="nav-status nav-status--panel">
+        <span class="status-dot"></span>
+        <span>OPERACIONAL</span>
+      </div>
+    </div>
+
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>OPERACIONAL</span>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="slide" id="hero-hp">
+      <div class="scan-bar"></div>
+      <div class="slide-container">
+        <div class="hero-axiom-grid reveal delay-2">
+          <div class="hero-head-content">
+            <h2 class="reveal" style="font-size: 3rem;">
+              <span class="gradient-text">AXIOM</span>
+              <span style="font-size: 0.4em; color: var(--clr-info); letter-spacing: 0.12em;">HUMAN
+                PERFORMANCE</span>
+            </h2>
+
+            <p class="body-text reveal delay-1" style="font-size: 1.2rem; max-width: 620px; margin: 10px 0;">
+              Performance humana orientada por dados — pessoas, indicadores e decisão estratégica
+            </p>
+
+            <div class="hero-badges reveal delay-2"
+              style="display: flex; gap: 14px; justify-content: flex-start; flex-wrap: wrap; margin: 30px 0;">
+              <span class="badge">⬡ PEOPLE ANALYTICS</span>
+              <span class="badge">⬡ OKR & KPI</span>
+              <span class="badge">⬡ ENGAGEMENT</span>
+              <span class="badge">⬡ DESEMPENHO</span>
+            </div>
+
+            <div class="hero-cta-group reveal delay-3"
+              style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; margin: 40px 0;">
+              <a href="#pilares" class="btn btn-primary">EXPLORAR PILARES</a>
+              <a href="../index.html#diagnostico" class="btn btn-secondary">SOLICITAR DIAGNÓSTICO</a>
+            </div>
+          </div>
+
+          <div class="hero-visual-module">
+            <img class="hero-bg-image" alt="Performance humana AXIOM"
+              src="../assets/images/Inteligencia-artificial.jpg" />
+            <div class="hero-visual-scanline"></div>
+            <div class="hero-tech-overlay">
+              <div class="hero-cam-badge">METRICS [LIVE]</div>
+              <div class="hero-data-panel">
+                <h4>Teams <span class="pulse-dot"></span></h4>
+                <div class="hero-bar-row"><span>ENGAGEMENT</span><span>87%</span></div>
+                <div class="hero-bar-track">
+                  <div class="hero-bar-fill" style="width: 87%;"></div>
+                </div>
+                <div class="hero-bar-row"><span>OKR_SYNC</span><span>ON</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="performance-index-chart reveal delay-4"
+          style="width: 100%; display: flex; flex-direction: column; gap: 20px; margin-top: 32px;">
+          <div class="perf-grid-dots" style="display: flex; width: 100%; gap: 12px;">
+            <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
+            <div style="flex: 1; height: 4px; border-radius: 2px; background: var(--clr-info); box-shadow: 0 0 8px var(--clr-info);"></div>
+            <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
+            <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
+            <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
+            <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
+          </div>
+          
+    </section>
+
+    <!-- VISÃO -->
+    <section class="slide section-gradient" id="visao">
+      <div class="scan-bar"></div>
+      <div class="slide-corner tl"></div>
+      <div class="slide-container">
+        <div class="label reveal"><span class="label-num">01 //</span> VISÃO</div>
+        <h3 class="reveal">Inteligência aplicada à <span class="gradient-text">performance humana</span></h3>
+        <div class="divider reveal"></div>
+
+        <div class="two-col mt-xl" style="width: 100%;">
+          <div>
+            <p class="body-text reveal">
+              A linha <strong style="color: var(--clr-info);">AXIOM Human Performance</strong> conecta
+              métricas de pessoas, engajamento e resultados operacionais em um único painel de decisão —
+              com a mesma rigorosidade analítica da Strategic Intelligence.
+            </p>
+            <p class="body-text reveal delay-1">
+              Dashboards, OKRs e indicadores de desempenho humano integrados à estratégia de Growth,
+              para líderes que precisam alinhar times, capacidade e entrega.
+            </p>
+          </div>
+          <div class="metric-grid metric-grid-2 reveal delay-2">
+            <div class="card glass hp-pillar-card">
+              <p class="metric-value">360°</p>
+              <p class="metric-label">Visão integrada de performance</p>
+            </div>
+            <div class="card glass hp-pillar-card">
+              <p class="metric-value">OKR</p>
+              <p class="metric-label">Ciclos e acompanhamento contínuo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num mono">02 / 05</div>
+    </section>
+
+    <!-- PILARES -->
+    <section class="slide" id="pilares">
+      <div class="scan-bar"></div>
+      <div class="slide-corner br"></div>
+      <div class="slide-container">
+        <div class="label reveal"><span class="label-num">03 //</span> PILARES</div>
+        <h3 class="reveal">Áreas de <span class="gradient-text">atuação</span></h3>
+        <div class="divider reveal"></div>
+
+        <div class="three-col mt-xl" style="width: 100%;">
+          <div class="card glass hp-pillar-card reveal delay-1">
+            <p class="card-title">People Analytics</p>
+            <p class="card-content body-text">Análise de indicadores de RH, produtividade e capacidade
+              instalada com visualização executiva.</p>
+          </div>
+          <div class="card glass hp-pillar-card reveal delay-2">
+            <p class="card-title">OKR & KPI Humanos</p>
+            <p class="card-content body-text">Estruturação de objetivos, rituais de acompanhamento e
+              painéis de progresso por time e função.</p>
+          </div>
+          <div class="card glass hp-pillar-card reveal delay-3">
+            <p class="card-title">Engagement & Retenção</p>
+            <p class="card-content body-text">Monitoramento de engajamento, turnover e fatores críticos
+              com alertas orientados à ação.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num mono">03 / 05</div>
+    </section>
+
+    <!-- METODOLOGIA -->
+    <section class="slide section-gradient" id="metodologia">
+      <div class="scan-bar"></div>
+      <div class="slide-container">
+        <div class="label reveal"><span class="label-num">04 //</span> METODOLOGIA</div>
+        <h3 class="reveal">Ciclo <span class="gradient-text">AXIOM HP</span></h3>
+        <div class="divider reveal"></div>
+
+        <div class="step-list reveal delay-1">
+          <div class="step-item" style="border: none; padding-bottom: 20px; border-bottom: 1px solid var(--clr-border);">
+            <span class="step-num">01</span>
+            <div>
+              <p class="step-title">Diagnóstico de baseline</p>
+              <p class="step-body">Mapeamento de indicadores atuais, fontes de dados e gaps de visibilidade</p>
+            </div>
+          </div>
+          <div class="step-item" style="border: none; padding-bottom: 20px; border-bottom: 1px solid var(--clr-border);">
+            <span class="step-num">02</span>
+            <div>
+              <p class="step-title">Modelagem de indicadores</p>
+              <p class="step-body">Definição de KPIs, OKRs e painéis alinhados à estratégia do negócio</p>
+            </div>
+          </div>
+          <div class="step-item" style="border: none; padding-bottom: 20px; border-bottom: 1px solid var(--clr-border);">
+            <span class="step-num">03</span>
+            <div>
+              <p class="step-title">Web App & automação</p>
+              <p class="step-body">Dashboards interativos e fluxos de atualização com IA quando aplicável</p>
+            </div>
+          </div>
+          <div class="step-item" style="border: none; padding-bottom: 0;">
+            <span class="step-num">04</span>
+            <div>
+              <p class="step-title">Governança e evolução</p>
+              <p class="step-body">Rituais de revisão, benchmarks e melhoria contínua orientada por dados</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;" class="reveal delay-2">
+          <a href="../index.html#diagnostico" class="btn btn-primary">SOLICITAR AVALIAÇÃO</a>
+        </div>
+      </div>
+      <div class="slide-num mono">04 / 05</div>
+    </section>
+
+    <!-- CONTATO / CHATBOT -->
+    <section class="slide slide-center" id="contato-hp">
+      <div class="scan-bar"></div>
+      <div class="slide-container"
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+        <div class="contato-content">
+          <div class="contato-status reveal">
+            <div class="contato-status-line"></div>
+            <div class="contato-status-badge">
+              <span class="contato-status-dot">
+                <span class="contato-status-dot-ping"></span>
+                <span class="contato-status-dot-core"></span>
+              </span>
+              Human Performance — Online
+            </div>
+            <div class="contato-status-line"></div>
+          </div>
+
+          <h3 class="reveal">Assistente <span class="gradient-text">Human Performance</span></h3>
+          <p class="body-text reveal delay-1" style="margin-top: 16px; max-width: 640px;">
+            Tire dúvidas sobre people analytics, OKRs e diagnóstico de performance humana.
+          </p>
+
+          <div class="chatbot reveal delay-2" id="axiom-chatbot"
+            data-chatbot-endpoint=""
+            data-chatbot-welcome="Olá! Sou o assistente AXIOM Human Performance. Posso explicar people analytics, OKRs, indicadores de equipe ou encaminhar você para um diagnóstico. Como posso ajudar?">
+
+            <header class="chatbot-header">
+              <div class="chatbot-header-info">
+                <span class="chatbot-avatar" aria-hidden="true">⬡</span>
+                <div>
+                  <h4 class="chatbot-title">AXIOM HP Assistant</h4>
+                  <span class="chatbot-status">Online</span>
+                </div>
+              </div>
+            </header>
+
+            <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"
+              aria-label="Histórico de mensagens do assistente"></div>
+
+            <div class="chatbot-suggestions" id="chatbot-suggestions" aria-label="Sugestões rápidas">
+              <button type="button" class="chatbot-suggestion"
+                data-prompt="O que é AXIOM Human Performance?">O que é HP</button>
+              <button type="button" class="chatbot-suggestion"
+                data-prompt="Como funcionam OKRs para times?">OKRs</button>
+              <button type="button" class="chatbot-suggestion"
+                data-prompt="Quero um diagnóstico de performance humana">Diagnóstico</button>
+              <button type="button" class="chatbot-suggestion"
+                data-prompt="Falar com um consultor humano">Consultor</button>
+            </div>
+
+            <form class="chatbot-form" id="chatbot-form">
+              <label for="chatbot-input" class="sr-only">Digite sua mensagem</label>
+              <input type="text" class="chatbot-input" id="chatbot-input" name="message"
+                placeholder="Digite sua mensagem..." autocomplete="off" required />
+              <button type="submit" class="chatbot-send btn btn-primary">Enviar</button>
+            </form>
+
+            <p class="chatbot-footer">
+              Respostas automatizadas · Configure <code>data-chatbot-endpoint</code> em <code>config.js</code>
+            </p>
+          </div>
+
+          <p class="caption reveal delay-3" style="margin-top: 48px;">
+            © 2026 AXIOM - Strategic Intelligence Ltda — Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+      <div class="slide-num mono">05 / 05</div>
+    </section>
+
+  </main>
+
+  <script src="../assets/js/vendors/unicorn-loader.js" defer></script>
+  <script src="../assets/js/vendors/img-fallback.js" defer></script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/modules/page-bootstrap.js"></script>
+  <script src="../assets/js/modules/nav-mobile.js" defer></script>
+  <script src="../assets/js/modules/scroll-ui.js" defer></script>
+  <script src="../assets/js/modules/chatbot.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+/* ─── BADGES ──────────────────────────────────────── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      background: rgba(201, 168, 76, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--clr-accent-primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .badge:hover {
+      background: rgba(201, 168, 76, 0.15);
+      border-color: var(--clr-accent-primary);
+    }
+
+    .hero-badges .badge {
+      color: var(--clr-hero-badge);
+      background: var(--clr-hero-badge-bg);
+      border-color: var(--clr-hero-badge-border);
+    }
+
+    .hero-badges .badge:hover {
+      background: var(--clr-hero-badge-bg-hover);
+      border-color: var(--clr-hero-badge);
+    }

@@ -1,0 +1,100 @@
+
+    /* ═══════════════════════════════════════════════════════════
+       AXIOM STRATEGIC INTELLIGENCE — APRESENTAÇÃO EXECUTIVA
+       
+    ═══════════════════════════════════════════════════════════ */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --clr-bg: #050508;
+      --clr-surface: #0a0a10;
+      --clr-surface-light: #12131b;
+      --clr-accent-primary: #fb7507;
+      --clr-accent-dark: #a68338;
+      --clr-accent-light: #e8d08a;
+      --clr-secondary: #2563a8;
+      --clr-secondary-dark: #1a3a6e;
+      --clr-secondary-light: #3b7dd8;
+      --clr-success: #22c55e;
+      --clr-warning: #f59e0b;
+      --clr-error: #ef4444;
+      --clr-info: #06b6d4;
+      --clr-white: #f0f4ff;
+      --clr-muted: rgba(220, 210, 240, 0.72);
+      --clr-dim: rgba(210, 210, 240, 0.564);
+      --clr-border: rgba(255, 255, 255, 0.07);
+      /* Background cinza chumbo — 2ª dobra (empresa) e 4ª dobra (diagnóstico) */
+      --clr-chumbo: #1f2025;
+      /* Tags prateadas — 1ª dobra (badges) e 3ª dobra (Tecnologias & Skills) */
+      --clr-hero-badge: #c0c0c0;
+      --clr-hero-badge-bg: rgba(192, 192, 192, 0.08);
+      --clr-hero-badge-border: rgba(192, 192, 192, 0.35);
+      --clr-hero-badge-bg-hover: rgba(192, 192, 192, 0.15);
+      /* Chatbot — 5ª dobra (Assistente Comercial Virtual) */
+      --clr-chatbot-bg: rgba(10, 10, 16, 0.94);
+      --clr-chatbot-header-bg: rgba(31, 32, 37, 0.98);
+      --clr-chatbot-border: rgba(255, 255, 255, 0.1);
+      --clr-chatbot-bot-bg: rgba(24, 24, 27, 0.95);
+      --clr-chatbot-user-bg: rgba(37, 99, 168, 0.28);
+      --clr-chatbot-input-bg: rgba(5, 5, 8, 0.85);
+      --clr-chatbot-accent: var(--clr-accent-primary);
+      --chatbot-width: 520px;
+      --chatbot-height: 480px;
+      --font-hd: 'Orbitron', sans-serif;
+      --font-mono: 'Share Tech Mono', monospace;
+      --font-body: 'Inter', sans-serif;
+      --spacing-xs: 4px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+      --spacing-xl: 32px;
+      --spacing-2xl: 48px;
+      --spacing-3xl: 64px;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--clr-bg);
+      color: var(--clr-white);
+      overflow-x: hidden;
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--clr-bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--clr-accent-primary), var(--clr-secondary-light));
+      border-radius: 2px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, var(--clr-accent-light), var(--clr-secondary-light));
+    }
+
+    
