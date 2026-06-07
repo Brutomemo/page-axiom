@@ -1,7 +1,7 @@
 {
-  "buildCommand": "echo 'Static site - no build needed'",
+  "buildCommand": "echo 'Static site'",
   "framework": "static",
-  "public": ".",
+  "public": true,
   "cleanUrls": true,
   "rewrites": [
     {
