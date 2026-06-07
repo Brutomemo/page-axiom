@@ -1,6 +1,5 @@
 {
   "buildCommand": "echo 'Static site'",
-  "framework": "static",
   "public": true,
   "cleanUrls": true,
   "rewrites": [
