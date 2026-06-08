@@ -1,4 +1,74 @@
 {
-  "buildCommand": "echo 'Static'",
-  "cleanUrls": true
+  "projectSettings": {
+    "framework": "other",
+    "buildCommand": "echo 'Deploy ready for Vercel Serverless'",
+    "outputDirectory": "public"
+  },
+
+  "functions": {
+    "api/chat.js": {
+      "memory": 1024,
+      "maxDuration": 30,
+      "runtime": "nodejs20.x"
+    },
+    "api/form-submit.js": {
+      "memory": 1024,
+      "maxDuration": 30,
+      "runtime": "nodejs20.x"
+    },
+    "api/get-leads.js": {
+      "memory": 512,
+      "maxDuration": 10,
+      "runtime": "nodejs20.x"
+    },
+    "api/health.js": {
+      "memory": 128,
+      "maxDuration": 5,
+      "runtime": "nodejs20.x"
+    }
+  },
+
+  "env": {
+    "OPENAI_API_KEY": "@openai_api_key",
+    "ANTHROPIC_API_KEY": "@anthropic_api_key",
+    "GROQ_API_KEY": "@groq_api_key",
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_KEY": "@supabase_key",
+    "NODE_ENV": "@node_env"
+  },
+
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+        }
+      ]
+    }
+  ]
 }
