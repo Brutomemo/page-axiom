@@ -135,6 +135,37 @@ Pergunta: {data.mensagem}"""
                 modelo_usado = "claude"
             except Exception as claude_error:
                 return {"erro": str(claude_error), "resposta": "Desculpe, estou com dificuldades no momento."}
+
+# Adicione estas rotas (além do chat):
+
+@app.post("/api/projetos")
+def criar_projeto(cliente_id: str, nome: str, descricao: str):
+    """Criar novo projeto de análise"""
+    # Salva no Supabase
+    pass
+
+@app.post("/api/upload-dados")
+def upload_dados(cliente_id: str, arquivo):
+    """Upload de dados para análise"""
+    # ETL automático
+    pass
+
+@app.post("/api/analise-diagnostica")
+def analise_diagnostica(projeto_id: str):
+    """Executa análise diagnóstica automática"""
+    # Usa IA para detectar padrões
+    pass
+
+@app.get("/api/dashboard/{cliente_id}")
+def get_dashboard(cliente_id: str):
+    """Retorna dados para dashboard Streamlit"""
+    pass
+
+@app.post("/api/automacao")
+def criar_automacao(cliente_id: str, config: dict):
+    """Criar pipeline de automação ETL"""
+    pass
+
     
     # Salva no Supabase
     try:
@@ -153,6 +184,7 @@ Pergunta: {data.mensagem}"""
         "modelo": modelo_usado,
         "session_id": data.session_id
     }
+    
     
     # Salva no Supabase
     try:
