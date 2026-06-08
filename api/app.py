@@ -6,6 +6,7 @@ import os
 from supabase import create_client
 from openai import OpenAI
 from groq import Groq
+import anthropic
 
 load_dotenv()
 
@@ -49,7 +50,7 @@ def warmup(request: WarmupRequest):
 
 @app.post("/chat")
 def chat(data: ChatMessage):
-    """Endpoint principal do chatbot"""
+    """Endpoint principal do chatbot com Groq → OpenAI → Claude"""
     try:
         # Tenta Groq primeiro (mais rápido)
         resposta = groq_client.chat.completions.create(
@@ -70,7 +71,7 @@ Objetivo:
 - Identificar necessidades do cliente
 - Ser profissional e direto
 
-Nunca invente preços. Sempre ofereça agendar uma conversa."""
+Nunca invente preços."""
                 },
                 {"role": "user", "content": data.mensagem}
             ],
@@ -81,8 +82,8 @@ Nunca invente preços. Sempre ofereça agendar uma conversa."""
         modelo_usado = "groq"
         
     except Exception as e:
-        # Fallback para Claude se Groq falhar
         try:
+            # Fallback para OpenAI
             resposta = openai_client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
@@ -104,9 +105,54 @@ Nunca invente preços."""
                 temperature=0.7
             )
             texto_resposta = resposta.choices[0].message.content
-            modelo_usado = "claude"
-        except Exception as fallback_error:
-            return {"erro": str(fallback_error), "resposta": "Desculpe, estou com dificuldades no momento."}
+            modelo_usado = "openai"
+        except Exception as openai_error:
+            try:
+                # Fallback para Claude (melhor qualidade)
+                client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+                resposta = client.messages.create(
+                    model="claude-3-5-sonnet-20241022",
+                    max_tokens=500,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": f"""Você é o assistente comercial da AXIOM.
+
+Serviços:
+- Dashboards e Analytics
+- Agentes de IA
+- Automação de Processos
+- Consultoria Estratégica
+
+Responda de forma clara e profissional.
+Nunca invente preços.
+
+Pergunta: {data.mensagem}"""
+                        }
+                    ]
+                )
+                texto_resposta = resposta.content[0].text
+                modelo_usado = "claude"
+            except Exception as claude_error:
+                return {"erro": str(claude_error), "resposta": "Desculpe, estou com dificuldades no momento."}
+    
+    # Salva no Supabase
+    try:
+        supabase.table("chat_history").insert({
+            "session_id": data.session_id,
+            "user_message": data.mensagem,
+            "assistant_message": texto_resposta,
+            "model": modelo_usado,
+            "user_email": data.user_email
+        }).execute()
+    except Exception as db_error:
+        print(f"Erro ao salvar: {db_error}")
+    
+    return {
+        "resposta": texto_resposta,
+        "modelo": modelo_usado,
+        "session_id": data.session_id
+    }
     
     # Salva no Supabase
     try:
