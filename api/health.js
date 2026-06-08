@@ -1,3 +1,6 @@
-module.exports = async (req, res) => {
-  return res.json({ status: '✅ Vercel respondendo!', time: new Date() });
+module.exports = (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'Vercel funcionando corretamente'
+  });
 };
