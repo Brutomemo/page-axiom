@@ -70,6 +70,81 @@
       max-width: none !important;
       grid-column: 1 / -1 !important;
     }
+
+    /* ── Chatbot — expande área de conversa na última dobra ── */
+    #contato-hp {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    #contato-hp .slide-container {
+      flex: 1 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: 56px 24px 40px !important;
+      box-sizing: border-box !important;
+    }
+
+    #contato-hp .contato-content {
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #contato-hp .chatbot {
+      width: 100%;
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contato-hp .chatbot-messages {
+      height: 420px;
+      min-height: 320px;
+      flex: 0 0 420px;
+    }
+
+    /* tablet */
+    @media (max-width: 1024px) {
+      #contato-hp .chatbot-messages {
+        height: 360px;
+        flex-basis: 360px;
+      }
+    }
+
+    /* mobile */
+    @media (max-width: 768px) {
+      #contato-hp .slide-container {
+        padding: 40px 12px 24px !important;
+      }
+      #contato-hp .contato-content {
+        max-width: 100%;
+      }
+      #contato-hp .chatbot-messages {
+        height: 280px;
+        min-height: 220px;
+        flex-basis: 280px;
+      }
+    }
+
+    /* mobile pequeno */
+    @media (max-width: 480px) {
+      #contato-hp .slide-container {
+        padding: 32px 8px 16px !important;
+      }
+      #contato-hp .chatbot-messages {
+        height: 240px;
+        min-height: 200px;
+        flex-basis: 240px;
+      }
+    }
   </style>
 </head>
 
