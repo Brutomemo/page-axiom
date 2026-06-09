@@ -154,7 +154,7 @@
 .page-human-performance #contato-hp .contato-status-line {
   width: 48px;
   height: 1px;
-  background: #27272a;
+  background: #000000;
 }
 
 .page-human-performance #contato-hp .contato-status-badge {
@@ -166,7 +166,7 @@
   border: 1px solid #27272a;
   font-family: var(--font-mono);
   font-size: 10px;
-  color: #a1a1aa;
+  color: #c0c0c9;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   backdrop-filter: blur(8px);
