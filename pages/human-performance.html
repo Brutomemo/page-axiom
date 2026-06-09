@@ -15,6 +15,15 @@
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/pages/human-performance.css" />
   <style>
+    /* ── RÓTULOS DE DOBRA (.label) — ajuste o tamanho aqui ─────────────
+       Ex.: <div class="label reveal"><span class="label-num">02 //</span> Texto</div>
+       Altere --label-font-size para mudar todos os rótulos desta página.
+    ──────────────────────────────────────────────────────────────────── */
+    :root {
+      --label-font-size: 13px;
+      --label-font-size-mobile: 11px;
+    }
+
     /* ── Menu mobile — painel e links ──────────────────────────────────
        Overrides sobre 03-navigation.css para melhorar legibilidade,
        área de toque e espaçamento em telas menores.
@@ -847,7 +856,7 @@
 
           <h4 style="margin:0 0 20px;font-size:clamp(1.15rem,2.5vw,1.6rem);line-height:1.4;font-family:var(--font-hd);font-weight:600;color:#e4e4e7;">
             Saúde Mental Não É Apenas Uma Exigência Legal.<br>
-            <span class="gradient-text">É Um Ativo Estratégico.</span>
+            <span class="gradient-text">É Um Ativo para o seu negócio.</span>
           </h4>
 
           <p class="body-text" style="max-width:640px;margin:0 auto 36px;line-height:1.8;color:rgba(166, 230, 250, 0.85);">
