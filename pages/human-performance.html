@@ -15,7 +15,25 @@
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/pages/human-performance.css" />
   <style>
-    /* ── Gradiente azul-ciano-amarelo para destaques da dobra empresa ── */
+    /* ── Benefícios & Diferencial — grid responsivo ── */
+    #beneficios .slide-container,
+    #diferencial .slide-container {
+      display: block !important;
+    }
+    #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 768px) {
+      #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+      #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] > div:first-child {
+        order: 2;
+      }
+      #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] > div:last-child {
+        order: 1;
+      }
+    }
     .hp-highlight {
       background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 55%, #facc15 100%);
       -webkit-background-clip: text;
@@ -30,13 +48,27 @@
       background-clip: text;
     }
     /* ── Corrige coluna única na dobra empresa ── */
-    .hp-empresa-content {
+    #empresa .slide-container {
+      display: block !important;
+      grid-template-columns: unset !important;
+      columns: unset !important;
+    }
+    .hp-empresa-content,
+    #empresa .hp-empresa-content {
       width: 100% !important;
-      max-width: 100% !important;
+      max-width: none !important;
       float: none !important;
       display: block !important;
+      flex: unset !important;
+      grid-column: 1 / -1 !important;
       column-count: unset !important;
       columns: unset !important;
+      box-sizing: border-box !important;
+    }
+    #empresa .slide-container > * {
+      width: 100% !important;
+      max-width: none !important;
+      grid-column: 1 / -1 !important;
     }
   </style>
 </head>
@@ -172,7 +204,7 @@
         <h3 class="reveal">Saúde <span class="gradient-text">Mental, Prevenção e Conformidade Organizacional</span></h3>
         <div class="divider reveal"></div>
 
-        <div class="hp-empresa-content mt-xl">
+        <div class="hp-empresa-content mt-xl" style="width: 100%; max-width: none; float: none; display: block; box-sizing: border-box; columns: unset; column-count: unset;">
           <h4 class="reveal">A Realidade</h4>
           <p class="body-text reveal delay-1">
             As organizações enfrentam um cenário cada vez mais  <strong class="hp-highlight">desafiador, </strong>marcado pelo aumento dos afastamentos relacionados à saúde mental, crescimento dos <strong class="hp-highlight">
@@ -410,6 +442,227 @@
       </div>
 
       <div class="slide-num mono">02 / 05</div>
+    </section>
+
+    <!-- ───────────────────────────────────────────────────────
+         BENEFÍCIOS
+    ─────────────────────────────────────────────────────────── -->
+    <section class="slide" id="beneficios" style="background: linear-gradient(180deg, rgba(5,5,8,0.97) 0%, rgba(6,182,212,0.04) 50%, rgba(5,5,8,0.97) 100%); overflow: hidden;">
+      <div class="scan-bar"></div>
+      <div class="slide-corner tl"></div>
+      <div class="slide-corner br"></div>
+
+      <!-- grade decorativa de fundo -->
+      <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="opacity:0.03;">
+          <defs>
+            <pattern id="bg-grid-b" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(6,182,212,1)" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#bg-grid-b)"/>
+        </svg>
+        <!-- glow central -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,0.07) 0%,transparent 70%);border-radius:50%;"></div>
+      </div>
+
+      <div class="slide-container" style="position:relative;z-index:2;">
+        <div class="label reveal"><span class="label-num">02.A //</span> IMPACTO ORGANIZACIONAL</div>
+        <h3 class="reveal">Benefícios para a <span class="gradient-text">Organização</span></h3>
+        <div class="divider reveal"></div>
+
+        <!-- grid de benefícios -->
+        <div class="reveal delay-1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;margin-top:48px;border:1px solid rgba(6,182,212,0.12);border-radius:4px;overflow:hidden;">
+
+          <!-- item 1 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Redução do <strong style="color:#e4e4e7;">absenteísmo</strong> e dos afastamentos relacionados à saúde mental</p>
+            </div>
+          </div>
+
+          <!-- item 2 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Fortalecimento do <strong style="color:#e4e4e7;">engajamento</strong> e da produtividade</p>
+            </div>
+          </div>
+
+          <!-- item 3 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Melhoria do <strong style="color:#e4e4e7;">clima organizacional</strong></p>
+            </div>
+          </div>
+
+          <!-- item 4 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Redução de <strong style="color:#e4e4e7;">conflitos internos</strong></p>
+            </div>
+          </div>
+
+          <!-- item 5 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Retenção de <strong style="color:#e4e4e7;">talentos estratégicos</strong></p>
+            </div>
+          </div>
+
+          <!-- item 6 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Fortalecimento da <strong style="color:#e4e4e7;">imagem institucional</strong></p>
+            </div>
+          </div>
+
+          <!-- item 7 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Mitigação de <strong style="color:#e4e4e7;">riscos trabalhistas</strong> e organizacionais</p>
+            </div>
+          </div>
+
+          <!-- item 8 -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:rgba(10,12,18,0.7);backdrop-filter:blur(8px);transition:background 0.3s;" onmouseover="this.style.background='rgba(6,182,212,0.06)'" onmouseout="this.style.background='rgba(10,12,18,0.7)'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.88rem;line-height:1.6;color:rgba(228,228,231,0.85);font-family:var(--font-body);">Apoio técnico para <strong style="color:#e4e4e7;">conformidade com a NR-1</strong></p>
+            </div>
+          </div>
+
+          <!-- item 9 — destaque, span full -->
+          <div class="hp-benefit-item" style="padding:28px 24px;background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(6,182,212,0.10));backdrop-filter:blur(8px);transition:background 0.3s;grid-column: 1 / -1;" onmouseover="this.style.background='linear-gradient(135deg,rgba(59,130,246,0.14),rgba(6,182,212,0.18))'" onmouseout="this.style.background='linear-gradient(135deg,rgba(59,130,246,0.08),rgba(6,182,212,0.10))'">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <span style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#facc15);display:flex;align-items:center;justify-content:center;margin-top:2px;">
+                <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <p style="margin:0;font-size:0.92rem;line-height:1.6;color:rgba(228,228,231,0.9);font-family:var(--font-body);">Construção de uma <strong class="hp-highlight">cultura organizacional mais saudável e sustentável</strong></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────────────────
+         DIFERENCIAL
+    ─────────────────────────────────────────────────────────── -->
+    <section class="slide section-gradient" id="diferencial" style="overflow:hidden;position:relative;">
+      <div class="scan-bar"></div>
+
+      <!-- linha decorativa vertical esquerda -->
+      <div aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,transparent,rgba(6,182,212,0.6) 30%,rgba(59,130,246,0.4) 70%,transparent);pointer-events:none;"></div>
+
+      <!-- glow canto direito -->
+      <div aria-hidden="true" style="position:absolute;bottom:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(6,182,212,0.06) 0%,transparent 65%);border-radius:50%;pointer-events:none;"></div>
+
+      <div class="slide-container" style="position:relative;z-index:2;">
+
+        <div class="label reveal"><span class="label-num">02.B //</span> PROPOSTA DE VALOR</div>
+        <h3 class="reveal">Nosso <span class="gradient-text">Diferencial</span></h3>
+        <div class="divider reveal"></div>
+
+        <!-- bloco principal dois painéis -->
+        <div class="reveal delay-1" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;align-items:start;">
+
+          <!-- coluna esquerda — texto -->
+          <div style="display:flex;flex-direction:column;gap:24px;">
+            <p class="body-text" style="line-height:1.85;margin:0;">
+              A Axiom Human Performance integra conhecimentos de
+              <strong class="hp-highlight">Psicologia Organizacional, Desenvolvimento Humano, Inteligência Estratégica e Análise de Dados</strong>
+              para oferecer soluções baseadas em evidências.
+            </p>
+            <p class="body-text" style="line-height:1.85;margin:0;">
+              Nossa abordagem une <strong class="hp-highlight">avaliação técnica, indicadores objetivos e intervenções direcionadas,</strong>
+              permitindo que decisões relacionadas à saúde mental sejam conduzidas com maior
+              precisão, segurança e impacto organizacional.
+            </p>
+            <p class="body-text" style="line-height:1.85;margin:0;">
+              Mais do que atender exigências regulatórias, ajudamos empresas a desenvolver
+              ambientes de trabalho capazes de <strong class="hp-highlight">potencializar o desempenho humano,
+              reduzir riscos e gerar resultados sustentáveis.</strong>
+            </p>
+          </div>
+
+          <!-- coluna direita — 4 pilares do diferencial -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div style="padding:20px 24px;border:1px solid rgba(6,182,212,0.15);border-left:3px solid #3b82f6;background:rgba(59,130,246,0.05);border-radius:0 4px 4px 0;">
+              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#3b82f6;">Psicologia Organizacional</p>
+              <p style="margin:0;font-size:0.82rem;color:rgba(161,161,170,0.9);line-height:1.5;">Diagnóstico e intervenção clínica aplicada ao contexto corporativo</p>
+            </div>
+
+            <div style="padding:20px 24px;border:1px solid rgba(6,182,212,0.15);border-left:3px solid #06b6d4;background:rgba(6,182,212,0.05);border-radius:0 4px 4px 0;">
+              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#06b6d4;">Inteligência Estratégica</p>
+              <p style="margin:0;font-size:0.82rem;color:rgba(161,161,170,0.9);line-height:1.5;">Análise de cenários, riscos e tomada de decisão orientada por dados</p>
+            </div>
+
+            <div style="padding:20px 24px;border:1px solid rgba(250,204,21,0.15);border-left:3px solid rgba(250,204,21,0.7);background:rgba(250,204,21,0.03);border-radius:0 4px 4px 0;">
+              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,204,21,0.85);">Análise de Dados</p>
+              <p style="margin:0;font-size:0.82rem;color:rgba(161,161,170,0.9);line-height:1.5;">Indicadores objetivos que transformam percepção em evidência mensurável</p>
+            </div>
+
+            <div style="padding:20px 24px;border:1px solid rgba(6,182,212,0.15);border-left:3px solid rgba(99,179,237,0.7);background:rgba(99,179,237,0.04);border-radius:0 4px 4px 0;">
+              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,179,237,0.9);">Desenvolvimento Humano</p>
+              <p style="margin:0;font-size:0.82rem;color:rgba(161,161,170,0.9);line-height:1.5;">Capacitação de líderes e equipes para ambientes psicologicamente seguros</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- frase de impacto / CTA -->
+        <div class="reveal delay-2" style="margin-top:64px;padding:48px;border:1px solid rgba(6,182,212,0.18);border-radius:4px;background:linear-gradient(135deg,rgba(10,12,18,0.9),rgba(6,182,212,0.04));position:relative;overflow:hidden;text-align:center;">
+
+          <!-- linha de brilho topo -->
+          <div aria-hidden="true" style="position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,0.6),transparent);"></div>
+
+          <p style="margin:0 0 12px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(6,182,212,0.7);">Perspectiva Estratégica</p>
+
+          <h4 style="margin:0 0 20px;font-size:clamp(1.15rem,2.5vw,1.6rem);line-height:1.4;font-family:var(--font-hd);font-weight:600;color:#e4e4e7;">
+            Saúde Mental Não É Apenas Uma Exigência Legal.<br>
+            <span class="gradient-text">É Um Ativo Estratégico.</span>
+          </h4>
+
+          <p class="body-text" style="max-width:640px;margin:0 auto 36px;line-height:1.8;color:rgba(161,161,170,0.85);">
+            Empresas que investem na saúde psicológica de seus colaboradores fortalecem sua
+            capacidade de <strong style="color:#e4e4e7;">inovação, retenção de talentos, produtividade</strong> e crescimento sustentável.
+            A Axiom Human Performance está preparada para auxiliar sua organização nessa jornada.
+          </p>
+
+          <a href="#contato-hp" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:10px;">
+            INICIAR DIAGNÓSTICO
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <!-- linha de brilho fundo -->
+          <div aria-hidden="true" style="position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.4),transparent);"></div>
+        </div>
+
+      </div>
     </section>
 
     <!-- ───────────────────────────────────────────────────────
