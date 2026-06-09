@@ -71,17 +71,30 @@
       grid-column: 1 / -1 !important;
     }
 
-    /* ── Chatbot — expande área de conversa na última dobra ── */
+    /* ── Chatbot — última dobra ────────────────────────────────────────
+       1. Quebra o height:100vh + overflow:hidden herdado de .slide
+       2. Padding-bottom generoso para a borda inferior do chat respirar
+       3. chatbot-messages contido para não empurrar o form para fora
+    ──────────────────────────────────────────────────────────────────── */
+
+    /* 1 — libera a seção do clipping do .slide */
+    #contato-hp {
+      height: auto !important;
+      min-height: 100vh;
+      overflow: visible !important;
+    }
+
+    /* 2 — container com padding-bottom amplo */
     #contato-hp .slide-container {
       width: 100% !important;
       max-width: 100% !important;
-      padding: 56px 24px 40px !important;
+      padding: 56px 24px 80px !important;
       box-sizing: border-box !important;
     }
 
     #contato-hp .contato-content {
       width: 100%;
-      max-width: 860px;
+      max-width: 960px;
     }
 
     #contato-hp .chatbot {
@@ -89,43 +102,50 @@
       max-width: none;
     }
 
-    /* apenas a janela de mensagens cresce — resto do chatbot intacto */
+    /* 3 — janela de mensagens calibrada; form/rodapé nunca são cortados */
     #contato-hp .chatbot-messages {
-      height: 420px;
-      min-height: 320px;
+      height: 380px;
+      max-height: 380px;
+      min-height: 220px;
       overflow-y: auto;
     }
 
-    /* tablet */
+    /* tablet ≤ 1024px */
     @media (max-width: 1024px) {
+      #contato-hp .slide-container {
+        padding: 48px 20px 72px !important;
+      }
       #contato-hp .chatbot-messages {
-        height: 340px;
-        min-height: 260px;
+        height: 300px;
+        max-height: 300px;
+        min-height: 200px;
       }
     }
 
-    /* mobile */
+    /* mobile ≤ 768px */
     @media (max-width: 768px) {
       #contato-hp .slide-container {
-        padding: 40px 12px 24px !important;
+        padding: 40px 12px 64px !important;
       }
       #contato-hp .contato-content {
         max-width: 100%;
       }
       #contato-hp .chatbot-messages {
-        height: 260px;
-        min-height: 200px;
+        height: 240px;
+        max-height: 240px;
+        min-height: 180px;
       }
     }
 
-    /* mobile pequeno */
+    /* mobile pequeno ≤ 480px */
     @media (max-width: 480px) {
       #contato-hp .slide-container {
-        padding: 32px 8px 16px !important;
+        padding: 32px 8px 56px !important;
       }
       #contato-hp .chatbot-messages {
-        height: 220px;
-        min-height: 180px;
+        height: 200px;
+        max-height: 200px;
+        min-height: 160px;
       }
     }
   </style>
@@ -621,7 +641,6 @@
               <p style="margin:0;font-size:0.92rem;line-height:1.6;color:rgba(253, 228, 0, 0.85);font-family:var(--font-body);">Construção de uma <strong class="hp-highlight">cultura organizacional mais saudável e sustentável</strong></p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
