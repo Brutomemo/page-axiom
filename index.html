@@ -25,8 +25,9 @@
 
       /* painel fullscreen com padding generoso no topo */
       .nav-panel {
-        padding: 42px 34px 50px !important;
-        overflow-y: auto !important;
+        padding: 100px 34px 50px !important; /* 💡 Aumentei o primeiro valor (topo) de 42px para 100px para o primeiro link descer e ficar totalmente visível, sem sumir atrás do topo fixo */
+        height: 100vh !important;           /* ◄ FORÇA a caixa do menu a ter a altura total da tela */
+        overflow-y: auto !important;         /* Mantém a rolagem caso os links passem da tela */
       }
 
       /* container de links: espaçamento entre itens */
