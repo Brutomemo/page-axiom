@@ -17,11 +17,24 @@
   <script src="assets/iconify-icon_e19829e7f0e8.js"></script>
 
   <style>
-    /* ── Chatbot — expande área de conversa na última dobra ── */
+    /* ── Chatbot — última dobra ────────────────────────────────────────
+       1. Quebra o height:100vh + overflow:hidden herdado de .slide
+       2. Padding-bottom generoso para a borda inferior do chat respirar
+       3. chatbot-messages contido para não empurrar o form para fora
+    ──────────────────────────────────────────────────────────────────── */
+
+    /* 1 — libera a seção do clipping do .slide */
+    #assistente {
+      height: auto !important;
+      min-height: 100vh;
+      overflow: visible !important;
+    }
+
+    /* 2 — container com padding-bottom amplo */
     #assistente .slide-container--center {
       width: 100%;
       max-width: 100%;
-      padding: 56px 24px 40px;
+      padding: 56px 24px 80px;
       box-sizing: border-box;
     }
 
@@ -35,43 +48,50 @@
       max-width: none;
     }
 
-    /* apenas a janela de mensagens cresce — resto do chatbot intacto */
+    /* 3 — janela de mensagens calibrada; form/rodapé nunca são cortados */
     #assistente .chatbot-messages {
-      height: 620px;
-      min-height: 420px;
+      height: 380px;
+      max-height: 380px;
+      min-height: 220px;
       overflow-y: auto;
     }
 
-    /* tablet */
+    /* tablet ≤ 1024px */
     @media (max-width: 1024px) {
+      #assistente .slide-container--center {
+        padding: 48px 20px 72px;
+      }
       #assistente .chatbot-messages {
-        height: 440px;
-        min-height: 360px;
+        height: 300px;
+        max-height: 300px;
+        min-height: 200px;
       }
     }
 
-    /* mobile */
-    @media (max-width: 968px) {
+    /* mobile ≤ 768px */
+    @media (max-width: 768px) {
       #assistente .slide-container--center {
-        padding: 60px 12px 24px;
+        padding: 40px 12px 64px;
       }
       #assistente .contato-content {
         max-width: 100%;
       }
       #assistente .chatbot-messages {
-        height: 460px;
-        min-height: 300px;
+        height: 240px;
+        max-height: 240px;
+        min-height: 180px;
       }
     }
 
-    /* mobile pequeno */
+    /* mobile pequeno ≤ 480px */
     @media (max-width: 480px) {
       #assistente .slide-container--center {
-        padding: 32px 8px 16px;
+        padding: 32px 8px 56px;
       }
       #assistente .chatbot-messages {
-        height: 320px;
-        min-height: 280px;
+        height: 200px;
+        max-height: 200px;
+        min-height: 160px;
       }
     }
   </style>
