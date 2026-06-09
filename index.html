@@ -157,12 +157,29 @@
       #assistente .contato-content {
         max-width: 100%;
       }
+      
+      /* 🔓 LIBERA A ALTURA TOTAL DO CHAT NO MOBILE */
+      #assistente .chatbot {
+        height: auto !important; /* Destrava os 420px fixos do CSS externo */
+        --chatbot-height: auto !important;
+      }
+      
+      /* Ajusta a área onde as mensagens rolam */
       #assistente .chatbot-messages {
-        height: 420px !important;       /* 💡 Aumentado de 240px para 420px */
-        max-height: 420px !important;   /* 💡 Aumentado de 240px para 420px */
-        min-height: 250px !important;
+        height: 300px !important;       
+        max-height: 300px !important;
+        min-height: 200px !important;
+      }
+
+      /* Mantém o input de texto e o botão de enviar na mesma linha para economizar espaço */
+      #assistente .chatbot-form {
+        flex-direction: row !important; 
+      }
+      #assistente .chatbot-send {
+        width: auto !important;
       }
     }
+
     /* mobile pequeno ≤ 480px */
     @media (max-width: 480px) {
       #assistente {
@@ -175,10 +192,24 @@
         overflow: visible !important;
         padding: 5px 6px 30px !important;
       }
+      
+      /* Força a libertação em telas ultra pequenas */
+      #assistente .chatbot {
+        height: auto !important;
+        --chatbot-height: auto !important;
+      }
+
       #assistente .chatbot-messages {
-        height: 360px !important;       /* 💡 Aumentado de 190px para 360px */
-        max-height: 360px !important;   /* 💡 Aumentado de 190px para 360px */
-        min-height: 200px !important;
+        height: 250px !important;       
+        max-height: 250px !important;
+        min-height: 180px !important;
+      }
+
+      #assistente .chatbot-form {
+        flex-direction: row !important;
+      }
+      #assistente .chatbot-send {
+        width: auto !important;
       }
     }
   </style>
