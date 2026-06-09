@@ -86,6 +86,16 @@
   color: var(--clr-info);
 }
 
+/* ── Background da dobra 02 — preto azulado para não competir com textos em ciano ── */
+.page-human-performance #empresa.slide,
+.page-human-performance #empresa.slide.section-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(4, 8, 15, 0.98) 0%,
+    rgba(2, 5, 10, 0.99) 100%
+  ) !important;
+}
+
 .page-human-performance #empresa .slide-container {
   display: block !important;
   grid-template-columns: unset !important;
@@ -154,7 +164,7 @@
 .page-human-performance #contato-hp .contato-status-line {
   width: 48px;
   height: 1px;
-  background: #000000;
+  background: #27272a;
 }
 
 .page-human-performance #contato-hp .contato-status-badge {
@@ -162,11 +172,11 @@
   align-items: center;
   gap: 12px;
   padding: 4px 12px;
-  background: rgba(7, 7, 7, 0.5);
+  background: rgba(24, 24, 27, 0.5);
   border: 1px solid #27272a;
   font-family: var(--font-mono);
   font-size: 10px;
-  color: #c0c0c9;
+  color: #a1a1aa;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   backdrop-filter: blur(8px);
