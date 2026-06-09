@@ -17,6 +17,71 @@
   <script src="assets/iconify-icon_e19829e7f0e8.js"></script>
 
   <style>
+    /* ── Menu mobile — painel e links ──────────────────────────────────
+       Overrides sobre 03-navigation.css para melhorar legibilidade,
+       área de toque e espaçamento em telas menores.
+    ──────────────────────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+
+      /* painel fullscreen com padding generoso no topo */
+      .nav-panel {
+        padding: 32px 24px 40px !important;
+        overflow-y: auto !important;
+      }
+
+      /* container de links: espaçamento entre itens */
+      .nav-links {
+        gap: 4px !important;
+      }
+
+      /* links com área de toque confortável + padding lateral */
+      .nav-link {
+        display: flex !important;
+        align-items: center;
+        padding: 16px 20px !important;
+        font-size: 14px !important;
+        letter-spacing: 0.10em !important;
+        border-radius: 6px;
+        border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+        min-height: 52px;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        background: rgba(201, 168, 76, 0.07);
+        color: var(--clr-white);
+      }
+
+      .nav-link--active {
+        background: rgba(201, 168, 76, 0.10);
+      }
+
+      /* linha decorativa ativa não precisa aparecer no mobile */
+      .nav-link::after {
+        display: none !important;
+      }
+
+      /* badge de status dentro do painel */
+      .nav-status--panel {
+        margin-top: 28px !important;
+        padding-top: 20px !important;
+        border-top: 1px solid rgba(255,255,255,0.06);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-panel {
+        padding: 24px 16px 32px !important;
+      }
+
+      .nav-link {
+        padding: 14px 16px !important;
+        font-size: 13px !important;
+        min-height: 48px;
+      }
+    }
+
     /* ── Chatbot — última dobra ────────────────────────────────────────
        1. Quebra o height:100vh + overflow:hidden herdado de .slide
        2. Padding-bottom generoso para a borda inferior do chat respirar
