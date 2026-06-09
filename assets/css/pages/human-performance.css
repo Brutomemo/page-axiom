@@ -35,8 +35,8 @@
   );
 }
 
-.page-human-performance #pilares.slide,
-.page-human-performance #metodologia.slide {
+.page-human-performance #serviços.slide,
+.page-human-performance #diferencial.slide {
   background: linear-gradient(
     180deg,
     rgba(31, 32, 37, 0.85) 0%,
