@@ -18,20 +18,9 @@
 
   <style>
     /* ── Chatbot — expande área de conversa na última dobra ── */
-    #assistente {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
     #assistente .slide-container--center {
-      flex: 1;
       width: 100%;
       max-width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       padding: 56px 24px 40px;
       box-sizing: border-box;
     }
@@ -39,29 +28,25 @@
     #assistente .contato-content {
       width: 100%;
       max-width: 860px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     #assistente .chatbot {
       width: 100%;
       max-width: none;
-      display: flex;
-      flex-direction: column;
     }
 
+    /* apenas a janela de mensagens cresce — resto do chatbot intacto */
     #assistente .chatbot-messages {
       height: 420px;
       min-height: 320px;
-      flex: 0 0 420px;
+      overflow-y: auto;
     }
 
     /* tablet */
     @media (max-width: 1024px) {
       #assistente .chatbot-messages {
-        height: 360px;
-        flex-basis: 360px;
+        height: 340px;
+        min-height: 260px;
       }
     }
 
@@ -74,9 +59,8 @@
         max-width: 100%;
       }
       #assistente .chatbot-messages {
-        height: 280px;
-        min-height: 220px;
-        flex-basis: 280px;
+        height: 260px;
+        min-height: 200px;
       }
     }
 
@@ -86,9 +70,8 @@
         padding: 32px 8px 16px;
       }
       #assistente .chatbot-messages {
-        height: 240px;
-        min-height: 200px;
-        flex-basis: 240px;
+        height: 220px;
+        min-height: 180px;
       }
     }
   </style>
