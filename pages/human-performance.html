@@ -14,6 +14,31 @@
 
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/pages/human-performance.css" />
+  <style>
+    /* ── Gradiente azul-ciano-amarelo para destaques da dobra empresa ── */
+    .hp-highlight {
+      background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 55%, #facc15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+    .hp-highlight-label {
+      background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 55%, #facc15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    /* ── Corrige coluna única na dobra empresa ── */
+    .hp-empresa-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      float: none !important;
+      display: block !important;
+      column-count: unset !important;
+      columns: unset !important;
+    }
+  </style>
 </head>
 
 <body class="page-human-performance" data-axiom-page="human-performance">
@@ -126,14 +151,12 @@
             <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
             <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
             <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
-            <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>
-          </div>
+            <div class="bg-zinc-700" style="flex: 1; height: 4px; border-radius: 2px;"></div>          
         </div>
       </div>
 
       <div class="slide-num mono">01 / 05</div>
     </section>
-
 
     <!-- ───────────────────────────────────────────────────────
          EMPRESA
@@ -150,17 +173,17 @@
         <div class="hp-empresa-content mt-xl">
           <h4 class="reveal">A Realidade</h4>
           <p class="body-text reveal delay-1">
-            As organizações enfrentam um cenário cada vez mais  <strong style="color: var(--clr-accent-primary);">desafiador, </strong>marcado pelo aumento dos afastamentos relacionados à saúde mental, crescimento dos <strong style="color: var(--clr-accent-primary);">
+            As organizações enfrentam um cenário cada vez mais  <strong class="hp-highlight">desafiador, </strong>marcado pelo aumento dos afastamentos relacionados à saúde mental, crescimento dos <strong class="hp-highlight">
             riscos psicossociais </strong> Ge maior exigência regulatória quanto à proteção dos trabalhadores.
           </p>
           <p class="body-text reveal delay-2">
-            Com as atualizações da NR-1, os fatores psicossociais passaram a <strong style="color: var(--clr-accent-primary);">integrar a gestão dos riscos ocupacionais, </strong>exigindo das empresas uma 
-            <strong style="color: var(--clr-accent-primary);">abordagem estruturada </strong>apara identificação, avaliação e controle desses fatores.
+            Com as atualizações da NR-1, os fatores psicossociais passaram a <strong class="hp-highlight">integrar a gestão dos riscos ocupacionais, </strong>exigindo das empresas uma 
+            <strong class="hp-highlight">abordagem estruturada </strong>apara identificação, avaliação e controle desses fatores.
           </p>
           <p class="body-text reveal delay-3">
-            A Axiom Human Performance oferece <strong style="color: var(--clr-accent-primary);">soluções especializadas em Psicologia Organizacional e do Trabalho, </strong>combinando <strong
-              style="color: var(--clr-accent-primary);">ciência, análise de dados</strong> e estratégias de desenvolvimento humano para transformar a gestão da saúde mental em um diferencial competitivo. Nosso trabalho vai além da conformidade legal. Atuamos para  <strong
-              style="color: var(--clr-accent-primary);">fortalecer a saúde psicológica das equipes, reduzir fatores de risco organizacionais e criar ambientes que favoreçam o desempenho sustentável, o engajamento e a produtividade.</strong>
+            A Axiom Human Performance oferece <strong class="hp-highlight">soluções especializadas em Psicologia Organizacional e do Trabalho, </strong>combinando <strong
+              class="hp-highlight">ciência, análise de dados</strong> e estratégias de desenvolvimento humano para transformar a gestão da saúde mental em um diferencial competitivo. Nosso trabalho vai além da conformidade legal. Atuamos para  <strong
+              class="hp-highlight">fortalecer a saúde psicológica das equipes, reduzir fatores de risco organizacionais e criar ambientes que favoreçam o desempenho sustentável, o engajamento e a produtividade.</strong>
           </p>
 
           <h4 class="reveal hp-empresa-subtitle">O Que Entregamos</h4>
@@ -172,7 +195,7 @@
             <div>
               <p class="step-title">Diagnóstico Psicossocial Organizacional</p>
               <p class="step-body">Realizamos uma análise aprofundada dos fatores que impactam a saúde mental e o desempenho dos colaboradores.</p>
-              <h5 style="color: var(--clr-accent-primary); margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Inclui:</h5>
+              <h5 class="hp-highlight-label" style="color: transparent; margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Inclui:</h5>
               <div class="step-list">
                 <div class="step-item" style="padding: 6px 0; border: none;">
                   <span class="step-num" style="font-size: 12px;">◆</span>
@@ -208,7 +231,7 @@
             <div>
               <p class="step-title">Gestão dos Riscos Psicossociais para Adequação à NR-1</p>
               <p class="step-body">Auxiliamos a empresa na estruturação de um processo técnico e documentado para identificação e gerenciamento dos riscos psicossociais exigidos pela legislação.</p>
-              <h5 style="color: var(--clr-accent-primary); margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Inclui:</h5>
+              <h5 class="hp-highlight-label" style="color: transparent; margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Inclui:</h5>
               <div class="step-list">
                 <div class="step-item" style="padding: 6px 0; border: none;">
                   <span class="step-num" style="font-size: 12px;">◆</span>
@@ -244,7 +267,7 @@
             <div>
               <p class="step-title">Desenvolvimento de Lideranças</p>
               <p class="step-body">Líderes exercem influência direta sobre a saúde mental e o desempenho das equipes. Desenvolvemos competências que permitem aos gestores criar ambientes mais produtivos, seguros e psicologicamente saudáveis.</p>
-              <h5 style="color: var(--clr-accent-primary); margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Temas trabalhados:</h5>
+              <h5 class="hp-highlight-label" style="color: transparent; margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Temas trabalhados:</h5>
               <div class="step-list">
                 <div class="step-item" style="padding: 6px 0; border: none;">
                   <span class="step-num" style="font-size: 12px;">◆</span>
@@ -284,7 +307,7 @@
             <div>
               <p class="step-title">Treinamentos Corporativos</p>
               <p class="step-body">Programas de capacitação voltados à prevenção, conscientização e desenvolvimento de competências comportamentais.</p>
-              <h5 style="color: var(--clr-accent-primary); margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Principais temas:</h5>
+              <h5 class="hp-highlight-label" style="color: transparent; margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Principais temas:</h5>
               <div class="step-list">
                 <div class="step-item" style="padding: 6px 0; border: none;">
                   <span class="step-num" style="font-size: 12px;">◆</span>
@@ -324,7 +347,7 @@
             <div>
               <p class="step-title">Programas de Saúde Mental e Qualidade de Vida</p>
               <p class="step-body">Desenvolvimento de ações contínuas para fortalecimento do bem-estar e do engajamento organizacional.</p>
-              <h5 style="color: var(--clr-accent-primary); margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Inclui:</h5>
+              <h5 class="hp-highlight-label" style="color: transparent; margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Inclui:</h5>
               <div class="step-list">
                 <div class="step-item" style="padding: 6px 0; border: none;">
                   <span class="step-num" style="font-size: 12px;">◆</span>
@@ -355,7 +378,7 @@
             <div>
               <p class="step-title">Gestão de Crises e Suporte Organizacional</p>
               <p class="step-body">Atuação em situações críticas que demandam suporte especializado para minimizar impactos humanos e organizacionais.</p>
-              <h5 style="color: var(--clr-accent-primary); margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Serviços:</h5>
+              <h5 class="hp-highlight-label" style="color: transparent; margin: 16px 0 10px; font-family: var(--font-hd); font-size: 0.75rem; letter-spacing: 0.08em;">Serviços:</h5>
               <div class="step-list">
                 <div class="step-item" style="padding: 6px 0; border: none;">
                   <span class="step-num" style="font-size: 12px;">◆</span>
@@ -419,21 +442,21 @@
 
           <div class="profile-content reveal delay-2">
             <p class="profile-role"
-              style="margin: 0; color: var(--clr-accent-primary); font-family: monospace; tracking-wider;">
+              class="hp-highlight-label" style="margin: 0; font-family: monospace; letter-spacing: 0.1em;">
           
             </p>
             <h3 class="profile-name" style="margin: 5px 0 0 0; font-size: 1.5rem;">Psicólogo e Negociador</h3>
             </p>
 
             <p class="body-text" style="margin-bottom: 20px;">
-              Profissional especializado em Inteligência Estratégica, Análise de Dados e <strong style="color: var(--clr-accent-primary);">Gestão da Informação,</strong> com mais de seis anos de experiência na transformação de dados operacionais em insights para suporte à tomada de decisão em ambientes de alta complexidade. Possui sólida atuação na elaboração de estudos analíticos, desenvolvimento de indicadores de desempenho e produção de relatórios estratégicos voltados à otimização de processos e resultados.
+              Profissional especializado em Inteligência Estratégica, Análise de Dados e <strong class="hp-highlight">Gestão da Informação,</strong> com mais de seis anos de experiência na transformação de dados operacionais em insights para suporte à tomada de decisão em ambientes de alta complexidade. Possui sólida atuação na elaboração de estudos analíticos, desenvolvimento de indicadores de desempenho e produção de relatórios estratégicos voltados à otimização de processos e resultados.
             </p>
 
             <p class="body-text" style="margin-bottom: 20px;">
-              Foi responsável técnico pela criação e estruturação do Departamento de Estudos e Análise de Dados de Ocorrências do Grupo de Ações Táticas Especiais (GATE), onde desenvolveu metodologias de coleta, tratamento e interpretação de dados em <strong style="color: var(--clr-accent-primary);">cenários de alta criticidade.</strong> Com mais de uma década de experiência em operações especializadas e quatro anos na Equipe de Negociação, possui expertise na avaliação de cenários complexos, gestão de riscos, negociação em situações críticas e produção de inteligência aplicada para suporte a decisões estratégicas.
+              Foi responsável técnico pela criação e estruturação do Departamento de Estudos e Análise de Dados de Ocorrências do Grupo de Ações Táticas Especiais (GATE), onde desenvolveu metodologias de coleta, tratamento e interpretação de dados em <strong class="hp-highlight">cenários de alta criticidade.</strong> Com mais de uma década de experiência em operações especializadas e quatro anos na Equipe de Negociação, possui expertise na avaliação de cenários complexos, gestão de riscos, negociação em situações críticas e produção de inteligência aplicada para suporte a decisões estratégicas.
             </p>
 
-            <h5 style="color: var(--clr-accent-primary); margin-bottom: 12px; font-family: var(--font-hd);">Formação
+            <h5 class="hp-highlight-label" style="color: transparent; margin-bottom: 12px; font-family: var(--font-hd);">Formação
               Acadêmica</h5>
             <div class="step-item" style="padding: 8px 0; border: none;">
               <span class="step-num" style="font-size: 12px;">◆</span>
@@ -503,21 +526,21 @@
 
           <div class="profile-content reveal delay-2">
             <p class="profile-role"
-              style="margin: 0; color: var(--clr-accent-primary); font-family: monospace; tracking-wider;">
+              class="hp-highlight-label" style="margin: 0; font-family: monospace; letter-spacing: 0.1em;">
           
             </p>
             <h3 class="profile-name" style="margin: 5px 0 0 0; font-size: 1.5rem;">Data Scientist e Analytics</h3>
             </p>
 
             <p class="body-text" style="margin-bottom: 20px;">
-              Profissional especializado em Inteligência Estratégica, Análise de Dados e <strong style="color: var(--clr-accent-primary);">Gestão da Informação,</strong> com mais de seis anos de experiência na transformação de dados operacionais em insights para suporte à tomada de decisão em ambientes de alta complexidade. Possui sólida atuação na elaboração de estudos analíticos, desenvolvimento de indicadores de desempenho e produção de relatórios estratégicos voltados à otimização de processos e resultados.
+              Profissional especializado em Inteligência Estratégica, Análise de Dados e <strong class="hp-highlight">Gestão da Informação,</strong> com mais de seis anos de experiência na transformação de dados operacionais em insights para suporte à tomada de decisão em ambientes de alta complexidade. Possui sólida atuação na elaboração de estudos analíticos, desenvolvimento de indicadores de desempenho e produção de relatórios estratégicos voltados à otimização de processos e resultados.
             </p>
 
             <p class="body-text" style="margin-bottom: 20px;">
-              Foi responsável técnico pela criação e estruturação do Departamento de Estudos e Análise de Dados de Ocorrências do Grupo de Ações Táticas Especiais (GATE), onde desenvolveu metodologias de coleta, tratamento e interpretação de dados em <strong style="color: var(--clr-accent-primary);">cenários de alta criticidade.</strong> Com mais de uma década de experiência em operações especializadas e quatro anos na Equipe de Negociação, possui expertise na avaliação de cenários complexos, gestão de riscos, negociação em situações críticas e produção de inteligência aplicada para suporte a decisões estratégicas.
+              Foi responsável técnico pela criação e estruturação do Departamento de Estudos e Análise de Dados de Ocorrências do Grupo de Ações Táticas Especiais (GATE), onde desenvolveu metodologias de coleta, tratamento e interpretação de dados em <strong class="hp-highlight">cenários de alta criticidade.</strong> Com mais de uma década de experiência em operações especializadas e quatro anos na Equipe de Negociação, possui expertise na avaliação de cenários complexos, gestão de riscos, negociação em situações críticas e produção de inteligência aplicada para suporte a decisões estratégicas.
             </p>
 
-            <h5 style="color: var(--clr-accent-primary); margin-bottom: 12px; font-family: var(--font-hd);">Formação
+            <h5 class="hp-highlight-label" style="color: transparent; margin-bottom: 12px; font-family: var(--font-hd);">Formação
               Acadêmica</h5>
             <div class="step-item" style="padding: 8px 0; border: none;">
               <span class="step-num" style="font-size: 12px;">◆</span>
