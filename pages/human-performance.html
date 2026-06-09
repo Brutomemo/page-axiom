@@ -197,42 +197,73 @@
 
     /* mobile ≤ 968px */
     @media (max-width: 968px) {
-      #contato-hp {
+      #assistente {
         height: auto !important;
         min-height: 100vh;
         overflow: visible !important;
+        padding-top: 0px !important;
       }
-      #contato-hp .slide-container {
+      #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
-        padding: 40px 12px 72px !important;
+        padding: 10px 12px 40px !important;
       }
-      #contato-hp .contato-content {
+      #assistente .contato-content {
         max-width: 100%;
       }
-      #contato-hp .chatbot-messages {
-        height: 280px;
-        max-height: 280px;
-        min-height: 200px;
+      
+      /* 🔓 LIBERA A ALTURA TOTAL DO CHAT NO MOBILE */
+      #assistente .chatbot {
+        height: auto !important; /* Destrava os 420px fixos do CSS externo */
+        --chatbot-height: auto !important;
+      }
+      
+      /* Ajusta a área onde as mensagens rolam */
+      #assistente .chatbot-messages {
+        height: 300px !important;       
+        max-height: 300px !important;
+        min-height: 200px !important;
+      }
+
+      /* Mantém o input de texto e o botão de enviar na mesma linha para economizar espaço */
+      #assistente .chatbot-form {
+        flex-direction: row !important; 
+      }
+      #assistente .chatbot-send {
+        width: auto !important;
       }
     }
 
     /* mobile pequeno ≤ 480px */
     @media (max-width: 480px) {
-      #contato-hp {
+      #assistente {
         height: auto !important;
         min-height: 100vh;
         overflow: visible !important;
       }
-      #contato-hp .slide-container {
+      #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
-        padding: 32px 8px 64px !important;
+        padding: 5px 6px 30px !important;
       }
-      #contato-hp .chatbot-messages {
-        height: 220px;
-        max-height: 220px;
-        min-height: 160px;
+      
+      /* Força a libertação em telas ultra pequenas */
+      #assistente .chatbot {
+        height: auto !important;
+        --chatbot-height: auto !important;
+      }
+
+      #assistente .chatbot-messages {
+        height: 250px !important;       
+        max-height: 250px !important;
+        min-height: 180px !important;
+      }
+
+      #assistente .chatbot-form {
+        flex-direction: row !important;
+      }
+      #assistente .chatbot-send {
+        width: auto !important;
       }
     }
   </style>
@@ -843,10 +874,9 @@
             </div>
             <div class="contato-status-line"></div>
           </div>
-
           <h3 class="reveal">Assistente <span class="gradient-text">Axiom</span></h3>
           <p class="body-text reveal delay-1" style="margin-top: 16px; max-width: 640px;">
-            Tire dúvidas sobre nossos serviços.
+            Tire suas dúvidas sobre nossos serviços.
           </p>
 
           <div class="chatbot reveal delay-2" id="axiom-chatbot"
