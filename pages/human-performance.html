@@ -178,7 +178,14 @@
 
     /* tablet ≤ 1024px */
     @media (max-width: 1024px) {
+      #contato-hp {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+      }
       #contato-hp .slide-container {
+        height: auto !important;
+        overflow: visible !important;
         padding: 48px 20px 72px !important;
       }
       #contato-hp .chatbot-messages {
@@ -188,29 +195,43 @@
       }
     }
 
-    /* mobile ≤ 768px */
-    @media (max-width: 768px) {
+    /* mobile ≤ 968px */
+    @media (max-width: 968px) {
+      #contato-hp {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+      }
       #contato-hp .slide-container {
-        padding: 40px 12px 64px !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 40px 12px 72px !important;
       }
       #contato-hp .contato-content {
         max-width: 100%;
       }
       #contato-hp .chatbot-messages {
-        height: 240px;
-        max-height: 240px;
-        min-height: 180px;
+        height: 280px;
+        max-height: 280px;
+        min-height: 200px;
       }
     }
 
     /* mobile pequeno ≤ 480px */
     @media (max-width: 480px) {
+      #contato-hp {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+      }
       #contato-hp .slide-container {
-        padding: 32px 8px 56px !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 32px 8px 64px !important;
       }
       #contato-hp .chatbot-messages {
-        height: 200px;
-        max-height: 200px;
+        height: 220px;
+        max-height: 220px;
         min-height: 160px;
       }
     }
@@ -837,7 +858,7 @@
               <div class="chatbot-header-info">
                 <span class="chatbot-avatar" aria-hidden="true">⬡</span>
                 <div>
-                  <h4 class="chatbot-title">AXIOM HP Assistant</h4>
+                  <h4 class="chatbot-title">AXIOM ASSISTENTE</h4>
                   <span class="chatbot-status">Online</span>
                 </div>
               </div>
@@ -848,13 +869,13 @@
 
             <div class="chatbot-suggestions" id="chatbot-suggestions" aria-label="Sugestões rápidas">
               <button type="button" class="chatbot-suggestion"
-                data-prompt="O que é AXIOM Human Performance?">O que é HP</button>
+                data-prompt="O que é AXIOM Human Performance?">HUMAN PERFORMANCE</button>
               <button type="button" class="chatbot-suggestion"
-                data-prompt="Como funcionam OKRs para times?">OKRs</button>
+                data-prompt="Como funcionam a NR-1?">NR-1</button>
               <button type="button" class="chatbot-suggestion"
-                data-prompt="Quero um diagnóstico de performance humana">Diagnóstico</button>
+                data-prompt="Quero um Diagnóstico Psicossocial Organizacional">Diagnóstico</button>
               <button type="button" class="chatbot-suggestion"
-                data-prompt="Falar com um consultor humano">Consultor</button>
+                data-prompt="Como a Axiom pode ajudar a empresa a melhorar a lideração e a saúde mental dos colaboradores?">Liderança</button>
             </div>
 
             <form class="chatbot-form" id="chatbot-form">
