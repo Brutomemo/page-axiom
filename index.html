@@ -147,23 +147,22 @@
         height: auto !important;
         min-height: 100vh;
         overflow: visible !important;
-        padding-top: 0px !important;   /* Remove qualquer margem externa superior */
+        padding-top: 0px !important;
       }
       #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
-        padding: 10px 12px 40px !important; /* 💡 Reduzido o topo de 40px para 10px e base para 40px */
+        padding: 10px 12px 40px !important;
       }
       #assistente .contato-content {
         max-width: 100%;
       }
       #assistente .chatbot-messages {
-        height: 240px !important;       /* Calibração fina para caber tudo na mesma tela */
-        max-height: 240px !important;
-        min-height: 180px !important;
+        height: 420px !important;       /* 💡 Aumentado de 240px para 420px */
+        max-height: 420px !important;   /* 💡 Aumentado de 240px para 420px */
+        min-height: 250px !important;
       }
     }
-
     /* mobile pequeno ≤ 480px */
     @media (max-width: 480px) {
       #assistente {
@@ -174,12 +173,12 @@
       #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
-        padding: 5px 6px 30px !important; /* 💡 Topo mínimo de 5px e base 30px para maximizar a área útil */
+        padding: 5px 6px 30px !important;
       }
       #assistente .chatbot-messages {
-        height: 190px !important;       /* Compactação necessária para a barra de digitação subir */
-        max-height: 190px !important;
-        min-height: 150px !important;
+        height: 360px !important;       /* 💡 Aumentado de 190px para 360px */
+        max-height: 360px !important;   /* 💡 Aumentado de 190px para 360px */
+        min-height: 200px !important;
       }
     }
   </style>
