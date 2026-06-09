@@ -1,4 +1,13 @@
 /* ─── TYPOGRAPHY ──────────────────────────────────── */
+
+    /* Rótulos de dobra — títulos como "03 // Líderes da Axiom:"
+       Ajuste --label-font-size aqui para mudar em todo o site. */
+    :root {
+      --label-font-size: 15px;
+      --label-font-size-mobile: 13px;
+      --label-letter-spacing: 0.35em;
+    }
+
     h1 {
       font-family: var(--font-hd);
       font-size: clamp(2.8rem, 6vw, 5.5rem);
@@ -54,8 +63,8 @@
 
     .label {
       font-family: var(--font-hd);
-      font-size: 8px;
-      letter-spacing: 0.5em;
+      font-size: var(--label-font-size);
+      letter-spacing: var(--label-letter-spacing);
       text-transform: uppercase;
       color: var(--clr-accent-primary);
       display: flex;
