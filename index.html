@@ -174,12 +174,12 @@
       #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
-        padding: 32px 8px 64px;
+        padding: 5px 6px 30px !important; /* 💡 Topo mínimo de 5px e base 30px para maximizar a área útil */
       }
       #assistente .chatbot-messages {
-        height: 220px;
-        max-height: 220px;
-        min-height: 160px;
+        height: 190px !important;       /* Compactação necessária para a barra de digitação subir */
+        max-height: 190px !important;
+        min-height: 150px !important;
       }
     }
   </style>
@@ -726,7 +726,7 @@
           </div>
           <h3 class="reveal">Assistente <span class="gradient-text">Axiom</span></h3>
           <p class="body-text reveal delay-1" style="margin-top: 16px; max-width: 640px; text-align: center; margin-left: auto; margin-right: auto;">
-            Tire dúvidas sobre nossos serviços.
+            Tire suas dúvidas sobre nossos serviços.
           </p>  
           
           <div class="chatbot reveal delay-2" id="axiom-chatbot"
