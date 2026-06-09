@@ -198,35 +198,48 @@
     /* mobile ≤ 968px */
     @media (max-width: 968px) {
       #assistente {
-        height: auto !important;
-        min-height: 100vh;
-        overflow: visible !important;
-        padding-top: 0px !important;
+      height: auto !important;
+      min-height: 100vh;
+      overflow: visible !important;
+    }
+
+    /* Ajuste de largura máxima padrão no desktop */
+    #assistente .contato-content {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    /* Correções específicas para Mobile Geral */
+    @media (max-width: 968px) {
+      #assistente {
+        padding-top: 0px !important; /* Remove vácuo superior */
       }
       #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
-        padding: 10px 12px 40px !important;
+        padding: 10px 12px 40px !important; /* Margem de respiro reduzida */
       }
       #assistente .contato-content {
         max-width: 100%;
       }
       
-      /* 🔓 LIBERA A ALTURA TOTAL DO CHAT NO MOBILE */
+      /* Anula a altura travada de 420px do CSS externo */
       #assistente .chatbot {
-        height: auto !important; /* Destrava os 420px fixos do CSS externo */
+        height: auto !important;
         --chatbot-height: auto !important;
       }
       
-      /* Ajusta a área onde as mensagens rolam */
+      /* Expande e calibra a janela de visualização das mensagens */
       #assistente .chatbot-messages {
         height: 300px !important;       
         max-height: 300px !important;
         min-height: 200px !important;
+        overflow-y: auto;
       }
 
-      /* Mantém o input de texto e o botão de enviar na mesma linha para economizar espaço */
+      /* Mantém o input e botão na mesma linha para não achatar a tela */
       #assistente .chatbot-form {
+        display: flex !important;
         flex-direction: row !important; 
       }
       #assistente .chatbot-send {
@@ -234,20 +247,14 @@
       }
     }
 
-    /* mobile pequeno ≤ 480px */
+    /* Correções específicas para Mobile Pequeno */
     @media (max-width: 480px) {
-      #assistente {
-        height: auto !important;
-        min-height: 100vh;
-        overflow: visible !important;
-      }
       #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
         padding: 5px 6px 30px !important;
       }
       
-      /* Força a libertação em telas ultra pequenas */
       #assistente .chatbot {
         height: auto !important;
         --chatbot-height: auto !important;
@@ -260,6 +267,7 @@
       }
 
       #assistente .chatbot-form {
+        display: flex !important;
         flex-direction: row !important;
       }
       #assistente .chatbot-send {
