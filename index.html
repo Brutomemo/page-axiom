@@ -696,31 +696,44 @@
     </section>
 
 
-    <<!-- CONTATO / CHATBOT -->
-    <section class="slide slide-center" id="contato-hp">
+    <!-- ───────────────────────────────────────────────────────
+         CONTATO
+    ─────────────────────────────────────────────────────────── -->
+    <section class="slide slide-center" id="assistente" style="
+        background:
+          radial-gradient(ellipse 110% 55% at 0% 100%,  rgba(180, 100, 10, 0.22) 0%, transparent 58%),
+          radial-gradient(ellipse  80% 45% at 100%  0%, rgba(15,  45, 110, 0.30) 0%, transparent 55%),
+          linear-gradient(148deg, #04091e 0%, #060a1c 28%, #090810 55%, #1b0d01 82%, #240e00 100%);
+      ">
+      <div class="contato-bg-layer" aria-hidden="true">
+        <div class="contato-bg-grid"></div>
+        <div class="contato-bg-scanlines"></div>
+      </div>
+
       <div class="scan-bar"></div>
-      <div class="slide-container"
-        style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+
+      <div class="slide-container slide-container--center">
         <div class="contato-content">
           <div class="contato-status reveal">
             <div class="contato-status-line"></div>
             <div class="contato-status-badge">
               <span class="contato-status-dot">
                 <span class="contato-status-dot-ping"></span>
-                <span class="contato-status-dot-core"></span>
-              </span>              
+                <span class="contato-status-dot-core"></span>                            
             </div>
             <div class="contato-status-line"></div>
           </div>
-          <h3 class="reveal">Assistente <span class="gradient-text">Axiom</span></h3>
-          <p class="body-text reveal delay-1" style="margin-top: 16px; max-width: 640px;">
+
+          <h3 class="reveal">Assistente Axiom</h3>
+
+          <p class="body-text reveal delay-1 contato-intro">
             Tire dúvidas sobre nossos serviços.
           </p>
-
+          
           <div class="chatbot reveal delay-2" id="axiom-chatbot"
             data-chatbot-endpoint=""
-            data-chatbot-welcome="Olá! Sou o assistente AXIOM Human Performance. Posso tirar dúvidas sobre nossos serviços. Como posso ajudar?">
-            
+            data-chatbot-welcome="Olá! Sou o assistente comercial da AXIOM. Posso te apresentar nossos serviços, entender suas necessidades e esclarecer dúvidas. Como posso ajudar?">
+
             <header class="chatbot-header">
               <div class="chatbot-header-info">
                 <span class="chatbot-avatar" aria-hidden="true">⬡</span>
