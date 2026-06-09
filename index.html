@@ -124,7 +124,14 @@
 
     /* tablet ≤ 1024px */
     @media (max-width: 1024px) {
+      #assistente {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+      }
       #assistente .slide-container--center {
+        height: auto !important;
+        overflow: visible !important;
         padding: 48px 20px 72px;
       }
       #assistente .chatbot-messages {
@@ -134,29 +141,43 @@
       }
     }
 
-    /* mobile ≤ 768px */
-    @media (max-width: 768px) {
+    /* mobile ≤ 968px */
+    @media (max-width: 968px) {
+      #assistente {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+      }
       #assistente .slide-container--center {
-        padding: 40px 12px 64px;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 40px 12px 72px;
       }
       #assistente .contato-content {
         max-width: 100%;
       }
       #assistente .chatbot-messages {
-        height: 240px;
-        max-height: 240px;
-        min-height: 180px;
+        height: 280px;
+        max-height: 280px;
+        min-height: 200px;
       }
     }
 
     /* mobile pequeno ≤ 480px */
     @media (max-width: 480px) {
+      #assistente {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+      }
       #assistente .slide-container--center {
-        padding: 32px 8px 56px;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 32px 8px 64px;
       }
       #assistente .chatbot-messages {
-        height: 200px;
-        max-height: 200px;
+        height: 220px;
+        max-height: 220px;
         min-height: 160px;
       }
     }
