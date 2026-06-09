@@ -147,19 +147,20 @@
         height: auto !important;
         min-height: 100vh;
         overflow: visible !important;
+        padding-top: 0px !important;   /* Remove qualquer margem externa superior */
       }
       #assistente .slide-container--center {
         height: auto !important;
         overflow: visible !important;
-        padding: 40px 12px 72px;
+        padding: 10px 12px 40px !important; /* 💡 Reduzido o topo de 40px para 10px e base para 40px */
       }
       #assistente .contato-content {
         max-width: 100%;
       }
       #assistente .chatbot-messages {
-        height: 280px;
-        max-height: 280px;
-        min-height: 200px;
+        height: 240px !important;       /* Calibração fina para caber tudo na mesma tela */
+        max-height: 240px !important;
+        min-height: 180px !important;
       }
     }
 
