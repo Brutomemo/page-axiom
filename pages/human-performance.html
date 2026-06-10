@@ -137,140 +137,123 @@
       grid-column: 1 / -1 !important;
     }
 
-    /* ── Chatbot — última dobra ────────────────────────────────────────
-       1. Quebra o height:100vh + overflow:hidden herdado de .slide
-       2. Padding-bottom generoso para a borda inferior do chat respirar
-       3. chatbot-messages contido para não empurrar o form para fora
-    ──────────────────────────────────────────────────────────────────── */
-
-    /* 1 — libera a seção do clipping do .slide */
-    #contato-hp {
+    /* ── Chatbot — última dobra (#assistente-hp) — espelha index.html #assistente ── */
+    #assistente-hp {
       height: auto !important;
       min-height: 100vh;
       overflow: visible !important;
     }
 
-    /* 2 — container com padding-bottom amplo */
-    #contato-hp .slide-container {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 56px 24px 80px !important;
-      box-sizing: border-box !important;
+    #assistente-hp .slide-container {
+      width: 100%;
+      max-width: 100%;
+      padding: 56px 24px 80px;
+      box-sizing: border-box;
     }
 
-    #contato-hp .contato-content {
+    #assistente-hp .contato-content {
       width: 100%;
       max-width: 960px;
     }
 
-    #contato-hp .chatbot {
+    #assistente-hp .chatbot {
       width: 100%;
       max-width: none;
     }
 
-    /* 3 — janela de mensagens calibrada; form/rodapé nunca são cortados */
-    #contato-hp .chatbot-messages {
+    #assistente-hp .chatbot-messages {
       height: 380px;
       max-height: 380px;
       min-height: 220px;
       overflow-y: auto;
     }
 
-    /* tablet ≤ 1024px */
     @media (max-width: 1024px) {
-      #contato-hp {
+      #assistente-hp {
         height: auto !important;
         min-height: 100vh;
         overflow: visible !important;
       }
-      #contato-hp .slide-container {
+      #assistente-hp .slide-container {
         height: auto !important;
         overflow: visible !important;
-        padding: 48px 20px 72px !important;
+        padding: 48px 20px 72px;
       }
-      #contato-hp .chatbot-messages {
-        height: 300px;
-        max-height: 300px;
-        min-height: 200px;
+      #assistente-hp .chatbot-messages {
+        height: 420px;
+        max-height: 420px;
+        min-height: 280px;
       }
     }
 
-    /* mobile ≤ 968px */
     @media (max-width: 968px) {
-      #assistente {
-      height: auto !important;
-      min-height: 100vh;
-      overflow: visible !important;
-    }
-
-    /* Ajuste de largura máxima padrão no desktop */
-    #assistente .contato-content {
-      width: 100%;
-      max-width: 960px;
-    }
-
-    /* Correções específicas para Mobile Geral */
-    @media (max-width: 968px) {
-      #assistente {
-        padding-top: 0px !important; /* Remove vácuo superior */
+      #assistente-hp {
+        height: auto !important;
+        min-height: 100dvh;
+        overflow: visible !important;
+        padding-top: 0 !important;
       }
-      #assistente .slide-container--center {
+      #assistente-hp .slide-container {
         height: auto !important;
         overflow: visible !important;
-        padding: 10px 12px 40px !important; /* Margem de respiro reduzida */
+        padding: 8px 8px 24px !important;
       }
-      #assistente .contato-content {
+      #assistente-hp .contato-content {
         max-width: 100%;
+        width: 100%;
+        padding: 0 4px;
       }
-      
-      /* Anula a altura travada de 420px do CSS externo */
-      #assistente .chatbot {
+      #assistente-hp .contato-status {
+        margin-bottom: 20px;
+      }
+      #assistente-hp h3.reveal,
+      #assistente-hp .body-text {
+        display: none;
+      }
+      #assistente-hp .chatbot {
         height: auto !important;
+        min-height: calc(100dvh - var(--nav-height) - 24px) !important;
         --chatbot-height: auto !important;
+        margin-top: 8px;
+        border-radius: 0;
       }
-      
-      /* Expande e calibra a janela de visualização das mensagens */
-      #assistente .chatbot-messages {
-        height: 300px !important;       
-        max-height: 300px !important;
-        min-height: 200px !important;
-        overflow-y: auto;
+      #assistente-hp .chatbot-messages {
+        height: calc(100dvh - var(--nav-height) - 220px) !important;
+        max-height: none !important;
+        min-height: 320px !important;
+        flex: 1 1 auto;
       }
-
-      /* Mantém o input e botão na mesma linha para não achatar a tela */
-      #assistente .chatbot-form {
-        display: flex !important;
-        flex-direction: row !important; 
-      }
-      #assistente .chatbot-send {
-        width: auto !important;
-      }
-    }
-
-    /* Correções específicas para Mobile Pequeno */
-    @media (max-width: 480px) {
-      #assistente .slide-container--center {
-        height: auto !important;
-        overflow: visible !important;
-        padding: 5px 6px 30px !important;
-      }
-      
-      #assistente .chatbot {
-        height: auto !important;
-        --chatbot-height: auto !important;
-      }
-
-      #assistente .chatbot-messages {
-        height: 250px !important;       
-        max-height: 250px !important;
-        min-height: 180px !important;
-      }
-
-      #assistente .chatbot-form {
-        display: flex !important;
+      #assistente-hp .chatbot-form {
         flex-direction: row !important;
       }
-      #assistente .chatbot-send {
+      #assistente-hp .chatbot-send {
+        width: auto !important;
+      }
+      #assistente-hp footer {
+        margin-top: 32px !important;
+        padding-top: 20px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #assistente-hp .slide-container {
+        padding: 4px 4px 16px !important;
+      }
+      #assistente-hp .chatbot {
+        min-height: calc(100dvh - var(--nav-height) - 16px) !important;
+      }
+      #assistente-hp .chatbot-messages {
+        height: calc(100dvh - var(--nav-height) - 200px) !important;
+        min-height: 280px !important;
+      }
+      #assistente-hp .chatbot-suggestions {
+        padding: 0 8px 8px;
+      }
+      #assistente-hp .chatbot-form {
+        padding: 10px 8px;
+        flex-direction: row !important;
+      }
+      #assistente-hp .chatbot-send {
         width: auto !important;
       }
     }
@@ -867,7 +850,17 @@
       
 
     <!-- CONTATO / CHATBOT -->
-    <section class="slide slide-center" id="assistente-hp">
+    <section class="slide slide-center" id="assistente-hp" style="
+        background:
+          radial-gradient(ellipse 110% 55% at 0% 100%,  rgba(6, 182, 212, 0.18) 0%, transparent 58%),
+          radial-gradient(ellipse  80% 45% at 100%  0%, rgba(15,  45, 110, 0.30) 0%, transparent 55%),
+          linear-gradient(148deg, #04091e 0%, #060a1c 28%, #090810 55%, #0a1520 82%, #061018 100%);
+      ">
+      <div class="contato-bg-layer" aria-hidden="true">
+        <div class="contato-bg-grid"></div>
+        <div class="contato-bg-scanlines"></div>
+      </div>
+
       <div class="scan-bar"></div>
       <div class="slide-container"
         style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
@@ -883,7 +876,7 @@
             <div class="contato-status-line"></div>
           </div>
           <h3 class="reveal">Assistente <span class="gradient-text">Axiom</span></h3>
-          <p class="body-text reveal delay-1" style="margin-top: 16px; max-width: 640px;">
+          <p class="body-text reveal delay-1" style="margin-top: 16px; max-width: 640px; text-align: center; margin-left: auto; margin-right: auto;">
             Tire suas dúvidas sobre nossos serviços.
           </p>
 
