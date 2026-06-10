@@ -84,6 +84,77 @@
       background: var(--clr-surface);
     }
 
+    #empresa .empresa-layout {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-3xl);
+    }
+
+    #empresa .empresa-intro .body-text {
+      max-width: none;
+      width: 100%;
+    }
+
+    #empresa .empresa-areas {
+      width: 100%;
+      padding-top: var(--spacing-2xl);
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    #empresa .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-xl);
+    }
+
+    #empresa .area-card {
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: flex-start;
+      padding: var(--spacing-xl) var(--spacing-lg);
+      background: rgba(201, 168, 76, 0.03);
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      border-radius: 4px;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    #empresa .area-card:hover {
+      background: rgba(201, 168, 76, 0.07);
+      border-color: rgba(201, 168, 76, 0.28);
+    }
+
+    #empresa .area-num {
+      font-family: var(--font-hd);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--clr-accent-primary);
+      flex-shrink: 0;
+      padding-top: 4px;
+    }
+
+    #empresa .area-title {
+      font-family: var(--font-hd);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      color: var(--clr-white);
+      margin: 0 0 var(--spacing-sm);
+    }
+
+    #empresa .area-desc {
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      #empresa .areas-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     #diagnostico.slide {
       background: var(--clr-chumbo);
     }
