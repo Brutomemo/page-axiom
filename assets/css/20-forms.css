@@ -19,24 +19,30 @@
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 4vw, 44px);
+  text-align: left;
 }
 
 .axiom-form--hp {
-  --form-accent: var(--clr-info);
+  --form-accent: #06b6d4;
   --form-accent-soft: rgba(6, 182, 212, 0.14);
   --form-accent-glow: rgba(6, 182, 212, 0.28);
   --form-border: rgba(6, 182, 212, 0.2);
 }
 
+#contato.slide,
+#contato-hp.slide {
+  overflow: visible;
+}
+
 /* ── Barra de progresso ── */
-.axiom-form-progress {
+.axiom-form .axiom-form-progress {
   height: 3px;
   background: rgba(255, 255, 255, 0.06);
   border-radius: 99px;
   overflow: hidden;
 }
 
-.axiom-form-progress__bar {
+.axiom-form .axiom-form-progress__bar {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, var(--form-accent), var(--clr-accent-primary));
@@ -46,18 +52,19 @@
 }
 
 /* ── Blocos / fieldsets ── */
-.axiom-form-block {
-  border: none;
+.axiom-form fieldset.axiom-form-block {
+  border: 0;
   margin: 0;
   padding: 0;
   min-width: 0;
 }
 
-.axiom-form-block__legend {
+.axiom-form .axiom-form-block__legend {
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 22px;
+  padding: 0;
   font-family: var(--font-hd);
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   letter-spacing: 0.06em;
@@ -65,7 +72,7 @@
   color: var(--form-text);
 }
 
-.axiom-form-block__num {
+.axiom-form .axiom-form-block__num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -81,7 +88,7 @@
   letter-spacing: 0.08em;
 }
 
-.axiom-form-block__hint {
+.axiom-form .axiom-form-block__hint {
   margin: -8px 0 18px;
   font-size: 0.92rem;
   line-height: 1.55;
@@ -89,23 +96,24 @@
 }
 
 /* ── Campos de texto ── */
-.axiom-form-row {
+.axiom-form .axiom-form-row {
   display: grid;
   gap: 22px 20px;
 }
 
-.axiom-form-row--2 {
+.axiom-form .axiom-form-row--2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.axiom-field {
+.axiom-form .axiom-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
   position: relative;
+  min-width: 0;
 }
 
-.axiom-field__label {
+.axiom-form .axiom-field__label {
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -113,8 +121,8 @@
   font-family: var(--font-mono);
 }
 
-.axiom-field__input,
-.axiom-field__textarea {
+.axiom-form .axiom-field__input,
+.axiom-form .axiom-field__textarea {
   width: 100%;
   background: transparent;
   border: none;
@@ -127,30 +135,30 @@
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.axiom-field__input::placeholder,
-.axiom-field__textarea::placeholder {
+.axiom-form .axiom-field__input::placeholder,
+.axiom-form .axiom-field__textarea::placeholder {
   color: rgba(169, 167, 167, 0.45);
 }
 
-.axiom-field__input:hover,
-.axiom-field__textarea:hover {
+.axiom-form .axiom-field__input:hover,
+.axiom-form .axiom-field__textarea:hover {
   border-bottom-color: var(--form-border-hover);
 }
 
-.axiom-field__input:focus,
-.axiom-field__textarea:focus {
+.axiom-form .axiom-field__input:focus,
+.axiom-form .axiom-field__textarea:focus {
   outline: none;
   border-bottom-color: var(--form-accent);
   box-shadow: 0 6px 18px -12px var(--form-accent-glow);
 }
 
-.axiom-field__textarea {
+.axiom-form .axiom-field__textarea {
   resize: vertical;
   min-height: 130px;
   line-height: 1.65;
 }
 
-.axiom-field__line {
+.axiom-form .axiom-field__line {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -161,24 +169,30 @@
   pointer-events: none;
 }
 
-.axiom-field:focus-within .axiom-field__line {
+.axiom-form .axiom-field:focus-within .axiom-field__line {
   width: 100%;
 }
 
 /* ── Choice cards (Typeform) ── */
-.choice-cards {
+.axiom-form .choice-cards {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
 }
 
-.choice-card {
+.axiom-form button.choice-card {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  margin: 0;
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
   width: 100%;
+  min-height: 0;
   padding: 18px 20px;
   border: 1.5px solid var(--form-border);
   border-radius: var(--form-radius);
@@ -188,7 +202,7 @@
   text-align: left;
   cursor: pointer;
   font: inherit;
-  animation: choice-card-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  line-height: 1.4;
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
@@ -196,48 +210,34 @@
     box-shadow 0.25s ease;
 }
 
-.choice-cards .choice-card:nth-child(1) { animation-delay: 0.04s; }
-.choice-cards .choice-card:nth-child(2) { animation-delay: 0.08s; }
-.choice-cards .choice-card:nth-child(3) { animation-delay: 0.12s; }
-.choice-cards .choice-card:nth-child(4) { animation-delay: 0.16s; }
-.choice-cards .choice-card:nth-child(5) { animation-delay: 0.20s; }
-.choice-cards .choice-card:nth-child(6) { animation-delay: 0.24s; }
-
-@keyframes choice-card-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.choice-card:hover {
+.axiom-form button.choice-card:hover {
   border-color: var(--form-border-hover);
   transform: translateX(4px);
 }
 
-.choice-card:focus-visible {
+.axiom-form button.choice-card:focus-visible {
   outline: 2px solid var(--form-accent);
   outline-offset: 2px;
 }
 
-.choice-card.is-selected {
+.axiom-form button.choice-card.is-selected {
   border-color: var(--form-accent);
-  background: linear-gradient(
-    135deg,
-    var(--form-accent-soft) 0%,
-    rgba(15, 23, 42, 0.88) 100%
-  );
+  background: linear-gradient(135deg, var(--form-accent-soft) 0%, rgba(15, 23, 42, 0.88) 100%);
   box-shadow:
     0 0 0 1px var(--form-accent-soft),
     0 8px 28px -8px var(--form-accent-glow);
   transform: translateX(6px);
 }
 
-.choice-card__key {
+.axiom-form button.choice-card > input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.axiom-form .choice-card__key {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -254,42 +254,47 @@
   transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-.choice-card.is-selected .choice-card__key {
+.axiom-form button.choice-card.is-selected .choice-card__key {
   background: var(--form-accent);
   border-color: var(--form-accent);
   color: var(--clr-bg);
 }
 
-.choice-card__body {
+.axiom-form .choice-card__body {
   display: flex;
   flex-direction: column;
   gap: 4px;
   min-width: 0;
 }
 
-.choice-card__title {
+.axiom-form .choice-card__title {
+  display: block;
   font-size: clamp(0.95rem, 2vw, 1.02rem);
   font-weight: 500;
   line-height: 1.35;
   color: var(--form-text);
 }
 
-.choice-card__desc {
+.axiom-form .choice-card__desc {
+  display: block;
   font-size: 0.84rem;
   line-height: 1.45;
   color: var(--form-muted);
 }
 
-.choice-card__check {
-  display: flex;
+.axiom-form .choice-card__check {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 28px;
   height: 28px;
+  min-width: 28px;
+  min-height: 28px;
   border-radius: 50%;
   border: 1.5px solid rgba(255, 255, 255, 0.14);
   color: transparent;
   flex-shrink: 0;
+  overflow: hidden;
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
@@ -297,19 +302,23 @@
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.choice-card.is-selected .choice-card__check {
+.axiom-form button.choice-card.is-selected .choice-card__check {
   border-color: var(--form-accent);
   background: var(--form-accent);
   color: var(--clr-bg);
   transform: scale(1.05);
 }
 
-.choice-card__check svg {
-  width: 14px;
-  height: 14px;
+.axiom-form .choice-card__check svg {
+  display: block;
+  width: 14px !important;
+  height: 14px !important;
+  max-width: 14px;
+  max-height: 14px;
+  flex-shrink: 0;
 }
 
-.choice-cards__feedback {
+.axiom-form .choice-cards__feedback {
   margin-top: 14px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -319,12 +328,12 @@
   min-height: 1.2em;
 }
 
-.choice-cards__feedback.is-error {
+.axiom-form .choice-cards__feedback.is-error {
   color: var(--clr-error);
 }
 
 /* ── Ações ── */
-.axiom-form-actions {
+.axiom-form .axiom-form-actions {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -332,7 +341,7 @@
   padding-top: 8px;
 }
 
-.axiom-form-actions .btn-primary {
+.axiom-form .axiom-form-actions .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -355,27 +364,27 @@
   text-align: center;
 }
 
-.axiom-form--hp .axiom-form-actions .btn-primary {
+.axiom-form.axiom-form--hp .axiom-form-actions .btn-primary {
   background: linear-gradient(135deg, var(--clr-info), var(--clr-secondary-light));
 }
 
-.axiom-form-actions .btn-primary:hover {
+.axiom-form .axiom-form-actions .btn-primary:hover {
   box-shadow: 0 0 30px rgba(201, 168, 76, 0.55);
   transform: translateY(-2px);
 }
 
-.axiom-form--hp .axiom-form-actions .btn-primary:hover {
+.axiom-form.axiom-form--hp .axiom-form-actions .btn-primary:hover {
   box-shadow: 0 0 30px var(--form-accent-glow);
 }
 
-.axiom-form-actions .btn-primary:disabled {
+.axiom-form .axiom-form-actions .btn-primary:disabled {
   opacity: 0.55;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-.axiom-form-note {
+.axiom-form .axiom-form-note {
   font-size: 0.78rem;
   color: rgba(169, 167, 167, 0.65);
   text-align: center;
@@ -383,7 +392,7 @@
   max-width: 520px;
 }
 
-.axiom-form-success {
+.axiom-form .axiom-form-success {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -403,7 +412,7 @@
   display: flex;
 }
 
-.axiom-form-success__icon {
+.axiom-form .axiom-form-success__icon {
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -415,13 +424,14 @@
   font-size: 1.5rem;
 }
 
-.axiom-form-success h4 {
+.axiom-form .axiom-form-success h4 {
   font-family: var(--font-hd);
   font-size: 1.1rem;
   letter-spacing: 0.04em;
+  color: var(--form-text);
 }
 
-.axiom-form-success p {
+.axiom-form .axiom-form-success p {
   color: var(--form-muted);
   max-width: 420px;
   line-height: 1.6;
