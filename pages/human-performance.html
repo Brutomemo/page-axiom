@@ -295,8 +295,9 @@
         <a href="../index.html" class="nav-link" data-nav-page="home">Strategic Intelligence</a>
         <a href="human-performance.html#hero-hp" class="nav-link nav-link--active" data-nav-page="human-performance"
           aria-current="page">Human Performance</a>
-        <a href="#empresa" class="nav-link">Serviços</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
         <a href="#diferencial" class="nav-link">Diferencial</a>
+        <a href="#contato-hp" class="nav-link">Contato</a>
         <a href="#assistente-hp" class="nav-link">Assistente Virtual</a>
       </div>
       <div class="nav-status nav-status--panel">
@@ -339,8 +340,8 @@
 
             <div class="hero-cta-group reveal delay-3"
               style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; margin: 40px 0;">
-              <a href="#serviços" class="btn btn-primary">CONHECER SERVIÇOS</a>
-              <a href="../index.html#diagnostico" class="btn btn-secondary">CONTATO</a>
+              <a href="#servicos" class="btn btn-primary">CONHECER SERVIÇOS</a>
+              <a href="#contato-hp" class="btn btn-secondary">CONTATO</a>
             </div>
           </div>
 
@@ -375,14 +376,14 @@
         </div>
       </div>
 
-      <div class="slide-num mono">01 / 05</div>
+      <div class="slide-num mono">01 / 06</div>
     </section>
 
 
     <!-- ───────────────────────────────────────────────────────
          EMPRESA
     ─────────────────────────────────────────────────────────── -->
-    <section class="slide section-gradient" id="empresa">
+    <section class="slide section-gradient" id="servicos">
       <div class="scan-bar"></div>
       <div class="slide-corner tl"></div>
 
@@ -628,7 +629,7 @@
         </div>
       </div>
 
-      <div class="slide-num mono">02 / 05</div>
+      <div class="slide-num mono">02 / 06</div>
     </section>
 
     <!-- ───────────────────────────────────────────────────────
@@ -847,6 +848,187 @@
       </div>
     </section>
 
+    <!-- ───────────────────────────────────────────────────────
+         DIAGNÓSTICO E CAPTAÇÃO DE LEADS
+    ─────────────────────────────────────────────────────────── -->
+    <section class="slide section-gradient" id="contato-hp">
+      <div class="scan-bar"></div>
+      <div class="slide-corner tl"></div>
+      <div class="slide-corner br"></div>
+
+      <div class="slide-container">
+
+        <div class="label reveal"><span class="label-num">//</span> DIAGNÓSTICO ESTRATÉGICO</div>
+
+        <h3 class="reveal">
+          Solicite uma
+          <span class="gradient-text">avaliação</span>
+        </h3>
+
+        <div class="divider reveal"></div>
+
+        <p class="section-description reveal">
+          Selecione os serviços de interesse, informe seus dados e descreva o contexto da sua organização.
+        </p>
+
+        <form id="hpLeadForm" class="axiom-form axiom-form--hp reveal delay-1" data-lead-form
+          data-choice-field="servicos" data-choice-min="1" data-origem="human-performance">
+
+          <div class="axiom-form-body">
+
+            <div class="axiom-form-progress" aria-hidden="true">
+              <div class="axiom-form-progress__bar"></div>
+            </div>
+
+            <fieldset class="axiom-form-block">
+              <legend class="axiom-form-block__legend">
+                <span class="axiom-form-block__num">01</span>
+                Serviços de interesse
+              </legend>
+
+              <p class="axiom-form-block__hint">Escolha um ou mais serviços que deseja conhecer ou implementar.</p>
+
+              <div class="choice-cards" id="servicos" data-choice-cards data-field="servicos" data-multiple
+                data-choice-label="serviço">
+
+                <button type="button" class="choice-card"
+                  data-value="Diagnóstico Psicossocial Organizacional">
+                  <span class="choice-card__key">A</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Diagnóstico Psicossocial Organizacional</span>
+                    <span class="choice-card__desc">Análise de riscos, clima, estresse ocupacional e fatores organizacionais.</span>
+                  </span>
+                  <input type="checkbox" name="servicos" value="Diagnóstico Psicossocial Organizacional" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card"
+                  data-value="Gestão dos Riscos Psicossociais — NR-1">
+                  <span class="choice-card__key">B</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Gestão dos Riscos Psicossociais — NR-1</span>
+                    <span class="choice-card__desc">Mapeamento, relatórios técnicos e integração ao PGR para conformidade.</span>
+                  </span>
+                  <input type="checkbox" name="servicos" value="Gestão dos Riscos Psicossociais — NR-1" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card" data-value="Desenvolvimento de Lideranças">
+                  <span class="choice-card__key">C</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Desenvolvimento de Lideranças</span>
+                    <span class="choice-card__desc">Liderança humanizada, inteligência emocional e segurança psicológica.</span>
+                  </span>
+                  <input type="checkbox" name="servicos" value="Desenvolvimento de Lideranças" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card" data-value="Treinamentos Corporativos">
+                  <span class="choice-card__key">D</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Treinamentos Corporativos</span>
+                    <span class="choice-card__desc">Saúde mental, prevenção ao assédio, burnout e comunicação assertiva.</span>
+                  </span>
+                  <input type="checkbox" name="servicos" value="Treinamentos Corporativos" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card"
+                  data-value="Programas de Saúde Mental e Qualidade de Vida">
+                  <span class="choice-card__key">E</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Programas de Saúde Mental e Qualidade de Vida</span>
+                    <span class="choice-card__desc">Campanhas, workshops e ações contínuas de bem-estar e engajamento.</span>
+                  </span>
+                  <input type="checkbox" name="servicos" value="Programas de Saúde Mental e Qualidade de Vida" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card"
+                  data-value="Gestão de Crises e Suporte Organizacional">
+                  <span class="choice-card__key">F</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Gestão de Crises e Suporte Organizacional</span>
+                    <span class="choice-card__desc">Acolhimento, mediação de conflitos e apoio em eventos críticos.</span>
+                  </span>
+                  <input type="checkbox" name="servicos" value="Gestão de Crises e Suporte Organizacional" class="sr-only" tabindex="-1">
+                </button>
+
+              </div>
+
+              <p class="choice-cards__feedback" data-choice-feedback hidden></p>
+            </fieldset>
+
+            <fieldset class="axiom-form-block">
+              <legend class="axiom-form-block__legend">
+                <span class="axiom-form-block__num">02</span>
+                Seus dados
+              </legend>
+
+              <div class="axiom-form-row axiom-form-row--2">
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="nome">Nome completo</label>
+                  <input class="axiom-field__input" type="text" id="nome" name="nome" placeholder="Como podemos te chamar?"
+                    required autocomplete="name">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
+
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="email">E-mail corporativo</label>
+                  <input class="axiom-field__input" type="email" id="email" name="email"
+                    placeholder="email@empresa.com" required autocomplete="email">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
+
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="telefone">Telefone / WhatsApp</label>
+                  <input class="axiom-field__input" type="tel" id="telefone" name="telefone"
+                    placeholder="(11) 99999-9999" autocomplete="tel">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
+
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="empresa">Empresa / organização</label>
+                  <input class="axiom-field__input" type="text" id="empresa" name="empresa"
+                    placeholder="Nome da empresa" autocomplete="organization">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="axiom-form-block">
+              <legend class="axiom-form-block__legend">
+                <span class="axiom-form-block__num">03</span>
+                Contexto da organização
+              </legend>
+
+              <p class="axiom-form-block__hint">Descreva o principal desafio, necessidade ou objetivo da sua empresa.</p>
+
+              <div class="axiom-field">
+                <label class="axiom-field__label" for="mensagem">Descrição</label>
+                <textarea class="axiom-field__textarea" id="mensagem" name="mensagem" rows="5"
+                  placeholder="Ex.: Precisamos estruturar a gestão de riscos psicossociais conforme a NR-1…"></textarea>
+                <span class="axiom-field__line" aria-hidden="true"></span>
+              </div>
+            </fieldset>
+
+            <div class="axiom-form-actions">
+              <button type="submit" class="btn-primary">
+                Solicitar avaliação personalizada
+              </button>
+              <p class="axiom-form-note">Informações tratadas com confidencialidade, em conformidade com a LGPD.</p>
+            </div>
+
+          </div>
+
+          <div class="axiom-form-success" role="status" aria-live="polite">
+            <span class="axiom-form-success__icon" aria-hidden="true">✓</span>
+            <h4>Solicitação recebida</h4>
+            <p>Obrigado pelo interesse. Nossa equipe analisará suas informações e entrará em contato em breve.</p>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="slide-num mono">05 / 06</div>
+    </section>
+
       
 
     <!-- CONTATO / CHATBOT -->
@@ -945,7 +1127,7 @@
         </div> <!-- ◄ Essa div fecha a classe ".contato-content" que já estava no seu código -->
       </div> <!-- ◄ Essa div fecha a classe ".slide-container--center" -->
 
-      <div class="slide-num mono"></div>
+      <div class="slide-num mono">06 / 06</div>
     </section>
   </main>
 
@@ -956,6 +1138,8 @@
   <script src="../assets/js/modules/nav-mobile.js" defer></script>
   <script src="../assets/js/modules/scroll-ui.js" defer></script>
   <script src="../assets/js/modules/chatbot.js" defer></script>
+  <script src="../assets/js/modules/choice-cards.js" defer></script>
+  <script src="../assets/js/modules/lead-form.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
 </body>
 
