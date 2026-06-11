@@ -8,8 +8,8 @@
       --nav-panel-padding: var(--spacing-lg);
       --nav-link-mobile-size: 13px;
       --nav-toggle-size: 44px;
-      --nav-logo-height: 68px;
-      --nav-logo-max-width: 320px;
+      --nav-logo-height: 98px;
+      --nav-logo-max-width: 340px;
     }
 
     nav,
@@ -71,8 +71,8 @@
     }
 
     .nav-pulse {
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       background: var(--clr-secondary-light);
       border-radius: 50%;
       animation: pulse-glow 2s ease-in-out infinite;
@@ -231,8 +231,8 @@
       }
 
       .nav-logo img {
-        max-width: min(240px, 42vw);
-        height: 56px;
+        max-width: min(340px, 62vw);
+        height: 96px;
       }
 
       .nav-status:not(.nav-status--panel) {
@@ -305,8 +305,8 @@
       }
 
       .nav-logo img {
-        max-width: min(200px, 48vw);
-        height: 48px;
+        max-width: min(250px, 58vw);
+        height: 70px;
       }
 
       .nav-link {
