@@ -51,6 +51,12 @@
   box-shadow: 0 0 12px var(--form-accent-glow);
 }
 
+.axiom-form .axiom-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vw, 56px);
+}
+
 /* ── Blocos / fieldsets ── */
 .axiom-form fieldset.axiom-form-block {
   border: 0;
@@ -320,6 +326,7 @@
 
 .axiom-form .choice-cards__feedback {
   margin-top: 14px;
+  margin-bottom: 8px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
