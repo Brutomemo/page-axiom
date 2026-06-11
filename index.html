@@ -359,7 +359,7 @@
       <div class="slide-corner tl"></div>
 
       <div class="slide-container">
-        <div class="label reveal"><span class="label-num">//</span> SOBRE AXIOM</div>
+        <div class="label reveal"><span class="label-num">//</span> SOBRE A AXIOM</div>
         <h3 class="reveal">Serviços de <span class="gradient-text">Inteligência Estratégica</span></h3>
         <div class="divider reveal"></div>
 
@@ -596,6 +596,7 @@
       <div class="slide-num mono">03 / 05</div>
     </section>
 
+    
     <!-- ───────────────────────────────────────────────────────
         DIAGNÓSTICO E CAPTAÇÃO DE LEADS
 ─────────────────────────────────────────────────────────── -->
@@ -646,25 +647,41 @@
             </div>
 
             <div class="form-group full-width">
-              <label>Área de Interesse</label>
+              <label>Área de Interesse <span class="form-label-hint">(selecione uma ou mais)</span></label>
 
-              <select id="interesse">
+              <div class="interesse-multiselect" id="interesse" role="group" aria-label="Áreas de interesse">
 
-                <option value="">Selecione</option>
+                <label class="interesse-check">
+                  <input type="checkbox" name="interesse" value="Dashboards em Web App personalizado">
+                  <span>Dashboards em Web App personalizado</span>
+                </label>
 
-                <option>Dashboards em Web App personalizado</option>
+                <label class="interesse-check">
+                  <input type="checkbox" name="interesse" value="KPIs e Indicadores Estratégicos">
+                  <span>KPIs e Indicadores Estratégicos</span>
+                </label>
 
-                <option>KPIs e Indicadores Estratégicos</option>
+                <label class="interesse-check">
+                  <input type="checkbox" name="interesse" value="Implementação de OKRs">
+                  <span>Implementação de OKRs</span>
+                </label>
 
-                <option>Implementação de OKRs</option>
+                <label class="interesse-check">
+                  <input type="checkbox" name="interesse" value="Automação de Processos">
+                  <span>Automação de Processos</span>
+                </label>
 
-                <option>Automação de Processos</option>
+                <label class="interesse-check">
+                  <input type="checkbox" name="interesse" value="Inteligência Artificial Aplicada">
+                  <span>Análise de dados</span>
+                </label>
 
-                <option>Inteligência Artificial Aplicada</option>
+                <label class="interesse-check">
+                  <input type="checkbox" name="interesse" value="Análise de Dados">
+                  <span>Análise de Dados</span>
+                </label>
 
-                <option>Análise de Dados</option>
-
-              </select>
+              </div>
             </div>
 
             <div class="form-group full-width">
@@ -695,7 +712,7 @@
 
 
     <!-- ───────────────────────────────────────────────────────
-         CONTATO
+         Assistante Virtual
     ─────────────────────────────────────────────────────────── -->
     <section class="slide slide-center" id="assistente" style="
         background:
