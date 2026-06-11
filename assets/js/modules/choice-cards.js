@@ -3,7 +3,7 @@
  */
 (function initChoiceCards() {
   const CHECK_ICON =
-    '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   function getFeedbackEl(container) {
     const id = container.dataset.feedbackId;
@@ -49,19 +49,33 @@
     container.dispatchEvent(new CustomEvent("choicechange", { bubbles: true }));
   }
 
+  function ensureCheckIcon(card) {
+    let check = card.querySelector(".choice-card__check");
+    if (!check) {
+      check = document.createElement("span");
+      check.className = "choice-card__check";
+      check.setAttribute("aria-hidden", "true");
+      const input = card.querySelector('input[type="checkbox"]');
+      if (input) {
+        card.insertBefore(check, input);
+      } else {
+        card.appendChild(check);
+      }
+    }
+    if (!check.innerHTML.trim()) {
+      check.innerHTML = CHECK_ICON;
+    }
+  }
+
   function bindContainer(container) {
     const cards = container.querySelectorAll(".choice-card");
     cards.forEach((card, index) => {
-      if (!card.querySelector(".choice-card__check")) {
-        const check = document.createElement("span");
-        check.className = "choice-card__check";
-        check.innerHTML = CHECK_ICON;
-        card.appendChild(check);
-      }
+      ensureCheckIcon(card);
 
       if (!card.hasAttribute("tabindex")) card.tabIndex = 0;
       if (!card.hasAttribute("role")) card.role = "button";
       if (!card.hasAttribute("aria-pressed")) card.setAttribute("aria-pressed", "false");
+      if (!card.getAttribute("type")) card.type = "button";
 
       const keyEl = card.querySelector(".choice-card__key");
       if (keyEl && !keyEl.textContent.trim()) {
