@@ -618,88 +618,155 @@
         <div class="divider reveal"></div>
 
         <p class="section-description reveal">
-          Solicite uma avalição, informe suas necessidades e/ou objetivo e entraremos em contato.
+          Informe seus dados, escolha as áreas de interesse e descreva seu objetivo. Entraremos em contato em breve.
         </p>
 
 
-        <form id="leadForm" class="lead-form reveal delay-1">
+        <form id="leadForm" class="axiom-form axiom-form--strategic reveal delay-1" data-lead-form
+          data-choice-field="interesse" data-choice-min="1" data-origem="strategic-intelligence">
 
-          <div class="form-grid">
+          <div class="axiom-form-body">
 
-            <div class="form-group">
-              <label>Nome Completo</label>
-              <input type="text" id="nome" placeholder="Seu nome" required>
+            <div class="axiom-form-progress" aria-hidden="true">
+              <div class="axiom-form-progress__bar"></div>
             </div>
 
-            <div class="form-group">
-              <label>E-mail Corporativo</label>
-              <input type="email" id="email" placeholder="email@empresa.com" required>
-            </div>
+            <fieldset class="axiom-form-block">
+              <legend class="axiom-form-block__legend">
+                <span class="axiom-form-block__num">01</span>
+                Seus dados
+              </legend>
 
-            <div class="form-group">
-              <label>Telefone / WhatsApp</label>
-              <input type="text" id="telefone" placeholder="(11) 99999-9999">
-            </div>
+              <div class="axiom-form-row axiom-form-row--2">
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="nome">Nome completo</label>
+                  <input class="axiom-field__input" type="text" id="nome" name="nome" placeholder="Como podemos te chamar?"
+                    required autocomplete="name">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
 
-            <div class="form-group">
-              <label>Empresa / Organização</label>
-              <input type="text" id="empresa" placeholder="Nome da empresa">
-            </div>
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="email">E-mail corporativo</label>
+                  <input class="axiom-field__input" type="email" id="email" name="email"
+                    placeholder="email@empresa.com" required autocomplete="email">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
 
-            <div class="form-group full-width">
-              <label>Área de Interesse <span class="form-label-hint">(selecione uma ou mais)</span></label>
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="telefone">Telefone / WhatsApp</label>
+                  <input class="axiom-field__input" type="tel" id="telefone" name="telefone"
+                    placeholder="(11) 99999-9999" autocomplete="tel">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
 
-              <div class="interesse-multiselect" id="interesse" role="group" aria-label="Áreas de interesse">
+                <div class="axiom-field">
+                  <label class="axiom-field__label" for="empresa">Empresa / organização</label>
+                  <input class="axiom-field__input" type="text" id="empresa" name="empresa"
+                    placeholder="Nome da empresa" autocomplete="organization">
+                  <span class="axiom-field__line" aria-hidden="true"></span>
+                </div>
+              </div>
+            </fieldset>
 
-                <label class="interesse-check">
-                  <input type="checkbox" name="interesse" value="Dashboards em Web App personalizado">
-                  <span>Dashboards em Web App personalizado</span>
-                </label>
+            <fieldset class="axiom-form-block">
+              <legend class="axiom-form-block__legend">
+                <span class="axiom-form-block__num">02</span>
+                Área de interesse
+              </legend>
 
-                <label class="interesse-check">
-                  <input type="checkbox" name="interesse" value="KPIs e Indicadores Estratégicos">
-                  <span>KPIs e Indicadores Estratégicos</span>
-                </label>
+              <p class="axiom-form-block__hint">Selecione uma ou mais soluções que fazem sentido para sua organização.</p>
 
-                <label class="interesse-check">
-                  <input type="checkbox" name="interesse" value="Implementação de OKRs">
-                  <span>Implementação de OKRs</span>
-                </label>
+              <div class="choice-cards" id="interesse" data-choice-cards data-field="interesse" data-multiple
+                data-choice-label="área">
 
-                <label class="interesse-check">
-                  <input type="checkbox" name="interesse" value="Automação de Processos">
-                  <span>Automação de Processos</span>
-                </label>
+                <button type="button" class="choice-card" data-value="Dashboards em Web App personalizado">
+                  <span class="choice-card__key">A</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Dashboards em Web App personalizado</span>
+                    <span class="choice-card__desc">Visualizações interativas e aplicativos sob medida para sua operação.</span>
+                  </span>
+                  <input type="checkbox" name="interesse" value="Dashboards em Web App personalizado" class="sr-only" tabindex="-1">
+                </button>
 
-                <label class="interesse-check">
-                  <input type="checkbox" name="interesse" value="Inteligência Artificial Aplicada">
-                  <span>Análise de dados</span>
-                </label>
+                <button type="button" class="choice-card" data-value="KPIs e Indicadores Estratégicos">
+                  <span class="choice-card__key">B</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">KPIs e Indicadores Estratégicos</span>
+                    <span class="choice-card__desc">Métricas alinhadas à estratégia e à tomada de decisão executiva.</span>
+                  </span>
+                  <input type="checkbox" name="interesse" value="KPIs e Indicadores Estratégicos" class="sr-only" tabindex="-1">
+                </button>
 
-                <label class="interesse-check">
-                  <input type="checkbox" name="interesse" value="Análise de Dados">
-                  <span>Análise de Dados</span>
-                </label>
+                <button type="button" class="choice-card" data-value="Implementação de OKRs">
+                  <span class="choice-card__key">C</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Implementação de OKRs</span>
+                    <span class="choice-card__desc">Estruturação do ciclo de objetivos e resultados-chave na empresa.</span>
+                  </span>
+                  <input type="checkbox" name="interesse" value="Implementação de OKRs" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card" data-value="Automação de Processos">
+                  <span class="choice-card__key">D</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Automação de Processos</span>
+                    <span class="choice-card__desc">Digitalização de fluxos, integrações e ganho de eficiência operacional.</span>
+                  </span>
+                  <input type="checkbox" name="interesse" value="Automação de Processos" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card" data-value="Inteligência Artificial Aplicada">
+                  <span class="choice-card__key">E</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Inteligência Artificial Aplicada</span>
+                    <span class="choice-card__desc">Modelos e automações inteligentes para problemas reais do negócio.</span>
+                  </span>
+                  <input type="checkbox" name="interesse" value="Inteligência Artificial Aplicada" class="sr-only" tabindex="-1">
+                </button>
+
+                <button type="button" class="choice-card" data-value="Análise de Dados">
+                  <span class="choice-card__key">F</span>
+                  <span class="choice-card__body">
+                    <span class="choice-card__title">Análise de Dados</span>
+                    <span class="choice-card__desc">Transformação de dados em insights acionáveis e relatórios estratégicos.</span>
+                  </span>
+                  <input type="checkbox" name="interesse" value="Análise de Dados" class="sr-only" tabindex="-1">
+                </button>
 
               </div>
-            </div>
 
-            <div class="form-group full-width">
-              <label>Qual o principal desafio ou necessidade da sua organização?</label>
+              <p class="choice-cards__feedback" data-choice-feedback hidden></p>
+            </fieldset>
 
-              <textarea id="mensagem" rows="5"
-                placeholder="Descreva brevemente seu desafio, necessidade ou objetivo."></textarea>
+            <fieldset class="axiom-form-block">
+              <legend class="axiom-form-block__legend">
+                <span class="axiom-form-block__num">03</span>
+                Seu desafio
+              </legend>
+
+              <p class="axiom-form-block__hint">Conte brevemente o contexto, a necessidade ou o objetivo da sua organização.</p>
+
+              <div class="axiom-field">
+                <label class="axiom-field__label" for="mensagem">Descrição</label>
+                <textarea class="axiom-field__textarea" id="mensagem" name="mensagem" rows="5"
+                  placeholder="Ex.: Precisamos centralizar indicadores de vendas e operação em um único painel executivo…"></textarea>
+                <span class="axiom-field__line" aria-hidden="true"></span>
+              </div>
+            </fieldset>
+
+            <div class="axiom-form-actions">
+              <button type="submit" class="btn-primary">
+                Solicitar avaliação das minhas necessidades
+              </button>
+              <p class="axiom-form-note">Seus dados são tratados com confidencialidade, em conformidade com a LGPD.</p>
             </div>
 
           </div>
 
-          <div class="lead-form-submit">
-            <button type="submit" class="btn-primary">
-
-              SOLICITAR AVALIAÇÃO DE SUAS NECESSIDADES E/OU OBJETIVOS
-
-            </button>
-
+          <div class="axiom-form-success" role="status" aria-live="polite">
+            <span class="axiom-form-success__icon" aria-hidden="true">✓</span>
+            <h4>Solicitação recebida</h4>
+            <p>Obrigado pelo interesse. Nossa equipe analisará suas informações e entrará em contato em breve.</p>
           </div>
 
         </form>
@@ -825,6 +892,7 @@
   <script src="assets/js/modules/nav-mobile.js" defer></script>
   <script src="assets/js/modules/scroll-ui.js" defer></script>
   <script src="assets/js/modules/chatbot.js" defer></script>
+  <script src="assets/js/modules/choice-cards.js" defer></script>
   <script src="assets/js/modules/lead-form.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
