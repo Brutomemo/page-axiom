@@ -232,7 +232,7 @@
 
       .nav-logo img {
         max-width: min(340px, 62vw);
-        height: 96px;
+        height: 98px;
       }
 
       .nav-status:not(.nav-status--panel) {
@@ -306,7 +306,7 @@
 
       .nav-logo img {
         max-width: min(250px, 58vw);
-        height: 70px;
+        height: 73px;
       }
 
       .nav-link {
