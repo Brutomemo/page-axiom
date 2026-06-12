@@ -38,12 +38,22 @@
         messagesEl.scrollTop = messagesEl.scrollHeight;
       }
 
+      const pageId = document.body.dataset.axiomPage;
+      const origem = pageId === "human-performance" ? "human-performance" : "strategic-intelligence";
+
+      // session_id simples, persistente durante a sessão do navegador
+      let sessionId = sessionStorage.getItem('axiom-session-id');
+      if (!sessionId) {
+        sessionId = 'sess-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+        sessionStorage.setItem('axiom-session-id', sessionId);
+      }
+      
       async function requestBotReply(userText) {
         if (endpoint) {
           const response = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: userText })
+            body: JSON.stringify({ message: userText, session_id: sessionId, origem: origem })
           });
 
           if (!response.ok) {
