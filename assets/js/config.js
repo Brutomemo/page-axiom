@@ -33,7 +33,7 @@
     },
 
     leadForm: {
-      endpoint: "",
+      endpoint: "https://axiombackend-production-25d9.up.railway.app/api/lead",
     },
 
     /** Navegação mobile — breakpoint, rótulos e comportamento do menu */
