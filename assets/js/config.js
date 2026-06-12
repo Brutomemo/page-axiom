@@ -27,7 +27,7 @@
     lang: "pt-BR",
 
     chatbot: {
-      endpoint: "",
+      endpoint: "https://axiombackend-production-25d9.up.railway.app/api/chat",
       welcome:
         "Olá! Sou o assistente comercial da AXIOM. Posso apresentar nossos serviços, explicar soluções de dados e IA, ou encaminhar seu contato.",
     },
