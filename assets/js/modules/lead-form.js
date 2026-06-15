@@ -9,6 +9,43 @@
   let toastEl = null;
   let toastTimer = null;
 
+  function getChoiceValues(form, fieldName) {
+    if (typeof window.AXIOM?.getChoiceValues === "function") {
+      return window.AXIOM.getChoiceValues(form, fieldName);
+    }
+    const container = form.querySelector(`[data-choice-cards][data-field="${fieldName}"]`);
+    if (!container) return [];
+    return Array.from(container.querySelectorAll(".choice-card.is-selected")).map(
+      (card) => card.dataset.value || card.querySelector('input[type="checkbox"]')?.value || ""
+    );
+  }
+
+  /** Payload alinhado ao LeadRequest em axiom_backend/main.py */
+  function buildPayload(form, choices, choiceField) {
+    const payload = {
+      nome: form.querySelector("[name='nome']")?.value?.trim() || "",
+      email: form.querySelector("[name='email']")?.value?.trim() || "",
+      telefone: form.querySelector("[name='telefone']")?.value?.trim() || "",
+      empresa: form.querySelector("[name='empresa']")?.value?.trim() || "",
+      origem: form.dataset.origem || "strategic-intelligence",
+    };
+
+    const mensagem = form.querySelector("[name='mensagem']")?.value?.trim();
+    if (mensagem) payload.mensagem = mensagem;
+
+    if (choiceField === "servicos") {
+      payload.servicos = choices;
+    } else {
+      payload.interesse = choices;
+    }
+
+    // Vincula ao histórico de chat da mesma sessão
+    const sessionId = sessionStorage.getItem("axiom-session-id");
+    if (sessionId) payload.session_id = sessionId;
+
+    return payload;
+  }
+
   function countProgress(form) {
     const fields = form.querySelectorAll(
       ".axiom-field__input[required], .axiom-field__textarea[required]"
@@ -78,9 +115,14 @@
 
   function setButtonState(btn, state) {
     if (!btn) return;
-    btn.classList.remove("is-loading", "is-success", "is-error");
+    btn.classList.remove("is-loading", "is-success", "is-error", "is-pressed");
     if (state) btn.classList.add(state);
     btn.disabled = state === "is-loading";
+  }
+
+  function flashButton(btn, state, duration = 1400) {
+    setButtonState(btn, state);
+    setTimeout(() => setButtonState(btn, null), duration);
   }
 
   function getToast() {
@@ -119,20 +161,13 @@
     }, 4200);
   }
 
-  function preserveScroll(action) {
-    const scrollY = window.scrollY;
-    const result = action();
-    if (result && typeof result.then === "function") {
-      return result.finally(() => {
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
-        });
-      });
+  function parseApiError(data) {
+    const detail = data?.detail;
+    if (typeof detail === "string") return detail;
+    if (Array.isArray(detail)) {
+      return detail.map((item) => item.msg || item).join(". ");
     }
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
-    });
-    return result;
+    return data?.error || data?.message || "Falha ao enviar formulário";
   }
 
   function bindForm(form) {
@@ -140,15 +175,37 @@
     form.addEventListener("choicechange", () => updateProgress(form));
     updateProgress(form);
 
+    const submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) {
+      submitBtn.addEventListener("mousedown", () => {
+        if (!submitBtn.disabled) submitBtn.classList.add("is-pressed");
+      });
+      submitBtn.addEventListener("mouseup", () => {
+        submitBtn.classList.remove("is-pressed");
+      });
+      submitBtn.addEventListener("mouseleave", () => {
+        submitBtn.classList.remove("is-pressed");
+      });
+    }
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
       const scrollY = window.scrollY;
       const choiceField = form.dataset.choiceField || "interesse";
-      const choices = window.AXIOM?.getChoiceValues?.(form, choiceField) || [];
+      const choices = getChoiceValues(form, choiceField);
       const minChoices = Number(form.dataset.choiceMin || 0);
+      const isHp = form.classList.contains("axiom-form--hp");
+      const accent = isHp ? "hp" : "strategic";
 
       clearChoiceErrors(form);
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        flashButton(submitBtn, "is-error", 900);
+        window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+        return;
+      }
 
       if (minChoices > 0 && choices.length < minChoices) {
         showChoiceError(
@@ -156,6 +213,7 @@
           choiceField,
           `Selecione pelo menos ${minChoices} opção${minChoices > 1 ? "ões" : ""}.`
         );
+        flashButton(submitBtn, "is-error", 1200);
         window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
         return;
       }
@@ -165,24 +223,11 @@
         window.AXIOM?.leadForm?.endpoint ||
         "";
 
-      const payload = {
-        nome: form.querySelector("#nome, [name='nome']")?.value?.trim(),
-        email: form.querySelector("#email, [name='email']")?.value?.trim(),
-        telefone: form.querySelector("#telefone, [name='telefone']")?.value?.trim(),
-        empresa: form.querySelector("#empresa, [name='empresa']")?.value?.trim(),
-        mensagem: form.querySelector("#mensagem, [name='mensagem']")?.value?.trim(),
-        origem: form.dataset.origem || "strategic-intelligence",
-        interesse: choices,
-        servicos: choices,
-      };
-
-      const submitBtn = form.querySelector('[type="submit"]');
-      const isHp = form.classList.contains("axiom-form--hp");
-      const accent = isHp ? "hp" : "strategic";
+      const payload = buildPayload(form, choices, choiceField);
 
       if (!endpoint) {
         console.info("[AXIOM] leadForm: endpoint não configurado.", payload);
-        setButtonState(submitBtn, "is-success");
+        flashButton(submitBtn, "is-success", 1600);
         resetForm(form);
         showToast({
           title: "Solicitação registrada",
@@ -191,48 +236,47 @@
           accent,
         });
         window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
-        setTimeout(() => setButtonState(submitBtn, null), 1600);
         return;
       }
 
       setButtonState(submitBtn, "is-loading");
 
-      preserveScroll(
-        fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+        .then(async (response) => {
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || data.success === false) {
+            throw new Error(parseApiError(data));
+          }
+          return data;
         })
-          .then(async (response) => {
-            const data = await response.json().catch(() => ({}));
-            if (!response.ok || data.success === false) {
-              throw new Error(data.error || "Falha ao enviar formulário");
-            }
-            return data;
-          })
-          .then(() => {
-            setButtonState(submitBtn, "is-success");
-            resetForm(form);
-            showToast({
-              title: "Solicitação recebida",
-              text: "Obrigado pelo interesse. Nossa equipe entrará em contato em breve.",
-              type: "success",
-              accent,
-            });
-            setTimeout(() => setButtonState(submitBtn, null), 1800);
-          })
-          .catch((err) => {
-            console.error("[AXIOM] leadForm:", err);
-            setButtonState(submitBtn, "is-error");
-            showToast({
-              title: "Não foi possível enviar",
-              text: "Tente novamente em instantes ou fale com o assistente virtual.",
-              type: "error",
-              accent,
-            });
-            setTimeout(() => setButtonState(submitBtn, null), 2200);
-          })
-      );
+        .then(() => {
+          setButtonState(submitBtn, "is-success");
+          resetForm(form);
+          showToast({
+            title: "Solicitação recebida",
+            text: "Obrigado pelo interesse. Nossa equipe entrará em contato em breve.",
+            type: "success",
+            accent,
+          });
+          setTimeout(() => setButtonState(submitBtn, null), 1800);
+        })
+        .catch((err) => {
+          console.error("[AXIOM] leadForm:", err);
+          flashButton(submitBtn, "is-error", 2200);
+          showToast({
+            title: "Não foi possível enviar",
+            text: "Tente novamente em instantes ou fale com o assistente virtual.",
+            type: "error",
+            accent,
+          });
+        })
+        .finally(() => {
+          window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+        });
     });
   }
 
