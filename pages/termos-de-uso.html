@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos de Uso | AXIOM</title>
+<style>
+  :root {
+    --bg: #07080d;
+    --card: #0d0f18;
+    --border: #1a2035;
+    --orange: #f57b09;
+    --cyan: #06b6d4;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #475569;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 110px 24px 96px;
+  }
+  .back-button {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 50;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(13,15,24,0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 10px 18px 10px 14px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  }
+  .back-button:hover {
+    border-color: rgba(6,182,212,0.4);
+    color: var(--cyan);
+    background: rgba(6,182,212,0.07);
+    text-decoration: none;
+  }
+  .back-button svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  header.page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(6,182,212,0.08);
+    border: 1px solid rgba(6,182,212,0.2);
+    border-radius: 20px;
+    padding: 4px 16px;
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  h1 {
+    color: var(--text-primary);
+    font-size: 30px;
+    margin: 0 0 8px;
+  }
+  .meta {
+    color: var(--text-tertiary);
+    font-size: 13px;
+  }
+  h2 {
+    color: var(--text-primary);
+    font-size: 19px;
+    margin: 48px 0 16px;
+    padding-top: 8px;
+  }
+  h3 {
+    color: var(--text-primary);
+    font-size: 15px;
+    margin: 24px 0 8px;
+  }
+  p { margin: 0 0 16px; font-size: 15px; }
+  ul { margin: 0 0 16px; padding-left: 20px; }
+  li { margin-bottom: 8px; font-size: 15px; }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 48px;
+  }
+  .toc p { margin: 0 0 12px; color: var(--text-tertiary); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { font-size: 14px; margin-bottom: 6px; }
+  .toc a { color: var(--text-secondary); }
+  .toc a:hover { color: var(--cyan); }
+  footer.page-footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+<a href="../index.html" class="back-button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 12H5M12 19l-7-7 7-7"/>
+  </svg>
+  Voltar ao site
+</a>
+<div class="wrap">
+
+  <header class="page-header">
+    <span class="badge">Termos &amp; Condições</span>
+    <h1>Termos de Uso</h1>
+    <p class="meta">AXIOM Strategic · CNPJ: [a inserir] · Versão 1 · Última atualização: junho de 2026</p>
+  </header>
+
+  <div class="toc">
+    <p>Nesta página</p>
+    <ol>
+      <li><a href="#aceite">Aceite dos termos</a></li>
+      <li><a href="#servicos">Descrição dos serviços</a></li>
+      <li><a href="#assistente">Uso do assistente virtual (IA)</a></li>
+      <li><a href="#cadastro">Formulários e cadastro</a></li>
+      <li><a href="#obrigacoes">Obrigações do usuário</a></li>
+      <li><a href="#propriedade">Propriedade intelectual</a></li>
+      <li><a href="#limitacoes">Limitações de responsabilidade</a></li>
+      <li><a href="#contratacao">Contratação de serviços</a></li>
+      <li><a href="#privacidade-link">Privacidade e proteção de dados</a></li>
+      <li><a href="#lei">Lei aplicável e foro</a></li>
+      <li><a href="#alteracoes">Alterações destes termos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ol>
+  </div>
+
+  <h2 id="aceite">1. Aceite dos termos</h2>
+  <p>
+    Estes Termos de Uso regem o acesso e a utilização do site, do assistente virtual e dos formulários de contato da <strong style="color:var(--text-primary)">AXIOM Strategic</strong> ("AXIOM", "nós"), que opera sob duas frentes — <strong style="color:var(--orange)">AXIOM Strategic Intelligence</strong> e <strong style="color:var(--cyan)">AXIOM Human Performance</strong>.
+  </p>
+  <p>
+    Ao acessar nosso site ou interagir com qualquer um dos nossos canais digitais, você declara ter lido, compreendido e concordado com estes Termos. Caso não concorde com qualquer disposição aqui prevista, recomendamos que não utilize nossos serviços digitais.
+  </p>
+
+  <h2 id="servicos">2. Descrição dos serviços</h2>
+  <p>
+    O site da AXIOM tem caráter institucional e comercial, apresentando nossas soluções de desenvolvimento de KPIs, OKRs, automação, inteligência artificial e aplicações web (Strategic Intelligence), bem como diagnóstico psicossocial organizacional e treinamentos corporativos (Human Performance).
+  </p>
+  <p>
+    O conteúdo disponibilizado no site — incluindo textos, descrições de serviço e respostas do assistente virtual — tem finalidade informativa e comercial, não constituindo, por si só, prestação de serviço, consultoria formal, diagnóstico clínico ou parecer técnico vinculante.
+  </p>
+
+  <h2 id="assistente">3. Uso do assistente virtual (inteligência artificial)</h2>
+  <div class="card">
+    <p>
+      O assistente virtual da AXIOM utiliza modelos de inteligência artificial de terceiros (Groq, OpenAI e Anthropic) para gerar respostas automatizadas com base nas mensagens enviadas por você.
+    </p>
+  </div>
+  <p>Ao utilizar o assistente virtual, você reconhece que:</p>
+  <ul>
+    <li>As respostas são geradas automaticamente e podem eventualmente conter imprecisões;</li>
+    <li>O conteúdo das mensagens trocadas é registrado e pode ser analisado pela nossa equipe para fins de atendimento, elaboração de propostas comerciais e melhoria dos serviços, nos termos da nossa <a href="privacidade.html">Política de Privacidade</a>;</li>
+    <li>As respostas do assistente virtual não substituem orientação profissional individualizada, diagnóstico técnico formal ou parecer jurídico, contábil, psicológico ou de qualquer outra natureza regulamentada;</li>
+    <li>Informações sensíveis (dados financeiros completos, senhas, dados de saúde detalhados) não devem ser compartilhadas pelo chat.</li>
+  </ul>
+
+  <h2 id="cadastro">4. Formulários e cadastro</h2>
+  <p>
+    Ao preencher qualquer formulário disponível no site, você se compromete a fornecer informações verdadeiras, completas e atualizadas. O envio do formulário representa uma manifestação de interesse comercial e não configura, por si só, contratação formal de serviço — a relação contratual entre você (ou sua empresa) e a AXIOM somente se constitui mediante proposta comercial específica e formalização posterior (ex.: contrato assinado, ordem de serviço).
+  </p>
+
+  <h2 id="obrigacoes">5. Obrigações do usuário</h2>
+  <p>Ao utilizar nossos canais digitais, você se compromete a:</p>
+  <ul>
+    <li>Não utilizar o site, o assistente virtual ou os formulários para fins ilícitos, fraudulentos ou que violem direitos de terceiros;</li>
+    <li>Não tentar acessar, sem autorização, áreas restritas do sistema (como o painel interno de gestão);</li>
+    <li>Não enviar conteúdo difamatório, ofensivo, discriminatório ou que infrinja direitos de propriedade intelectual de terceiros através do chat ou formulários;</li>
+    <li>Não utilizar mecanismos automatizados (bots, scrapers) para extrair dados do site sem autorização prévia.</li>
+  </ul>
+
+  <h2 id="propriedade">6. Propriedade intelectual</h2>
+  <p>
+    Todo o conteúdo do site — incluindo textos, identidade visual, logotipo, layout, estrutura e materiais de apresentação — é de propriedade da AXIOM ou de seus respectivos titulares, protegido pela legislação de propriedade intelectual aplicável. É vedada a reprodução, distribuição ou utilização comercial desse conteúdo sem autorização expressa.
+  </p>
+
+  <h2 id="limitacoes">7. Limitações de responsabilidade</h2>
+  <p>
+    A AXIOM emprega esforços razoáveis para manter o site e o assistente virtual disponíveis e funcionando corretamente, mas não garante disponibilidade ininterrupta, ausência total de erros ou que os resultados obtidos por meio do assistente virtual atendam integralmente às expectativas do usuário.
+  </p>
+  <p>
+    A AXIOM não se responsabiliza por danos decorrentes de:
+  </p>
+  <ul>
+    <li>Indisponibilidade temporária do site ou dos serviços de terceiros (hospedagem, provedores de inteligência artificial, e-mail) dos quais dependemos tecnicamente;</li>
+    <li>Uso indevido das informações fornecidas pelo assistente virtual fora do contexto de uma relação contratual formalizada;</li>
+    <li>Informações incorretas ou desatualizadas fornecidas pelo próprio usuário em formulários.</li>
+  </ul>
+
+  <h2 id="contratacao">8. Contratação de serviços</h2>
+  <p>
+    Os serviços efetivamente contratados junto à AXIOM (desenvolvimento de soluções, diagnósticos, treinamentos) são regidos por contrato específico, com escopo, prazos, valores e condições próprias, definidos individualmente com cada cliente. Estes Termos de Uso aplicam-se à navegação e interação com o site institucional, e não substituem o instrumento contratual firmado para a prestação de serviços.
+  </p>
+
+  <h2 id="privacidade-link">9. Privacidade e proteção de dados</h2>
+  <p>
+    O tratamento de dados pessoais realizado pela AXIOM está descrito em detalhes em nossa <a href="privacidade.html">Política de Privacidade</a>, parte integrante destes Termos de Uso.
+  </p>
+
+  <h2 id="lei">10. Lei aplicável e foro</h2>
+  <p>
+    Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca de [a inserir — cidade/UF da sede da AXIOM] para a resolução de eventuais controvérsias, com renúncia a qualquer outro, por mais privilegiado que seja.
+  </p>
+
+  <h2 id="alteracoes">11. Alterações destes termos</h2>
+  <p>
+    Estes Termos de Uso poderão ser atualizados a qualquer momento, em razão de mudanças legais, evolução dos serviços oferecidos pela AXIOM ou adoção de novas tecnologias. A versão vigente estará sempre disponível nesta página.
+  </p>
+
+  <table>
+    <tr><th>Versão</th><th>Data da última atualização</th></tr>
+    <tr><td>1</td><td>Junho de 2026</td></tr>
+  </table>
+
+  <h2 id="contato">12. Contato</h2>
+  <div class="card">
+    <p><strong style="color:var(--text-primary)">E-mail de contato:</strong> <a href="mailto:contato@axiomstrategic.com.br">contato@axiomstrategic.com.br</a></p>
+  </div>
+
+  <footer class="page-footer">
+    <p>AXIOM Strategic · Todos os direitos reservados</p>
+  </footer>
+
+</div>
+</body>
+</html>
