@@ -630,6 +630,34 @@
         <form id="leadForm" class="axiom-form axiom-form--strategic reveal delay-1" data-lead-form
           data-choice-field="interesse" data-choice-min="1" data-origem="strategic-intelligence">
 
+          <fieldset class="axiom-form-block">
+            <legend class="axiom-form-block__legend">
+              <span class="axiom-form-block__num">04</span>
+              Consentimento
+            </legend>
+          
+            <label class="axiom-consent" style="display:flex; gap:10px; align-items:flex-start; margin-bottom:14px; cursor:pointer;">
+              <input type="checkbox" name="consentimento_dados" required style="margin-top:3px; accent-color:#06b6d4;">
+              <span style="font-size:13px; color:#94a3b8; line-height:1.5;">
+                <strong style="color:#e2e8f0;">Obrigatório.</strong> Declaro que li e concordo com a
+                <a href="pages/privacidade.html" style="color:#06b6d4;">Política de Privacidade</a> da AXIOM Strategic Intelligence
+                e autorizo o tratamento dos meus dados pessoais para análise da minha solicitação, contato comercial,
+                elaboração de propostas e prestação dos serviços solicitados.
+              </span>
+            </label>
+          
+            <label class="axiom-consent" style="display:flex; gap:10px; align-items:flex-start; cursor:pointer;">
+              <input type="checkbox" name="consentimento_marketing" style="margin-top:3px; accent-color:#06b6d4;">
+              <span style="font-size:13px; color:#94a3b8; line-height:1.5;">
+                <strong style="color:#e2e8f0;">Opcional.</strong> Desejo receber conteúdos, materiais educativos, pesquisas,
+                newsletters, convites para eventos, treinamentos, webinars e comunicações comerciais da AXIOM por e-mail,
+                WhatsApp ou outros canais informados por mim.
+              </span>
+            </label>
+          
+            <p class="choice-cards__feedback" data-consent-feedback hidden style="color:#ef4444; font-size:13px; margin-top:8px;"></p>
+          </fieldset>
+          
           <div class="axiom-form-body">
 
             <div class="axiom-form-progress" aria-hidden="true">
@@ -876,6 +904,7 @@
                 Desenvolvido por Axiom  Strategic Intelligence Ltda. 
                 <span style="display: inline-block; margin-left: 6px; color: rgba(255,255,255,0.35);">— Todos os direitos reservados.</span>
               </div>
+
               <a href="pages/privacidade.html" style="color:#94a3b8; text-decoration:none;">Política de Privacidade</a>
               <span style="color:#475569; margin: 0 8px;">·</span>
               <a href="pages/termos-de-uso.html" style="color:#94a3b8; text-decoration:none;">Termos de Uso</a>
