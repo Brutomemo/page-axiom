@@ -881,7 +881,36 @@
         <form id="hpLeadForm" class="axiom-form axiom-form--hp reveal delay-1" data-lead-form
         data-choice-field="servicos" data-choice-min="1" data-origem="human-performance">
 
-          <div class="axiom-form-body">
+        <fieldset class="axiom-form-block">
+          <legend class="axiom-form-block__legend">
+            <span class="axiom-form-block__num">04</span>
+            Consentimento
+          </legend>
+        
+          <label class="axiom-consent" style="display:flex; gap:10px; align-items:flex-start; margin-bottom:14px; cursor:pointer;">
+            <input type="checkbox" name="consentimento_dados" required style="margin-top:3px; accent-color:#06b6d4;">
+            <span style="font-size:13px; color:#94a3b8; line-height:1.5;">
+              <strong style="color:#e2e8f0;">Obrigatório.</strong> Declaro que li e concordo com a
+              <a href="privacidade.html" style="color:#06b6d4;">Política de Privacidade</a> da AXIOM e autorizo o tratamento
+              dos meus dados pessoais, incluindo dados relacionados à saúde ocupacional e ao contexto psicossocial da minha
+              organização (dados sensíveis nos termos do Art. 5º, II, da LGPD), para fins de elaboração do diagnóstico,
+              contato comercial e prestação dos serviços solicitados.
+            </span>
+          </label>
+        
+          <label class="axiom-consent" style="display:flex; gap:10px; align-items:flex-start; cursor:pointer;">
+            <input type="checkbox" name="consentimento_marketing" style="margin-top:3px; accent-color:#06b6d4;">
+            <span style="font-size:13px; color:#94a3b8; line-height:1.5;">
+              <strong style="color:#e2e8f0;">Opcional.</strong> Desejo receber conteúdos, materiais educativos, pesquisas,
+              newsletters, convites para eventos, treinamentos, webinars e comunicações comerciais da AXIOM por e-mail,
+              WhatsApp ou outros canais informados por mim.
+            </span>
+          </label>
+        
+          <p class="choice-cards__feedback" data-consent-feedback hidden style="color:#ef4444; font-size:13px; margin-top:8px;"></p>
+        </fieldset>  
+        
+        <div class="axiom-form-body">
 
             <div class="axiom-form-progress" aria-hidden="true">
               <div class="axiom-form-progress__bar"></div>
