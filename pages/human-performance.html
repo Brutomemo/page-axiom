@@ -114,28 +114,36 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    /* ── Corrige coluna única na dobra empresa ── */
-    #empresa .slide-container {
+    /* ── Corrige coluna única na dobra empresa / serviços ── */
+    #empresa .slide-container,
+    #servicos .slide-container {
       display: block !important;
       grid-template-columns: unset !important;
       columns: unset !important;
     }
     .hp-empresa-content,
-    #empresa .hp-empresa-content {
+    #empresa .hp-empresa-content,
+    #servicos .hp-empresa-content {
       width: 100% !important;
       max-width: none !important;
       float: none !important;
       display: block !important;
       flex: unset !important;
       grid-column: 1 / -1 !important;
-      column-count: unset !important;
-      columns: unset !important;
+      column-count: 1 !important;
+      columns: 1 !important;
       box-sizing: border-box !important;
     }
-    #empresa .slide-container > * {
+    #empresa .slide-container > *,
+    #servicos .slide-container > * {
       width: 100% !important;
       max-width: none !important;
       grid-column: 1 / -1 !important;
+    }
+    #empresa .hp-empresa-content .body-text,
+    #servicos .hp-empresa-content .body-text {
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     /* ── Chatbot — última dobra (#assistente-hp) — espelha index.html #assistente ── */
@@ -350,8 +358,7 @@
             <img class="hero-bg-image" alt="Performance humana AXIOM"
               src="../assets/images/Inteligencia-artificial.jpg" />
             <div class="hero-visual-scanline"></div>
-            <div class="hero-tech-overlay">
-              <div class="hero-cam-badge">METRICS [LIVE]</div>
+            <div class="hero-tech-overlay">              
               <div class="hero-data-panel">
                 <h4>Teams <span class="pulse-dot"></span></h4>
                 <div class="hero-bar-row"><span>ENGAGEMENT</span><span>87%</span></div>
@@ -403,7 +410,7 @@
         <h3 class="reveal">Saúde <span class="gradient-text">Mental, Prevenção e Conformidade Organizacional</span></h3>
         <div class="divider reveal"></div>
 
-        <div class="hp-empresa-content mt-xl" style="width: 100%; max-width: none; float: none; display: block; box-sizing: border-box; columns: unset; column-count: unset;">
+        <div class="hp-empresa-content mt-xl">
           <h4 class="reveal">A Realidade</h4>
           <p class="body-text reveal delay-1">
             As organizações enfrentam um cenário cada vez mais  <strong class="hp-highlight">desafiador, </strong>marcado pelo aumento dos afastamentos relacionados à saúde mental, crescimento dos <strong class="hp-highlight">
