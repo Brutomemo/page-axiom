@@ -141,9 +141,52 @@
       grid-column: 1 / -1 !important;
     }
     #empresa .hp-empresa-content .body-text,
-    #servicos .hp-empresa-content .body-text {
+    #servicos .hp-empresa-content .body-text,
+    #servicos .hp-realidade-text .body-text {
       text-align: justify;
       text-justify: inter-word;
+    }
+
+    /* ── A Realidade — texto + imagem lado a lado ── */
+    #servicos .hp-realidade-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 48px;
+      align-items: stretch;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #servicos .hp-realidade-text {
+      min-width: 0;
+    }
+    #servicos .hp-realidade-visual {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 100%;
+      align-self: stretch;
+    }
+    #servicos .hp-realidade-visual .hero-visual-module {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+    }
+    #servicos .hp-realidade-visual .hero-bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 968px) {
+      #servicos .hp-realidade-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      #servicos .hp-realidade-visual .hero-visual-module {
+        min-height: 280px;
+      }
+    }
+    #servicos .hp-empresa-content .hp-empresa-subtitle {
+      margin-top: 48px;
     }
 
     /* ── Chatbot — última dobra (#assistente-hp) — espelha index.html #assistente ── */
@@ -346,19 +389,19 @@
               <span class="badge">⬡ SAÚDE MENTAL</span>
               <span class="badge">⬡ DESEMPENHO</span>
             </div>
-
+            
             <div class="hero-cta-group reveal delay-3"
               style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; margin: 40px 0;">
               <a href="#servicos" class="btn btn-primary">CONHECER SERVIÇOS</a>
               <a href="#contato-hp" class="btn btn-secondary">CONTATO</a>
             </div>
           </div>
-
+<!-- IMAGEM DESTAQUE HUMAN PERFORMANCE-->
           <div class="hero-visual-module">
             <img class="hero-bg-image" alt="Performance humana AXIOM"
               src="../assets/images/Inteligencia-artificial.jpg" />
             <div class="hero-visual-scanline"></div>
-            <div class="hero-tech-overlay">              
+            <div class="hero-tech-overlay">           
               
             </div>
           </div>
@@ -403,23 +446,36 @@
         <h3 class="reveal">Saúde <span class="gradient-text">Mental, Prevenção e Conformidade Organizacional</span></h3>
         <div class="divider reveal"></div>
 
-        <div class="hp-empresa-content mt-xl">
-          <h4 class="reveal">A Realidade</h4>
-          <p class="body-text reveal delay-1">
-            As organizações enfrentam um cenário cada vez mais  <strong class="hp-highlight">desafiador, </strong>marcado pelo aumento dos afastamentos relacionados à saúde mental, crescimento dos <strong class="hp-highlight">
-            riscos psicossociais </strong> Ge maior exigência regulatória quanto à proteção dos trabalhadores.
-          </p>
-          <p class="body-text reveal delay-2">
-            Com as atualizações da NR-1, os fatores psicossociais passaram a <strong class="hp-highlight">integrar a gestão dos riscos ocupacionais, </strong>exigindo das empresas uma 
-            <strong class="hp-highlight">abordagem estruturada </strong>apara identificação, avaliação e controle desses fatores.
-          </p>
-          <p class="body-text reveal delay-3">
-            A Axiom Human Performance oferece <strong class="hp-highlight">soluções especializadas em Psicologia Organizacional e do Trabalho, </strong>combinando <strong
-              class="hp-highlight">ciência, análise de dados</strong> e estratégias de desenvolvimento humano para transformar a gestão da saúde mental em um diferencial competitivo. Nosso trabalho vai além da conformidade legal. Atuamos para  <strong
-              class="hp-highlight">fortalecer a saúde psicológica das equipes, reduzir fatores de risco organizacionais e criar ambientes que favoreçam o desempenho sustentável, o engajamento e a produtividade.</strong>
-          </p>
+        <div class="hp-realidade-layout mt-xl">
+          <div class="hp-realidade-text">
+            <h4 class="reveal">A Realidade</h4>
+            <p class="body-text reveal delay-1">
+              As organizações enfrentam um cenário cada vez mais  <strong class="hp-highlight">desafiador, </strong>marcado pelo aumento dos afastamentos relacionados à saúde mental, crescimento dos <strong class="hp-highlight">
+              riscos psicossociais </strong> Ge maior exigência regulatória quanto à proteção dos trabalhadores.
+            </p>
+            <p class="body-text reveal delay-2">
+              Com as atualizações da NR-1, os fatores psicossociais passaram a <strong class="hp-highlight">integrar a gestão dos riscos ocupacionais, </strong>exigindo das empresas uma 
+              <strong class="hp-highlight">abordagem estruturada </strong>apara identificação, avaliação e controle desses fatores.
+            </p>
+            <p class="body-text reveal delay-3">
+              A Axiom Human Performance oferece <strong class="hp-highlight">soluções especializadas em Psicologia Organizacional e do Trabalho, </strong>combinando <strong
+                class="hp-highlight">ciência, análise de dados</strong> e estratégias de desenvolvimento humano para transformar a gestão da saúde mental em um diferencial competitivo. Nosso trabalho vai além da conformidade legal. Atuamos para  <strong
+                class="hp-highlight">fortalecer a saúde psicológica das equipes, reduzir fatores de risco organizacionais e criar ambientes que favoreçam o desempenho sustentável, o engajamento e a produtividade.</strong>
+            </p>
+          </div>
 
-          <h4 class="reveal hp-empresa-subtitle">O Que Entregamos</h4>
+          <div class="hp-realidade-visual reveal delay-2">
+            <div class="hero-visual-module">
+              <img class="hero-bg-image" alt="Performance humana AXIOM"
+                src="../assets/images/Inteligencia-artificial.jpg" />
+              <div class="hero-visual-scanline"></div>
+              <div class="hero-tech-overlay">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hp-empresa-content">
 
           <div class="step-list reveal delay-1">
           <div class="step-item"
