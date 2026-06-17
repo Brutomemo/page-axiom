@@ -101,6 +101,96 @@
         order: 1;
       }
     }
+
+    /* ── Diferencial — efeitos nas caixas de texto ── */
+    #diferencial .hp-pillar-card {
+      padding: 20px 24px;
+      border-radius: 0 4px 4px 0;
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+    }
+    #diferencial .hp-pillar-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    #diferencial .hp-pillar-card:hover {
+      transform: translateX(4px);
+    }
+    #diferencial .hp-pillar-card:hover::after {
+      opacity: 1;
+    }
+    #diferencial .hp-pillar-card--psy {
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      border-left: 3px solid #3b82f6;
+      background: rgba(59, 130, 246, 0.05);
+    }
+    #diferencial .hp-pillar-card--psy:hover {
+      background: rgba(59, 130, 246, 0.10);
+      border-color: rgba(59, 130, 246, 0.35);
+      box-shadow: 0 6px 22px rgba(59, 130, 246, 0.14);
+    }
+    #diferencial .hp-pillar-card--intel {
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      border-left: 3px solid #06b6d4;
+      background: rgba(6, 182, 212, 0.05);
+    }
+    #diferencial .hp-pillar-card--intel:hover {
+      background: rgba(6, 182, 212, 0.10);
+      border-color: rgba(6, 182, 212, 0.35);
+      box-shadow: 0 6px 22px rgba(6, 182, 212, 0.14);
+    }
+    #diferencial .hp-pillar-card--data {
+      border: 1px solid rgba(250, 204, 21, 0.15);
+      border-left: 3px solid rgba(250, 204, 21, 0.7);
+      background: rgba(250, 204, 21, 0.03);
+    }
+    #diferencial .hp-pillar-card--data:hover {
+      background: rgba(250, 204, 21, 0.07);
+      border-color: rgba(250, 204, 21, 0.35);
+      box-shadow: 0 6px 22px rgba(250, 204, 21, 0.10);
+    }
+    #diferencial .hp-pillar-card--human {
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      border-left: 3px solid rgba(99, 179, 237, 0.7);
+      background: rgba(99, 179, 237, 0.04);
+    }
+    #diferencial .hp-pillar-card--human:hover {
+      background: rgba(99, 179, 237, 0.09);
+      border-color: rgba(99, 179, 237, 0.35);
+      box-shadow: 0 6px 22px rgba(99, 179, 237, 0.12);
+    }
+    #diferencial .hp-pillar-card__title {
+      margin: 0 0 4px;
+      font-family: var(--font-hd);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    #diferencial .hp-pillar-card__desc {
+      margin: 0;
+      font-size: 0.82rem;
+      color: rgba(240, 240, 248, 0.9);
+      line-height: 1.5;
+    }
+    #diferencial .hp-impact-card {
+      backdrop-filter: blur(10px);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, transform 0.3s ease;
+    }
+    #diferencial .hp-impact-card:hover {
+      border-color: rgba(6, 182, 212, 0.32) !important;
+      background: linear-gradient(135deg, rgba(10, 12, 18, 0.94), rgba(6, 182, 212, 0.07)) !important;
+      box-shadow: 0 0 48px rgba(6, 182, 212, 0.10);
+      transform: translateY(-2px);
+    }
     .hp-highlight {
       background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 55%, #facc15 100%);
       -webkit-background-clip: text;
@@ -841,17 +931,17 @@
 
           <!-- coluna esquerda — texto -->
           <div style="display:flex;flex-direction:column;gap:24px;">
-            <p class="body-text" style="line-height:1.85;margin:0;">
+            <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;">
               A Axiom Human Performance integra conhecimentos de
               <strong class="hp-highlight">Psicologia Organizacional, Desenvolvimento Humano, Inteligência Estratégica e Análise de Dados</strong>
               para oferecer soluções baseadas em evidências.
             </p>
-            <p class="body-text" style="line-height:1.85;margin:0;">
+            <p class="body-text reveal delay-2" style="line-height:1.85;margin:0;">
               Nossa abordagem une <strong class="hp-highlight">avaliação técnica, indicadores objetivos e intervenções direcionadas,</strong>
               permitindo que decisões relacionadas à saúde mental sejam conduzidas com maior
               precisão, segurança e impacto organizacional.
             </p>
-            <p class="body-text" style="line-height:1.85;margin:0;">
+            <p class="body-text reveal delay-3" style="line-height:1.85;margin:0;">
               Mais do que atender exigências regulatórias, ajudamos empresas a desenvolver
               ambientes de trabalho capazes de <strong class="hp-highlight">potencializar o desempenho humano,
               reduzir riscos e gerar resultados sustentáveis.</strong>
@@ -861,31 +951,31 @@
           <!-- coluna direita — 4 pilares do diferencial -->
           <div style="display:flex;flex-direction:column;gap:16px;">
 
-            <div style="padding:20px 24px;border:1px solid rgba(6,182,212,0.15);border-left:3px solid #3b82f6;background:rgba(59,130,246,0.05);border-radius:0 4px 4px 0;">
-              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#3b82f6;">Psicologia Organizacional</p>
-              <p style="margin:0;font-size:0.82rem;color:rgba(240, 240, 248, 0.9);line-height:1.5;">Diagnóstico e intervenção clínica aplicada ao contexto corporativo</p>
+            <div class="hp-pillar-card hp-pillar-card--psy reveal delay-1">
+              <p class="hp-pillar-card__title" style="color:#3b82f6;">Psicologia Organizacional</p>
+              <p class="hp-pillar-card__desc">Diagnóstico e intervenção clínica aplicada ao contexto corporativo</p>
             </div>
 
-            <div style="padding:20px 24px;border:1px solid rgba(6,182,212,0.15);border-left:3px solid #06b6d4;background:rgba(6,182,212,0.05);border-radius:0 4px 4px 0;">
-              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#06b6d4;">Inteligência Estratégica</p>
-              <p style="margin:0;font-size:0.82rem;color:rgba(240, 240, 248, 0.9);line-height:1.5;">Análise de cenários, riscos e tomada de decisão orientada por dados</p>
+            <div class="hp-pillar-card hp-pillar-card--intel reveal delay-2">
+              <p class="hp-pillar-card__title" style="color:#06b6d4;">Inteligência Estratégica</p>
+              <p class="hp-pillar-card__desc">Análise de cenários, riscos e tomada de decisão orientada por dados</p>
             </div>
 
-            <div style="padding:20px 24px;border:1px solid rgba(250,204,21,0.15);border-left:3px solid rgba(250,204,21,0.7);background:rgba(250,204,21,0.03);border-radius:0 4px 4px 0;">
-              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,204,21,0.85);">Análise de Dados</p>
-              <p style="margin:0;font-size:0.82rem;color:rgba(240, 240, 248, 0.9);line-height:1.5;">Indicadores objetivos que transformam percepção em evidência mensurável</p>
+            <div class="hp-pillar-card hp-pillar-card--data reveal delay-3">
+              <p class="hp-pillar-card__title" style="color:rgba(250,204,21,0.85);">Análise de Dados</p>
+              <p class="hp-pillar-card__desc">Indicadores objetivos que transformam percepção em evidência mensurável</p>
             </div>
 
-            <div style="padding:20px 24px;border:1px solid rgba(6,182,212,0.15);border-left:3px solid rgba(99,179,237,0.7);background:rgba(99,179,237,0.04);border-radius:0 4px 4px 0;">
-              <p style="margin:0 0 4px;font-family:var(--font-hd);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,179,237,0.9);">Desenvolvimento Humano</p>
-              <p style="margin:0;font-size:0.82rem;color:rgba(240, 240, 248, 0.9);line-height:1.5;">Capacitação de líderes e equipes para ambientes psicologicamente seguros</p>
+            <div class="hp-pillar-card hp-pillar-card--human reveal delay-4">
+              <p class="hp-pillar-card__title" style="color:rgba(99,179,237,0.9);">Desenvolvimento Humano</p>
+              <p class="hp-pillar-card__desc">Capacitação de líderes e equipes para ambientes psicologicamente seguros</p>
             </div>
 
           </div>
         </div>
 
         <!-- frase de impacto / CTA -->
-        <div class="reveal delay-2" style="margin-top:64px;padding:48px;border:1px solid rgba(6,182,212,0.18);border-radius:4px;background:linear-gradient(135deg,rgba(10,12,18,0.9),rgba(6,182,212,0.04));position:relative;overflow:hidden;text-align:center;">
+        <div class="hp-impact-card reveal delay-2" style="margin-top:64px;padding:48px;border:1px solid rgba(6,182,212,0.18);border-radius:4px;background:linear-gradient(135deg,rgba(10,12,18,0.9),rgba(6,182,212,0.04));position:relative;overflow:hidden;text-align:center;">
 
           <!-- linha de brilho topo -->
           <div aria-hidden="true" style="position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,0.6),transparent);"></div>
