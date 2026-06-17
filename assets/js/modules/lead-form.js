@@ -28,6 +28,8 @@
       telefone: form.querySelector("[name='telefone']")?.value?.trim() || "",
       empresa: form.querySelector("[name='empresa']")?.value?.trim() || "",
       origem: form.dataset.origem || "strategic-intelligence",
+      consentimento_dados: form.querySelector("[name='consentimento_dados']")?.checked || false,
+      consentimento_marketing: form.querySelector("[name='consentimento_marketing']")?.checked || false,    
     };
 
     const mensagem = form.querySelector("[name='mensagem']")?.value?.trim();
@@ -45,6 +47,7 @@
 
     return payload;
   }
+  
 
   function countProgress(form) {
     const fields = form.querySelectorAll(
@@ -213,7 +216,19 @@
           choiceField,
           `Selecione pelo menos ${minChoices} opção${minChoices > 1 ? "ões" : ""}.`
         );
-        flashButton(submitBtn, "is-error", 1200);
+        window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+        return;
+      }
+
+      const consentimentoDados = form.querySelector("[name='consentimento_dados']");
+      const consentFeedback = form.querySelector("[data-consent-feedback]");
+
+      if (consentimentoDados && !consentimentoDados.checked) {
+        if (consentFeedback) {
+          consentFeedback.hidden = false;
+          consentFeedback.textContent = "É necessário aceitar o tratamento de dados para continuar.";
+        }
+        flashButton(submitBtn, "is-error", 900);
         window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
         return;
       }
