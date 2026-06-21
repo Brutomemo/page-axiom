@@ -1005,51 +1005,16 @@
             </div>
             <div class="contato-status-line"></div>
           </div>
+
           <h3 class="reveal">Assistente <span class="gradient-text">Axiom</span></h3>
           <p class="body-text reveal delay-1" style="margin-top: 16px; max-width: 640px; text-align: center; margin-left: auto; margin-right: auto;">
-            Tire suas dúvidas sobre nossos serviços.
-          </p>  
-          
-          <div class="chatbot reveal delay-2" id="axiom-chatbot"
-            data-chatbot-endpoint=""
-            data-chatbot-welcome="Olá! Sou o assistente comercial da AXIOM. Posso te apresentar nossos serviços, entender suas necessidades e esclarecer dúvidas. Como posso ajudar?">
+            Tire suas dúvidas sobre nossos serviços a qualquer momento — o assistente AXIOM está sempre disponível no canto da tela.
+          </p>
 
-            <header class="chatbot-header">
-              <div class="chatbot-header-info">
-                <span class="chatbot-avatar" aria-hidden="true">⬡</span>
-                <div>
-                  <h4 class="chatbot-title">AXIOM ASSISTENTE</h4>
-                  <span class="chatbot-status">Online</span>
-                </div>
-              </div>
-            </header>
-
-            <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"
-              aria-label="Histórico de mensagens do assistente comercial">
-            </div>
-
-            <div class="chatbot-suggestions" id="chatbot-suggestions" aria-label="Sugestões rápidas">
-              <button type="button" class="chatbot-suggestion"
-                data-prompt="Quais serviços a AXIOM oferece?">Serviços</button>
-              <button type="button" class="chatbot-suggestion"
-                data-prompt="Como funciona o diagnóstico estratégico?">Diagnóstico</button>
-              <button type="button" class="chatbot-suggestion"
-                data-prompt="Quero solicitar um orçamento">Orçamento</button>
-              <button type="button" class="chatbot-suggestion"
-                data-prompt="Falar com um consultor humano">Análise de Dados</button>
-            </div>
-
-            <form class="chatbot-form" id="chatbot-form">
-              <label for="chatbot-input" class="sr-only">Digite sua mensagem</label>
-              <input type="text" class="chatbot-input" id="chatbot-input" name="message"
-                placeholder="Digite sua mensagem..." autocomplete="off" required />
-              <button type="submit" class="chatbot-send btn btn-primary">Enviar</button>
-            </form>
-            <p class="chatbot-footer">
-            </p>
-          </div>
+          <button type="button" class="btn btn-primary reveal delay-2" id="chatbot-cta" style="margin-top: 24px;">
+            Iniciar conversa
+          </button>
           <hr style="border:none; height:1px; background:linear-gradient(to right, transparent, rgba(255,174,66,0.6), transparent); margin-top:18px; margin-bottom:12px;">
-          
           
           <!-- ═══════════════════════════════════════════════════════════
                RODAPÉ ATUALIZADO (ENTRA AQUI)
@@ -1084,9 +1049,63 @@
     </section>
   </main>
 
+
+  <!-- ═══════════════════════════════════════════════════════════
+     CHATBOT FLUTUANTE — disponível em toda a navegação
+═══════════════════════════════════════════════════════════ -->
+<div class="chatbot-widget" id="chatbot-widget">
+
+  <button type="button" class="chatbot-fab" id="chatbot-fab" aria-expanded="false" aria-controls="axiom-chatbot" aria-label="Abrir assistente AXIOM">
+    <span class="chatbot-fab-icon chatbot-fab-icon--open" aria-hidden="true">⬡</span>
+    <span class="chatbot-fab-icon chatbot-fab-icon--close" aria-hidden="true">✕</span>
+    <span class="chatbot-fab-pulse" aria-hidden="true"></span>
+  </button>
+
+  <div class="chatbot chatbot-panel" id="axiom-chatbot"
+    data-chatbot-endpoint=""
+    data-chatbot-welcome="Olá! Sou o assistente comercial da AXIOM. Posso te apresentar nossos serviços, entender suas necessidades e esclarecer dúvidas. Como posso ajudar?">
+
+    <header class="chatbot-header">
+      <div class="chatbot-header-info">
+        <span class="chatbot-avatar" aria-hidden="true">⬡</span>
+        <div>
+          <h4 class="chatbot-title">AXIOM ASSISTENTE</h4>
+          <span class="chatbot-status">Online</span>
+        </div>
+      </div>
+      <button type="button" class="chatbot-close" id="chatbot-close" aria-label="Fechar assistente">✕</button>
+    </header>
+
+    <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite"
+      aria-label="Histórico de mensagens do assistente comercial">
+    </div>
+
+    <div class="chatbot-suggestions" id="chatbot-suggestions" aria-label="Sugestões rápidas">
+      <button type="button" class="chatbot-suggestion" data-prompt="Quais serviços a AXIOM oferece?">Serviços</button>
+      <button type="button" class="chatbot-suggestion" data-prompt="Como funciona o diagnóstico estratégico?">Diagnóstico</button>
+      <button type="button" class="chatbot-suggestion" data-prompt="Quero solicitar um orçamento">Orçamento</button>
+      <button type="button" class="chatbot-suggestion" data-prompt="Falar com um consultor humano">Análise de Dados</button>
+    </div>
+
+    <form class="chatbot-form" id="chatbot-form">
+      <label for="chatbot-input" class="sr-only">Digite sua mensagem</label>
+      <input type="text" class="chatbot-input" id="chatbot-input" name="message"
+        placeholder="Digite sua mensagem..." autocomplete="off" required />
+      <button type="submit" class="chatbot-send btn btn-primary">Enviar</button>
+    </form>
+    <p class="chatbot-footer"></p>
+  </div>
+
+</div>
+
   <!-- ═══════════════════════════════════════════════════════════
        JAVASCRIPT
   ═══════════════════════════════════════════════════════════ -->
+
+  
+
+
+
   <script src="assets/js/vendors/img-fallback.js" defer></script>
 
 
@@ -1095,6 +1114,7 @@
   <script src="assets/js/modules/nav-mobile.js" defer></script>
   <script src="assets/js/modules/scroll-ui.js" defer></script>
   <script src="assets/js/modules/chatbot.js" defer></script>
+  <script src="assets/js/modules/chatbot-toggle.js" defer></script>
   <script src="assets/js/modules/choice-cards.js" defer></script>
   <script src="assets/js/modules/lead-form.js" defer></script>
   <script src="assets/js/main.js" defer></script>
