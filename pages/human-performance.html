@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/20-forms.css" />
   <link rel="stylesheet" href="../assets/css/pages/human-performance.css" />
+  <link rel="stylesheet" href="../assets/css/19-chatbot.css" />
   <style>
     /* ── Menu mobile — painel e links ──────────────────────────────────
        Overrides sobre 03-navigation.css para melhorar legibilidade,
@@ -402,7 +403,7 @@
   </style>
 </head>
 
-<body class="page-human-performance" data-axiom-page="human-performance">
+<body data-axiom-page="human-performance" class="dark scroll-smooth">
 
   <!-- Background — Unicorn projeto alternativo (Human Performance) -->
   <div class="axiom-bg-layer" data-axiom-unicorn aria-hidden="true">
@@ -1276,6 +1277,87 @@
 
       <div class="slide-num mono">06 / 06</div>
     </section>
+
+<!-- ═══════════════════════════════════════════════════════════
+       AXIOM CHATBOT WIDGET (Flutuante + Modal)
+       ═══════════════════════════════════════════════════════════ -->
+       <div id="chatbot-widget" class="chatbot-widget">
+    
+        <!-- BOTÃO FLUTUANTE (FAB) — canto inferior direito -->
+        <button id="chatbot-fab" 
+                class="chatbot-fab" 
+                aria-label="Abrir assistente AXIOM"
+                aria-expanded="false">
+          <!-- Ícone de chat (aberto) -->
+          <svg class="chatbot-fab-icon chatbot-fab-icon--open" 
+               viewBox="0 0 24 24" 
+               style="width:24px; height:24px; fill:currentColor;">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+          </svg>
+          <!-- Ícone de fechar (X) -->
+          <svg class="chatbot-fab-icon chatbot-fab-icon--close" 
+               viewBox="0 0 24 24" 
+               style="width:24px; height:24px; fill:currentColor;">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+          </svg>
+          <!-- Pulso animado (indica que está online) -->
+          <div class="chatbot-fab-pulse"></div>
+        </button>
+    
+        <!-- PAINEL DO CHAT (abre ao clicar no FAB) -->
+        <div id="chatbot-panel" class="chatbot chatbot-panel">
+          
+          <!-- HEADER -->
+          <div class="chatbot-header">
+            <div class="chatbot-header-info">
+              <div class="chatbot-avatar">◯</div>
+              <div>
+                <h3 class="chatbot-title">AXIOM Assistente</h3>
+                <p class="chatbot-status">ONLINE</p>
+              </div>
+            </div>
+            <button id="chatbot-close" class="chatbot-close" aria-label="Fechar chat">✕</button>
+          </div>
+    
+          <!-- ÁREA DE MENSAGENS -->
+          <div id="chatbot-messages" class="chatbot-messages"></div>
+    
+          <!-- BOTÕES DE SUGESTÃO (Intent-driven adaptado para HP) -->
+          <div class="chatbot-suggestions">
+            <button class="chatbot-suggestion" 
+                    data-prompt="Qual é o diferencial do AXIOM Human Performance?">
+              Serviços
+            </button>
+            <button class="chatbot-suggestion" 
+                    data-prompt="Como funciona um diagnóstico de performance humana?">
+              Diagnóstico
+            </button>
+            <button class="chatbot-suggestion" 
+                    data-prompt="Gostaria de receber uma proposta">
+              Orçamento
+            </button>
+            <button class="chatbot-suggestion" 
+                    data-prompt="Qual a metodologia usada?">
+              Metodologia
+            </button>
+          </div>
+    
+          <!-- FORMULÁRIO DE ENTRADA -->
+          <form id="chatbot-form" class="chatbot-form">
+            <input id="chatbot-input" 
+                   class="chatbot-input" 
+                   type="text" 
+                   placeholder="Digite sua mensagem..."
+                   autocomplete="off">
+            <button type="submit" class="chatbot-send btn-primary">ENVIAR</button>
+          </form>
+    
+          <!-- RODAPÉ -->
+          <div class="chatbot-footer">Powered by AXIOM</div>
+        </div>
+      </div>
+
+
   </main>
 
   <script src="../assets/js/vendors/unicorn-loader.js" defer></script>
