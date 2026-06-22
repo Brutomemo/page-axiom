@@ -218,6 +218,50 @@
     #empresa .empresa-intro .body-text {
       text-align: justify;
     }
+
+    /* ── Marquee — faixa animada no final da primeira dobra ── */
+    .marquee-section {
+      width: 100%;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(201, 168, 76, 0.12);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+      overflow: hidden;
+      background: rgba(5, 5, 8, 0.45);
+    }
+    .marquee-track {
+      display: flex;
+      animation: marqueeScroll 30s linear infinite;
+      width: max-content;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 0 2.5rem;
+      white-space: nowrap;
+    }
+    .marquee-item span {
+      font-family: var(--font-hd);
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.45);
+      text-transform: uppercase;
+    }
+    .marquee-item .dot {
+      width: 4px;
+      height: 4px;
+      background: var(--clr-accent-primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (max-width: 768px) {
+      .marquee-item span { font-size: 0.85rem; letter-spacing: 0.15em; }
+      .marquee-item { gap: 1.5rem; padding: 0 1.5rem; }
+    }
   </style>
 </head>
 
@@ -349,6 +393,32 @@
 
       <div class="slide-num mono">01 / 05</div>
     </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          <span>Análise de Dados</span><div class="dot"></div>
+          <span>Inteligência Artificial</span><div class="dot"></div>
+          <span>Automação</span><div class="dot"></div>
+          <span>Inteligência Estratégica</span><div class="dot"></div>
+          <span>People Analytics</span><div class="dot"></div>
+          <span>Decisões Estratégicas</span><div class="dot"></div>
+          <span>Consultoria Executiva</span><div class="dot"></div>
+          <span>Transformação Digital</span><div class="dot"></div>
+        </div>
+        <div class="marquee-item">
+          <span>Análise de Dados</span><div class="dot"></div>
+          <span>Inteligência Artificial</span><div class="dot"></div>
+          <span>Automação</span><div class="dot"></div>
+          <span>Inteligência Estratégica</span><div class="dot"></div>
+          <span>People Analytics</span><div class="dot"></div>
+          <span>Decisões Estratégicas</span><div class="dot"></div>
+          <span>Consultoria Executiva</span><div class="dot"></div>
+          <span>Transformação Digital</span><div class="dot"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- ───────────────────────────────────────────────────────
          EMPRESA
