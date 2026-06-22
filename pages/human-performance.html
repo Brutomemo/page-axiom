@@ -88,20 +88,6 @@
     #diferencial .slide-container {
       display: block !important;
     }
-    #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] {
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (max-width: 768px) {
-      #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-      }
-      #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] > div:first-child {
-        order: 2;
-      }
-      #diferencial .slide-container > div[style*="grid-template-columns:1fr 1fr"] > div:last-child {
-        order: 1;
-      }
-    }
 
     /* ── Diferencial — efeitos nas caixas de texto ── */
     #diferencial .hp-pillar-card {
@@ -926,80 +912,74 @@
         <h3 class="reveal">Nosso <span class="gradient-text">Diferencial</span></h3>
         <div class="divider reveal"></div>
 
-        <!-- bloco principal dois painéis -->
-        <div class="reveal delay-1" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;align-items:start;">
-          <div style="display:flex;flex-direction:column;gap:24px;">
-            <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
-              Nem todos os problemas organizacionais são visíveis em relatórios, pesquisas de clima ou indicadores de absenteísmo. 
-              Muitas vezes, os sinais aparecem primeiro no
-              <strong class="hp-highlight">comportamento das equipes,</strong>
-              nas falhas de comunicação, nos conflitos recorrentes, no aumento da pressão operacional 
-              e na deterioração gradual do ambiente de trabalho.
-            </p>
-             <div style="display:flex;flex-direction:column;gap:24px;">
-                <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
-                  Nossa atuação foi construída estudando e gerenciando cenários onde fatores humanos, riscos e
-                  <strong class="hp-highlight">tomada de decisão</strong>
-                  possuem impacto direto sobre os resultados.
-                </p>          
-              </div>
-              <div style="display:flex;flex-direction:column;gap:24px;">
-                <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
-                  Essa experiência nos permite analisar organizações de forma sistêmica, identificando não apenas os sintomas, mas também as
-                  <strong class="hp-highlight">causas estruturais</strong>
-                  que afetam a saúde mental, a produtividade e o desempenho coletivo.
-                </p>       
-              </div>
-            </div>
-          <div style="display:flex;flex-direction:column;gap:24px;">
-            <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
-              A maioria das abordagens em saúde mental organizacional concentra-se exclusivamente em
-              <strong class="hp-highlight">conformidade regulatória</strong>
-              ou em ações isoladas de bem-estar.
-            </p>
-          <div style="display:flex;flex-direction:column;gap:24px;">
-            <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
-              A AXIOM Human Performance adota uma perspectiva mais ampla: integra
-              <strong class="hp-highlight">Psicologia Organizacional, Inteligência Estratégica, Desenvolvimento Humano e Análise de Dados</strong>
-              para compreender os fatores que impactam o desempenho, a segurança psicológica e a sustentabilidade dos resultados organizacionais.
-            </p>
-            <p class="body-text reveal delay-2" style="line-height:1.85;margin:0;text-align:justify;">
-              Nossa metodologia combina avaliação técnica, evidências científicas, 
-              indicadores objetivos e experiência prática na análise de cenários complexos, permitindo 
-              <strong class="hp-highlight">identificar riscos,</strong>
-              compreender causas sistêmicas e desenvolver intervenções com impacto mensurável. 
-            </p>
-            <p class="body-text reveal delay-3" style="line-height:1.85;margin:0;text-align:justify;">
-              Mais do que atender exigências regulatórias, ajudamos empresas a desenvolver
-              ambientes de trabalho capazes de <strong class="hp-highlight">potencializar o desempenho humano,
-              reduzir riscos e gerar resultados sustentáveis.</strong>
-            </p>
-          </div>
+        <!-- bloco principal — texto em coluna única -->
+        <div class="reveal delay-1" style="display:flex;flex-direction:column;gap:24px;margin-top:48px;width:100%;">
+          <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
+            Nem todos os problemas organizacionais são visíveis em relatórios, pesquisas de clima ou indicadores de absenteísmo.
+            Muitas vezes, os sinais aparecem primeiro no
+            <strong class="hp-highlight">comportamento das equipes,</strong>
+            nas falhas de comunicação, nos conflitos recorrentes, no aumento da pressão operacional
+            e na deterioração gradual do ambiente de trabalho.
+          </p>
+          <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
+            Nossa atuação foi construída estudando e gerenciando cenários onde fatores humanos, riscos e
+            <strong class="hp-highlight">tomada de decisão</strong>
+            possuem impacto direto sobre os resultados.
+          </p>
+          <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
+            Essa experiência nos permite analisar organizações de forma sistêmica, identificando não apenas os sintomas, mas também as
+            <strong class="hp-highlight">causas estruturais</strong>
+            que afetam a saúde mental, a produtividade e o desempenho coletivo.
+          </p>
+          <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
+            A maioria das abordagens em saúde mental organizacional concentra-se exclusivamente em
+            <strong class="hp-highlight">conformidade regulatória</strong>
+            ou em ações isoladas de bem-estar.
+          </p>
+          <p class="body-text reveal delay-1" style="line-height:1.85;margin:0;text-align:justify;">
+            A AXIOM Human Performance adota uma perspectiva mais ampla: integra
+            <strong class="hp-highlight">Psicologia Organizacional, Inteligência Estratégica, Desenvolvimento Humano e Análise de Dados</strong>
+            para compreender os fatores que impactam o desempenho, a segurança psicológica e a sustentabilidade dos resultados organizacionais.
+          </p>
+          <p class="body-text reveal delay-2" style="line-height:1.85;margin:0;text-align:justify;">
+            Nossa metodologia combina avaliação técnica, evidências científicas,
+            indicadores objetivos e experiência prática na análise de cenários complexos, permitindo
+            <strong class="hp-highlight">identificar riscos,</strong>
+            compreender causas sistêmicas e desenvolver intervenções com impacto mensurável.
+          </p>
+          <p class="body-text reveal delay-3" style="line-height:1.85;margin:0;text-align:justify;">
+            Mais do que atender exigências regulatórias, ajudamos empresas a desenvolver
+            ambientes de trabalho capazes de <strong class="hp-highlight">potencializar o desempenho humano,
+            </strong>reduzir riscos e gerar resultados sustentáveis.
+          </p>
+        </div>
 
-          <!-- coluna direita — 4 pilares do diferencial -->
-          <div style="display:flex;flex-direction:column;gap:16px;">
+        <!-- 4 pilares do diferencial -->
+        <div class="reveal delay-2" style="display:flex;flex-direction:column;gap:16px;margin-top:40px;width:100%;">
 
             <div class="hp-pillar-card hp-pillar-card--psy reveal delay-1">
               <p class="hp-pillar-card__title" style="color:#3b82f6;">Psicologia Organizacional</p>
-              <p class="hp-pillar-card__desc">Diagnóstico e intervenção clínica aplicada ao contexto corporativo</p>
+              <p class="hp-pillar-card__desc">Diagnóstico psicossocial, avaliação de riscos, saúde mental 
+              ocupacional e intervenções baseadas em evidências.</p>
             </div>
 
             <div class="hp-pillar-card hp-pillar-card--intel reveal delay-2">
               <p class="hp-pillar-card__title" style="color:#06b6d4;">Inteligência Estratégica</p>
-              <p class="hp-pillar-card__desc">Análise de cenários, riscos e tomada de decisão orientada por dados</p>
+              <p class="hp-pillar-card__desc">Análise sistêmica de cenários, identificação de riscos organizacionais e suporte à tomada de decisão.</p>
             </div>
 
             <div class="hp-pillar-card hp-pillar-card--data reveal delay-3">
               <p class="hp-pillar-card__title" style="color:rgba(250,204,21,0.85);">Análise de Dados</p>
-              <p class="hp-pillar-card__desc">Indicadores objetivos que transformam percepção em evidência mensurável</p>
+              <p class="hp-pillar-card__desc">Indicadores, dashboards e métricas que transformam 
+              percepções subjetivas em evidências mensuráveis.</p>
             </div>
 
             <div class="hp-pillar-card hp-pillar-card--human reveal delay-4">
               <p class="hp-pillar-card__title" style="color:rgba(99,179,237,0.9);">Desenvolvimento Humano</p>
-              <p class="hp-pillar-card__desc">Capacitação de líderes e equipes para ambientes psicologicamente seguros</p>
+              <p class="hp-pillar-card__desc">Capacitação de líderes e equipes para fortalecimento da cultura organizacional, 
+                segurança psicológica e alta performance sustentável.</p>
             </div>
 
-          </div>
         </div>
 
         <!-- frase de impacto / CTA -->
