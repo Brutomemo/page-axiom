@@ -102,6 +102,20 @@
       text-justify: inter-word;
     }
 
+    /* ── Diferencial — pilares em duas colunas ── */
+    #diferencial .hp-diferencial-pilares {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      #diferencial .hp-diferencial-pilares {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ── Diferencial — efeitos nas caixas de texto ── */
     #diferencial .hp-pillar-card {
       padding: 20px 24px;
@@ -968,7 +982,7 @@
         </div>
 
         <!-- 4 pilares do diferencial -->
-        <div class="reveal delay-2" style="display:flex;flex-direction:column;gap:16px;margin-top:40px;width:100%;">
+        <div class="hp-diferencial-pilares reveal delay-2">
 
             <div class="hp-pillar-card hp-pillar-card--psy reveal delay-1">
               <p class="hp-pillar-card__title" style="color:#3b82f6;">Psicologia Organizacional</p>
@@ -1005,7 +1019,7 @@
 
         <h4 style="margin:0 0 20px;font-size:clamp(1.15rem,2.5vw,1.6rem);line-height:1.4;font-family:var(--font-hd);font-weight:600;color:#e4e4e7;">
           Saúde mental organizacional não é apenas uma questão de conformidade. <br>
-          <span class="gradient-text">Saúde mental é um Ativo para o seu negócio.</span>
+          <span class="gradient-text">É um Ativo para o seu negócio.</span>
         </h4>
 
         <p class="body-text" style="max-width:640px;margin:0 auto 36px;line-height:1.8;color:rgba(166, 230, 250, 0.85);">
